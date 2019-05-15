@@ -1,0 +1,44 @@
+.icon {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border-radius: 0;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.8rem;
+
+    &--circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-size: 55%;
+        background-color: $background-color;
+    }
+
+    &--circle-big {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-size: 50%;
+        background-color: $background-color;
+    }
+
+    &--fill {
+        background-color: $accent-color;
+    }
+
+    &--tooth1 {
+        background-image: url($icon-path + "tooth-1.svg");
+    }
+    &--tooth2 {
+        background-image: url($icon-path + "tooth-2.svg");
+    }
+    &--tooth3 {
+        background-image: url($icon-path + "tooth-3.svg");
+    }
+}
+

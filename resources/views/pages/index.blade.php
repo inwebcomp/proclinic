@@ -5,13 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>ProClinic</title>
+
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
     <body>
-        @include('blocks.header')
-
-        @include('snippets.category', [
-            'title' => 'Some title',
-            'description' => 'Some description'
+        @include('blocks.header', [
+            'classMod' => 'active',
+            'data' => [
+                'title' => 'Some title22sdsds',
+                'description' => 'Some description'
+            ]
         ])
     </body>
 </html>

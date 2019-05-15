@@ -1,0 +1,13 @@
+.menu {
+    display: flex;
+
+    &__link {
+        display: block;
+        padding: $padding * 0.35 $padding * 1.25;
+        transition: color $transition;
+
+        &:hover {
+            color: darken(#fff, 10%)
+        }
+    }
+}

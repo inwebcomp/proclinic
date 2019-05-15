@@ -539,6 +539,7 @@ template {
 
 .icon--fill {
   background-color: #67a5eb;
+  box-shadow: 0 0.5rem 1rem rgba(3, 29, 91, 0.05), 0 0 1.5rem rgba(3, 29, 91, 0.02);
 }
 
 .icon--tooth1 {
@@ -551,6 +552,11 @@ template {
 
 .icon--tooth3 {
   background-image: url("/img/icons/tooth-3.svg");
+}
+
+.icon--phone-call {
+  background-image: url("/img/icons/phone-call.svg");
+  background-size: 50%;
 }
 
 .grid {
@@ -585,7 +591,7 @@ html {
 }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   overflow-x: hidden;
   font-family: "Montserrat", fantasy;
   font-weight: normal;
@@ -863,7 +869,7 @@ transition {
 
 .text-block,
 .fr-view {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.4;
   color: #022749;
   overflow: hidden;
@@ -918,7 +924,7 @@ transition {
 .fr-view thead th {
   height: 48px;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .text-block tbody td,
@@ -1024,6 +1030,17 @@ transition {
   }
 }
 
+.button-reset,
+.lang-toggler__button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: block;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+}
+
 .button {
   font-size: 1.6rem;
   letter-spacing: 1px;
@@ -1074,17 +1091,72 @@ transition {
   color: #FFF;
 }
 
-.layout {
-  display: grid;
-  grid-template-columns: 270px 1fr;
-  grid-gap: 32px;
+.lang-toggler {
+  display: flex;
+  align-items: center;
+  height: 42px;
 }
 
-@media screen and (max-width: 1024px) {
-  .layout {
-    grid-template-columns: 1fr;
-    grid-gap: 16px;
-  }
+.lang-toggler__button {
+  width: 22px;
+  overflow: hidden;
+  display: block;
+  font-weight: 700;
+  font-size: 0;
+  color: #3e415b;
+  padding: 0;
+  border-radius: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(3, 29, 91, 0.05), 0 0 1.5rem rgba(3, 29, 91, 0.02);
+  transition: all ease 0.15s;
+}
+
+.lang-toggler__button:not(:last-child) {
+  margin-right: 12px;
+}
+
+.lang-toggler__button::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 16px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lang-toggler__button--ru::before {
+  background-image: url("/img/icons/russia.png");
+}
+
+.lang-toggler__button--md::before {
+  background-image: url("/img/icons/romania.png");
+}
+
+.lang-toggler__button--en::before {
+  background-image: url("/img/icons/united-states.png");
+}
+
+.lang-toggler__button.active {
+  width: 85px;
+  background-color: #fff;
+  padding: 9px;
+  font-size: inherit;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu__link {
+  display: block;
+  padding: 5.6px 20px;
+  transition: color ease 0.15s;
+}
+
+.menu__link:hover {
+  color: #e6e6e6;
 }
 
 .mob-menu {
@@ -1113,5 +1185,67 @@ transition {
   padding: 16px;
   padding-bottom: 28px;
   background-color: #dbe7f3;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  grid-gap: 32px;
+}
+
+@media screen and (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+  }
+}
+
+.header {
+  min-height: 780px;
+  background-image: url("/img/header-bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.header__top-line {
+  background-color: rgba(54, 54, 54, 0.3);
+  padding: 20px 0;
+  color: #fff;
+}
+
+.header__top-line__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  margin-top: -5px;
+}
+
+.header__phone {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+.header__phone-bold {
+  font-size: 2rem;
+  font-weight: 700;
+  vertical-align: middle;
+  line-height: 1;
+  margin-left: 4px;
+  margin-top: -3px;
+}
+
+.header__phone .icon {
+  margin-right: 16px;
+}
+
+.logo {
+  width: 160px;
+  height: 40px;
 }
 

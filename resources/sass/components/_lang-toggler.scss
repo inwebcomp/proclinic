@@ -1,0 +1,59 @@
+.lang-toggler {
+    display: flex;
+    align-items: center;
+    height: 42px;
+
+    &__button {
+        @extend .button-reset;
+
+        width: 22px;
+        overflow: hidden;
+        display: block;
+        font-weight: 700;
+        font-size: 0;
+        color: #3e415b;
+        padding: 0;
+        border-radius: 2rem;
+        box-shadow: 0 0.5rem 1rem rgba(3, 29, 91, 0.05), 0 0 1.5rem rgba(3, 29, 91, 0.02);
+        transition: all $transition;
+        &:not(:last-child) {
+            margin-right: $padding * 0.75;
+        }
+
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: $padding;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &--ru {
+            &::before {
+                background-image: url('/img/icons/russia.png');
+            }
+
+        }
+        &--md {
+            &::before {
+                background-image: url('/img/icons/romania.png');
+            }
+        }
+        &--en {
+            &::before {
+                background-image: url('/img/icons/united-states.png');
+            }
+        }
+
+        &.active {
+            width: 85px;
+            background-color: $background-color;
+            padding: 9px;
+            font-size: inherit;
+        }
+    }
+}

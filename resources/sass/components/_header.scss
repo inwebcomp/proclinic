@@ -1,9 +1,22 @@
 .header {
-    min-height: 780px;
+    min-height: 720px;
+    height: 100vh;
     background-image: url('/img/header-bg.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: $accent-color;
+        background-color: #081a36;
+        opacity: 0.3;
+    }
 
     &__top-line {
         background-color: rgba(#363636, 0.3);
@@ -21,11 +34,22 @@
         margin-top: -5px;
     }
 
+    &__menu {
+        margin-right: $padding * 1.25;
+        margin-left: auto;
+    }
+
     &__phone {
         display: flex;
         align-items: center;
         font-size: 1.6rem;
-        vertical-align: middle;
+        margin-right: $padding * 2.5;
+
+        &:hover {
+            .icon {
+                opacity: 0.87;
+            }
+        }
 
         &-bold {
             font-size: 2rem;
@@ -33,11 +57,14 @@
             vertical-align: middle;
             line-height: 1;
             margin-left: $padding * 0.25;
-            margin-top: -3px;
+            flex: 1;
         }
 
         .icon {
             margin-right: $padding ;
+            width: 39px;
+            height: 39px;
+            transition: opacity $transition;
         }
     }
 }
@@ -45,4 +72,9 @@
 .logo {
     width: 160px;
     height: 40px;
+    display: inline-block;
+
+    &__img {
+        max-width: 100%;
+    }
 }

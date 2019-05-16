@@ -20,6 +20,6 @@ template {
 	transition: color $transition;
 
 	&:hover {
-		color: $font-color-accent;
+		color: $accent-color;
 	}
 }

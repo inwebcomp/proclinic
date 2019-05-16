@@ -1,12 +1,13 @@
 .lang-toggler {
     display: flex;
     align-items: center;
-    height: 42px;
+    height: 40px;
 
     &__button {
         @extend .button-reset;
 
         width: 22px;
+        height: 40px;
         overflow: hidden;
         display: block;
         font-weight: 700;
@@ -52,7 +53,6 @@
         &.active {
             width: 85px;
             background-color: $background-color;
-            padding: 9px;
             font-size: inherit;
         }
     }

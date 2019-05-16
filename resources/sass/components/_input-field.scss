@@ -1,0 +1,23 @@
+.input-field {
+    display: flex;
+    align-items: center;
+    max-width: 570px;
+    padding: $padding * 0.625;
+    padding-left: 30px;
+    background-color: $input-color;
+    border-radius: 3.5rem;
+
+    &__input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: $padding * 0.25;
+        font-weight: 500;
+        color: $font-color-black;
+        margin-left: $padding;
+
+        &::placeholder {
+            color: $font-color-black;
+        }
+    }
+}

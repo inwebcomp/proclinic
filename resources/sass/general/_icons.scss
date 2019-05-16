@@ -41,9 +41,12 @@
     &--tooth3 {
         background-image: url($icon-path + "tooth-3.svg");
     }
+    &--phone-call-white {
+        background-image: url($icon-path + "phone-call-white.svg");
+        background-size: 50%;
+    }
     &--phone-call {
         background-image: url($icon-path + "phone-call.svg");
-        background-size: 50%;
     }
 }
 

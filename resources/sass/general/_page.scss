@@ -97,7 +97,6 @@ body {
 
 .subtitle {
     font-size: 1.8rem;
-    color: $font-color-grey;
     font-weight: bold;
 
     @include media-max(425px) {

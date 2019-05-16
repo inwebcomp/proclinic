@@ -1119,6 +1119,7 @@ transition {
 .lang-toggler__button {
   width: 22px;
   height: 40px;
+  line-height: 40px;
   overflow: hidden;
   display: block;
   font-weight: 700;
@@ -1128,6 +1129,7 @@ transition {
   border-radius: 2rem;
   box-shadow: 0 0.5rem 1rem rgba(3, 29, 91, 0.05), 0 0 1.5rem rgba(3, 29, 91, 0.02);
   transition: all ease 0.15s;
+  text-align: center;
 }
 
 .lang-toggler__button:not(:last-child) {
@@ -1139,7 +1141,7 @@ transition {
   width: 20px;
   height: 20px;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   margin-right: 16px;
   background-size: contain;
   background-position: center;
@@ -1282,7 +1284,6 @@ transition {
 
 .header__top-line {
   background-color: rgba(54, 54, 54, 0.3);
-  padding: 20px 0;
   color: #fff;
 }
 
@@ -1290,10 +1291,7 @@ transition {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.header__logo {
-  margin-top: -5px;
+  height: 80px;
 }
 
 .header__menu {
@@ -1329,13 +1327,12 @@ transition {
 }
 
 .logo {
-  width: 160px;
-  height: 40px;
   display: inline-block;
 }
 
 .logo__img {
   max-width: 100%;
+  display: block;
 }
 
 .banner {

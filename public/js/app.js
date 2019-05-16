@@ -14316,8 +14316,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Work\proclinic\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Work\proclinic\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/escral/Server/www/proclinic/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/escral/Server/www/proclinic/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

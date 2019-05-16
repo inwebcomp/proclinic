@@ -1,4 +1,4 @@
-<nav class="menu {{$classMod}}">
+<nav class="menu {{ $classMod ?? '' }}">
     <a href="#" class="menu__link">Услуги</a>
     <a href="#" class="menu__link">Клиника</a>
     <a href="#" class="menu__link">Отзывы</a>

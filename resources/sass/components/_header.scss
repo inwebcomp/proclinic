@@ -20,7 +20,6 @@
 
     &__top-line {
         background-color: rgba(#363636, 0.3);
-        padding: $padding * 1.25 0;
         color: #fff;
     }
 
@@ -28,10 +27,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    &__logo {
-        margin-top: -5px;
+        height: $header-height;
     }
 
     &__menu {
@@ -70,11 +66,10 @@
 }
 
 .logo {
-    width: 160px;
-    height: 40px;
     display: inline-block;
 
     &__img {
         max-width: 100%;
+        display: block;
     }
 }

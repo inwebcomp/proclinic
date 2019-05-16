@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+	 viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve" fill="url(#linear-gradient)">
+    <linearGradient id="linear-gradient">
+        <stop offset="0%" stop-color="#2588cb"/>
+        <stop offset="100%" stop-color="#1166be"/>
+    </linearGradient>
+
+
 <g>
 	<g>
 		<path d="M209.348,121.576l-0.009-0.029c-1.599-5.285-7.172-8.242-12.453-6.644c-5.284,1.598-8.264,7.207-6.664,12.491

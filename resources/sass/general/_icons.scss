@@ -32,6 +32,9 @@
         box-shadow: 0 0.5rem 1rem rgba(3, 29, 91, 0.05), 0 0 1.5rem rgba(3, 29, 91, 0.02);
     }
 
+    &--tooth {
+        background-image: url($icon-path + "tooth.svg");
+    }
     &--tooth1 {
         background-image: url($icon-path + "tooth-1.svg");
     }
@@ -41,6 +44,42 @@
     &--tooth3 {
         background-image: url($icon-path + "tooth-3.svg");
     }
+    &--tooth4 {
+        background-image: url($icon-path + "tooth-4.svg");
+    }
+    &--brackets {
+        background-image: url($icon-path + "brackets.svg");
+    }
+    &--chat {
+        background-image: url($icon-path + "chat.svg");
+    }
+    &--decay {
+        background-image: url($icon-path + "decay.svg");
+    }
+    &--dentures {
+        background-image: url($icon-path + "dentures.svg");
+    }
+    &--doctor {
+        background-image: url($icon-path + "doctor.svg");
+    }
+    &--electrocardiogram {
+        background-image: url($icon-path + "electrocardiogram.svg");
+    }
+    &--message {
+        background-image: url($icon-path + "message.svg");
+    }
+    &--respect {
+        background-image: url($icon-path + "respect.svg");
+    }
+    &--technology {
+        background-image: url($icon-path + "technology.svg");
+    }
+    &--tooth-whitening {
+        background-image: url($icon-path + "tooth-whitening.svg");
+    }
+    &--placeholder {
+        background-image: url($icon-path + "placeholder.svg");
+    }
     &--phone-call-white {
         background-image: url($icon-path + "phone-call-white.svg");
         background-size: 50%;
@@ -48,5 +87,17 @@
     &--phone-call {
         background-image: url($icon-path + "phone-call.svg");
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

@@ -48,29 +48,22 @@ body {
 }
 
 .block {
-    padding-top: $padding * 5;
-    margin-top: $padding * 5;
+    padding-top: 0;
+    margin-top: $padding * 7.5;
 
     @include media-max(768px) {
         margin-top: 0;
-        padding-top: $padding * 3.75;
+        padding-top: $padding * 5;
+    }
+
+    &__title {
+        font-size: 3.6rem;
+        font-weight: bold;
+        margin: 0;
+        color: $font-color-black;;
     }
 }
 
-.block__header__lines {
-    width: 600px;
-    height: $padding * 2;
-    border: 1px dashed $border-color;
-    border-top: none;
-    position: absolute;
-    right: 50%;
-    top: 100%;
-    z-index: -1;
-
-    @include media-max($content-width + $padding * 2) {
-        display: none;
-   }
-}
 
 .title {
     font-size: 3.6rem;

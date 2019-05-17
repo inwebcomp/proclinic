@@ -88,16 +88,25 @@
         background-image: url($icon-path + "phone-call.svg");
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    &--tooth-whitening  {
+        background-image: url($icon-path + "tooth-whitening.svg");
+    }
+    &--doctor {
+        background-image: url($icon-path + "doctor.svg");
+    }
+    &--cardiogram {
+        background-image: url($icon-path + "electrocardiogram.svg");
+    }
+    &--technology {
+        background-image: url($icon-path + "technology.svg");
+        background-size: 50%;
+    }
+    &--respect {
+        background-image: url($icon-path + "respect.svg");
+    }
+    &--chevron {
+        background-image: url($icon-path + "arrow.svg");
+        background-size: 40%;
+    }
 }
 

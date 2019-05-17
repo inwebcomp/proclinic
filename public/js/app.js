@@ -14262,8 +14262,40 @@ module.exports = g;
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // есть flickity для VUE
+//import Flickity from 'flickity';
 
+
+var initCarousel = function initCarousel() {
+  var carousel = document.querySelector('.slider-main');
+  var buttonPrev = document.querySelector('.dual-slider__button--prev');
+  var buttonNext = document.querySelector('.dual-slider__button--next');
+  if (!carousel) return false;
+  var flkty = new Flickity(carousel, {
+    prevNextButtons: false,
+    pageDots: false,
+    fade: true,
+    wrapAround: true,
+    adaptiveHeight: false
+  });
+  new Flickity(document.querySelector('.slider-small'), {
+    prevNextButtons: false,
+    fade: true,
+    contain: true,
+    draggable: false,
+    asNavFor: document.querySelector('.slider-main'),
+    pageDots: false,
+    adaptiveHeight: false
+  });
+  buttonPrev.addEventListener('click', function () {
+    flkty.previous();
+  });
+  buttonNext.addEventListener('click', function () {
+    flkty.next();
+  });
+};
+
+initCarousel();
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 /***/ }),
@@ -14316,8 +14348,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/escral/Server/www/proclinic/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/escral/Server/www/proclinic/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Work\proclinic\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Work\proclinic\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

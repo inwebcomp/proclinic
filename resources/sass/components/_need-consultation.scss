@@ -1,0 +1,41 @@
+.block--consultation {
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('/img/consult-bg.jpg');
+    position: relative;
+    padding: $padding * 3 $padding;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(55, 87, 115, 0.35);
+    }
+}
+
+.consultation {
+    width: 570px;
+    color: $font-color-light;
+    font-size: 1.8rem;
+    font-weight: 500;
+    z-index: 1;
+
+    &__title {
+        font-size: 3.6rem;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    &__text {
+        margin-bottom: 0;
+        margin-top: $padding * 0.25;
+        margin-bottom: $padding * 1.75;
+    }
+}

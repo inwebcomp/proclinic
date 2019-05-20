@@ -1,13 +1,3 @@
-.button-reset {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    display: block;
-    font-size: inherit;
-    color: inherit;
-    outline: none;
-}
-
 .button {
     @extend .button-reset;
 

@@ -32,6 +32,12 @@
         border-radius: 50%;
         z-index: 1;
 
+        &:hover {
+            .icon {
+                opacity: 0.83;
+            }
+        }
+
         &--prev {
             top: 278px;
             left: -40px;
@@ -40,7 +46,6 @@
         &--next {
             right: -40px;
             top: 144px;
-
         }
     }
 }
@@ -67,6 +72,15 @@
         font-weight: 700;
         margin: $padding * 2 0 $padding;
         color: $font-color-black;
+    }
+
+    .button {
+        box-shadow: 0px 3px 21px -9px rgba(0,0,0,0.75);
+        margin-bottom: $padding;
+    }
+
+    .is-selected {
+        z-index: 1;
     }
 }
 

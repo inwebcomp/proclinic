@@ -10,6 +10,7 @@
     font-weight: normal;
     font-style: normal;
     font-size: 1.8rem;
+    transition: opacity $transition;
 
     &--circle {
         width: 40px;

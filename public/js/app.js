@@ -14257,6 +14257,14 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -14276,7 +14284,7 @@ var initCarousel = function initCarousel() {
     pageDots: false,
     fade: true,
     wrapAround: true,
-    adaptiveHeight: false
+    adaptiveHeight: true
   });
   new Flickity(document.querySelector('.slider-small'), {
     prevNextButtons: false,
@@ -14285,7 +14293,7 @@ var initCarousel = function initCarousel() {
     draggable: false,
     asNavFor: document.querySelector('.slider-main'),
     pageDots: false,
-    adaptiveHeight: false
+    adaptiveHeight: true
   });
   buttonPrev.addEventListener('click', function () {
     flkty.previous();
@@ -14296,6 +14304,77 @@ var initCarousel = function initCarousel() {
 };
 
 initCarousel();
+
+var personalSlider = function personalSlider() {
+  var carousel = document.querySelector('.js-slider');
+  var buttonPrev = document.querySelector('.cart-slider__button--prev');
+  var buttonNext = document.querySelector('.cart-slider__button--next');
+  if (!carousel) return false;
+  var flkty = new Flickity(carousel, {
+    prevNextButtons: false,
+    pageDots: false,
+    contain: true,
+    cellAlign: 'left',
+    wrapAround: true,
+    adaptiveHeight: true
+  });
+  buttonPrev.addEventListener('click', function () {
+    flkty.previous();
+  });
+  buttonNext.addEventListener('click', function () {
+    flkty.next();
+  });
+};
+
+personalSlider();
+
+var reviewslSlider = function reviewslSlider() {
+  var carousel = document.querySelector('.reviews__list');
+  var buttonsNav = document.querySelector('.reviews__peoples');
+  var buttonsNavGroup = document.querySelectorAll('.reviews__peoples-box');
+  var buttonPrev = document.querySelector('.cart-slider__button--prev');
+  var buttonNext = document.querySelector('.cart-slider__button--next');
+  if (!carousel) return false;
+  var flkty = new Flickity(carousel, {
+    prevNextButtons: false,
+    pageDots: false,
+    contain: true,
+    cellAlign: 'left',
+    wrapAround: true,
+    groupCells: 2,
+    adaptiveHeight: true
+  });
+  flkty.on('select', function () {
+    var selectedButton = buttonsNav.children[flkty.selectedIndex];
+
+    _toConsumableArray(buttonsNavGroup).forEach(function (elem) {
+      elem.classList.remove('active');
+    });
+
+    selectedButton.classList.add('active');
+  });
+  buttonsNav.addEventListener('click', function (_ref) {
+    var target = _ref.target;
+
+    if (target.classList.contains('reviews__man__img')) {
+      var selector = target.parentElement.getAttribute('data-selector');
+
+      _toConsumableArray(buttonsNavGroup).forEach(function (elem) {
+        elem.classList.remove('active');
+      });
+
+      target.parentElement.parentElement.classList.add('active');
+      flkty.selectCell(selector);
+    }
+  }); // buttonPrev.addEventListener('click', () => {
+  //     flkty.previous()
+  // });
+  // buttonNext.addEventListener('click', () => {
+  //     flkty.next()
+  // })
+};
+
+reviewslSlider();
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 /***/ }),

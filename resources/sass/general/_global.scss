@@ -23,3 +23,45 @@ template {
 		color: $accent-color;
 	}
 }
+
+.img-in-box {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.ul-reset {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.button-reset {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    font-size: inherit;
+    color: inherit;
+    outline: none;
+}
+
+.slider-button {
+    @extend .button-reset;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: $background-color;
+    border-radius: 50%;
+    z-index: 1;
+
+    &:hover {
+        .icon {
+            opacity: 0.83;
+        }
+    }
+}

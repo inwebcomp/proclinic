@@ -1,0 +1,134 @@
+.block--reviews {
+    padding: 0 $padding * 7.5;
+    background-color: $content-bg-color;
+}
+
+.reviews {
+    position: relative;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding 0;
+    }
+
+    &__peoples {
+        @extend .ul-reset;
+    }
+
+    &__peoples-box {
+        display: flex;
+        align-items: center;
+
+        &.active {
+            .reviews__man {
+                box-shadow: 0 0 0 2px #000;
+                opacity: 1;
+            }
+        }
+
+        &:last-child {
+            .reviews__man {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+    }
+
+    &__peoples {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__man {
+        margin-right: $padding * 1.875;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        height: 76px;
+        width: 76px;
+        opacity: 0.7;
+        transition: box-shadow $transition, opacity $transition;
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        &__img {
+            @extend .img-in-box;
+            border: 3px solid $content-bg-color;
+            border-radius: 50%;
+        }
+    }
+
+    &__list {
+        margin: $padding * 2 0;
+        position: relative;
+    }
+
+    &__item {
+        width: 50%;
+        max-width: 570px;
+        background-color: #fff;
+        margin-right: $padding * 1.875;
+        border-radius:  $border-radius;
+        padding: 30px 30px 30px 80px;
+        position: relative;
+
+        &:nth-child(even) {
+            padding: 30px 70px 30px 30px;
+        }
+
+        &__name {
+            font-weight: 700;
+            color: $font-color-black;
+            margin-top: 0;
+        }
+
+        &__text {
+            font-weight: 400;
+            font-family: 'OpenSans', sans-serif;
+            color: $font-color-black;
+        }
+
+        &__data {
+            font-family: 'OpenSans', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            position: absolute;
+            right: 40px;
+            top: 32px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__button {
+        &:not(:last-child) {
+            margin-right: $padding * 1.875;
+            margin-left: $padding * 1.875;
+        }
+    }
+
+    &__slider-btn {
+        &--prev {
+            top: 203px;
+            left: -40px;
+            transform: rotate(180deg);
+        }
+
+        &--next {
+            top: 203px;
+            right: -40px;
+        }
+    }
+}

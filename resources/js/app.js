@@ -74,11 +74,33 @@ personalSlider();
 const reviewslSlider = () => {
     const carousel = document.querySelector('.reviews__list');
     const buttonsNav = document.querySelector('.reviews__peoples');
-    const buttonsNavGroup = document.querySelectorAll('.reviews__peoples-box');
-    const buttonPrev = document.querySelector('.cart-slider__button--prev');
-    const buttonNext = document.querySelector('.cart-slider__button--next');
+    const buttonPrev = document.querySelector('.reviews__slider-btn--prev');
+    const buttonNext = document.querySelector('.reviews__slider-btn--next');
 
     if(!carousel) return false;
+
+    const activeButtonsFn = () => {
+        const activeButtons = [];
+        const arrSelectedIndexs = [];
+
+        [...buttonsNav.children].forEach(elem => {
+            elem.classList.remove('active')
+        });
+
+        flkty.selectedCells.forEach((cell) => {
+            const index = cell.element.getAttribute('data-index');
+            arrSelectedIndexs.push(index);
+        });
+
+        arrSelectedIndexs.forEach((index) => {
+            const button = buttonsNav.children[index];
+            activeButtons.push(button);
+        });
+
+        activeButtons.forEach((navButton) => {
+            navButton.classList.add('active')
+        });
+    }
 
     const flkty =  new Flickity( carousel, {
         prevNextButtons: false,
@@ -86,42 +108,34 @@ const reviewslSlider = () => {
         contain: true,
         cellAlign: 'left',
         wrapAround: true,
-        groupCells: 2,
-        adaptiveHeight: true
+        groupCells: '100%',
+        adaptiveHeight: true,
     });
 
-    flkty.on( 'select', function() {
-        const selectedButton = buttonsNav.children[ flkty.selectedIndex ];
+    activeButtonsFn();
 
-        [...buttonsNavGroup].forEach(elem => {
-            elem.classList.remove('active')
-        });
-
-        selectedButton.classList.add('active');
-      });
+    flkty.on( 'select', activeButtonsFn);
 
     buttonsNav.addEventListener( 'click', ({ target }) => {
         if(target.classList.contains('reviews__man__img')) {
             const selector = target.parentElement.getAttribute('data-selector');
 
-            [...buttonsNavGroup].forEach(elem => {
+            [...buttonsNav.children].forEach(elem => {
                 elem.classList.remove('active')
             });
 
-            target.parentElement.parentElement.classList.add('active');
+            target.parentElement.classList.add('active');
 
             flkty.selectCell(selector);
         }
     });
 
-
-
-    // buttonPrev.addEventListener('click', () => {
-    //     flkty.previous()
-    // });
-    // buttonNext.addEventListener('click', () => {
-    //     flkty.next()
-    // })
+    buttonPrev.addEventListener('click', () => {
+        flkty.previous()
+    });
+    buttonNext.addEventListener('click', () => {
+        flkty.next()
+    })
 };
 
 reviewslSlider();

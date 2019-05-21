@@ -1,5 +1,6 @@
 <div class="block">
     <div class="container">
+        <h3 class="block__title">@lang('Наши врачи')</h3>
 
         <div class="cart-slider">
             <div class="cart-slider__list js-slider">

@@ -14331,47 +14331,62 @@ personalSlider();
 var reviewslSlider = function reviewslSlider() {
   var carousel = document.querySelector('.reviews__list');
   var buttonsNav = document.querySelector('.reviews__peoples');
-  var buttonsNavGroup = document.querySelectorAll('.reviews__peoples-box');
-  var buttonPrev = document.querySelector('.cart-slider__button--prev');
-  var buttonNext = document.querySelector('.cart-slider__button--next');
+  var buttonPrev = document.querySelector('.reviews__slider-btn--prev');
+  var buttonNext = document.querySelector('.reviews__slider-btn--next');
   if (!carousel) return false;
+
+  var activeButtonsFn = function activeButtonsFn() {
+    var activeButtons = [];
+    var arrSelectedIndexs = [];
+
+    _toConsumableArray(buttonsNav.children).forEach(function (elem) {
+      elem.classList.remove('active');
+    });
+
+    flkty.selectedCells.forEach(function (cell) {
+      var index = cell.element.getAttribute('data-index');
+      arrSelectedIndexs.push(index);
+    });
+    arrSelectedIndexs.forEach(function (index) {
+      var button = buttonsNav.children[index];
+      activeButtons.push(button);
+    });
+    activeButtons.forEach(function (navButton) {
+      navButton.classList.add('active');
+    });
+  };
+
   var flkty = new Flickity(carousel, {
     prevNextButtons: false,
     pageDots: false,
     contain: true,
     cellAlign: 'left',
     wrapAround: true,
-    groupCells: 2,
+    groupCells: '100%',
     adaptiveHeight: true
   });
-  flkty.on('select', function () {
-    var selectedButton = buttonsNav.children[flkty.selectedIndex];
-
-    _toConsumableArray(buttonsNavGroup).forEach(function (elem) {
-      elem.classList.remove('active');
-    });
-
-    selectedButton.classList.add('active');
-  });
+  activeButtonsFn();
+  flkty.on('select', activeButtonsFn);
   buttonsNav.addEventListener('click', function (_ref) {
     var target = _ref.target;
 
     if (target.classList.contains('reviews__man__img')) {
       var selector = target.parentElement.getAttribute('data-selector');
 
-      _toConsumableArray(buttonsNavGroup).forEach(function (elem) {
+      _toConsumableArray(buttonsNav.children).forEach(function (elem) {
         elem.classList.remove('active');
       });
 
-      target.parentElement.parentElement.classList.add('active');
+      target.parentElement.classList.add('active');
       flkty.selectCell(selector);
     }
-  }); // buttonPrev.addEventListener('click', () => {
-  //     flkty.previous()
-  // });
-  // buttonNext.addEventListener('click', () => {
-  //     flkty.next()
-  // })
+  });
+  buttonPrev.addEventListener('click', function () {
+    flkty.previous();
+  });
+  buttonNext.addEventListener('click', function () {
+    flkty.next();
+  });
 };
 
 reviewslSlider();

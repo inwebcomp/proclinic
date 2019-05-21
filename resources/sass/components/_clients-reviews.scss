@@ -1,5 +1,5 @@
 .block--reviews {
-    padding: 0 $padding * 7.5;
+    padding: $padding * 7.5 0;
     background-color: $content-bg-color;
 }
 
@@ -13,29 +13,12 @@
         padding: $padding 0;
     }
 
-    &__peoples {
-        @extend .ul-reset;
+    &__title {
+        padding-right: $padding * 1.5;
     }
 
-    &__peoples-box {
-        display: flex;
-        align-items: center;
-
-        &.active {
-            .reviews__man {
-                box-shadow: 0 0 0 2px #000;
-                opacity: 1;
-            }
-        }
-
-        &:last-child {
-            .reviews__man {
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-
+    &__peoples {
+        @extend .ul-reset;
     }
 
     &__peoples {
@@ -46,7 +29,7 @@
     }
 
     &__man {
-        margin-right: $padding * 1.875;
+        margin-right: 25px;
         border-radius: 50%;
         overflow: hidden;
         cursor: pointer;
@@ -55,8 +38,17 @@
         opacity: 0.7;
         transition: box-shadow $transition, opacity $transition;
 
+        &:last-child {
+            margin-right: 0;
+        }
+
         &:hover {
             opacity: 0.85;
+        }
+
+        &.active {
+            box-shadow: 0 0 0 2px #000;
+            opacity: 1;
         }
 
         &__img {
@@ -66,34 +58,48 @@
         }
     }
 
-    &__list {
-        margin: $padding * 2 0;
+    &__list-wrap {
+        position: relative;
+        margin: $padding * 1.75 0;
         position: relative;
     }
 
     &__item {
         width: 50%;
+        min-height: 100%;
+        //height: 190px;
         max-width: 570px;
         background-color: #fff;
         margin-right: $padding * 1.875;
         border-radius:  $border-radius;
-        padding: 30px 30px 30px 80px;
+        padding: $padding * 1.75;
+        padding-left: 80px;
         position: relative;
+        background: radial-gradient(30px 30px at 0 50%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
+
+        @include media-max(1100px) {
+            width: 100%;
+            max-width: 100%;
+        }
 
         &:nth-child(even) {
-            padding: 30px 70px 30px 30px;
+            padding-left: $padding * 2.5;
+            padding-right: 70px;
+            background: radial-gradient(30px 30px at 100% 50%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
         }
 
         &__name {
             font-weight: 700;
             color: $font-color-black;
-            margin-top: 0;
+            margin: 0;
         }
 
         &__text {
             font-weight: 400;
             font-family: 'OpenSans', sans-serif;
             color: $font-color-black;
+            margin-bottom: 0;
+            margin-top: $padding * 0.75;
         }
 
         &__data {
@@ -120,14 +126,16 @@
     }
 
     &__slider-btn {
+        background-color: transparent;
+        top: 50%;
+        transform: translateY(-50%);
+
         &--prev {
-            top: 203px;
             left: -40px;
-            transform: rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
         }
 
         &--next {
-            top: 203px;
             right: -40px;
         }
     }

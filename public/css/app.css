@@ -647,6 +647,7 @@ template {
 }
 
 .img-in-box,
+.article-prew__img,
 .reviews__man__img {
   max-width: 100%;
   display: block;
@@ -654,6 +655,7 @@ template {
 }
 
 .ul-reset,
+.tag-cloud,
 .reviews__peoples {
   padding: 0;
   margin: 0;
@@ -1870,6 +1872,11 @@ transition {
   display: block;
 }
 
+.cart-slider {
+  margin-top: 40px;
+  position: relative;
+}
+
 .cart-slider__item {
   width: 24%;
   max-width: 270px;
@@ -1980,7 +1987,7 @@ transition {
 }
 
 .block--reviews {
-  padding: 0 120px;
+  padding: 120px 0;
   background-color: #eef2f9;
 }
 
@@ -1995,18 +2002,8 @@ transition {
   padding: 16px 0;
 }
 
-.reviews__peoples-box {
-  display: flex;
-  align-items: center;
-}
-
-.reviews__peoples-box.active .reviews__man {
-  box-shadow: 0 0 0 2px #000;
-  opacity: 1;
-}
-
-.reviews__peoples-box:last-child .reviews__man:last-child {
-  margin-right: 0;
+.reviews__title {
+  padding-right: 24px;
 }
 
 .reviews__peoples {
@@ -2017,7 +2014,7 @@ transition {
 }
 
 .reviews__man {
-  margin-right: 30px;
+  margin-right: 25px;
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
@@ -2027,8 +2024,17 @@ transition {
   transition: box-shadow ease 0.15s, opacity ease 0.15s;
 }
 
+.reviews__man:last-child {
+  margin-right: 0;
+}
+
 .reviews__man:hover {
   opacity: 0.85;
+}
+
+.reviews__man.active {
+  box-shadow: 0 0 0 2px #000;
+  opacity: 1;
 }
 
 .reviews__man__img {
@@ -2036,35 +2042,50 @@ transition {
   border-radius: 50%;
 }
 
-.reviews__list {
-  margin: 32px 0;
+.reviews__list-wrap {
+  position: relative;
+  margin: 28px 0;
   position: relative;
 }
 
 .reviews__item {
   width: 50%;
+  min-height: 100%;
   max-width: 570px;
   background-color: #fff;
   margin-right: 30px;
   border-radius: 2.5rem;
-  padding: 30px 30px 30px 80px;
+  padding: 28px;
+  padding-left: 80px;
   position: relative;
+  background: radial-gradient(30px 30px at 0 50%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
+}
+
+@media screen and (max-width: 1100px) {
+  .reviews__item {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .reviews__item:nth-child(even) {
-  padding: 30px 70px 30px 30px;
+  padding-left: 40px;
+  padding-right: 70px;
+  background: radial-gradient(30px 30px at 100% 50%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
 }
 
 .reviews__item__name {
   font-weight: 700;
   color: #3e415b;
-  margin-top: 0;
+  margin: 0;
 }
 
 .reviews__item__text {
   font-weight: 400;
   font-family: "OpenSans", sans-serif;
   color: #3e415b;
+  margin-bottom: 0;
+  margin-top: 12px;
 }
 
 .reviews__item__data {
@@ -2087,15 +2108,88 @@ transition {
   margin-left: 30px;
 }
 
+.reviews__slider-btn {
+  background-color: transparent;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .reviews__slider-btn--prev {
-  top: 203px;
   left: -40px;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
 }
 
 .reviews__slider-btn--next {
-  top: 203px;
   right: -40px;
+}
+
+.articles-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 56px;
+}
+
+.article-prew__photo {
+  display: block;
+}
+
+.article-prew__img {
+  margin-bottom: 16px;
+  border-radius: 2.5rem;
+}
+
+.article-prew__title {
+  font-weight: 700;
+  display: block;
+  color: #3e415b;
+  margin-bottom: 12px;
+}
+
+.article-prew__text {
+  font-family: "OpenSans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-cloud__tag {
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+
+.tag-cloud__tag:not(:last-child) {
+  margin-right: 8px;
+}
+
+.tag-cloud__tag__link {
+  display: block;
+  color: #67a5eb;
+  padding: 8px 20px;
+  background-color: #eef2f9;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 15px;
+  transition: background-color ease 0.15s, -webkit-transform ease 0.15s;
+  transition: background-color ease 0.15s, transform ease 0.15s;
+  transition: background-color ease 0.15s, transform ease 0.15s, -webkit-transform ease 0.15s;
+}
+
+.tag-cloud__tag__link:hover {
+  background-color: #dbe4f2;
+}
+
+.tag-cloud__tag__link:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 

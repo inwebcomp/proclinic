@@ -1,4 +1,4 @@
-<div class="block">
+<div class="block block--personals">
     <div class="container">
         <h3 class="block__title">@lang('Наши врачи')</h3>
 

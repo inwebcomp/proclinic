@@ -140,4 +140,21 @@ const reviewslSlider = () => {
 
 reviewslSlider();
 
+const headerCollapse = () => {
+    const header = document.querySelector('.header');
+
+
+    document.addEventListener('scroll', function (evt) {
+        let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrolled > 10) {
+            header.classList.add('header--compact');
+        } else {
+            header.classList.remove('header--compact');
+        }
+    })
+};
+
+//headerCollapse()
+
 window.Vue = require('vue');

@@ -1,0 +1,36 @@
+.footer {
+    background-color: $background-color;
+
+    &__main {
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__menu {
+        margin-right: -$padding * 1.25;
+    }
+
+    &__bottom {
+        background-color: $content-bg-color;
+        min-height: 40px
+    }
+
+    &__bottom__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding * 0.625 0;
+        padding-bottom: $padding * 0.5;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+    &__copr {
+        color: $font-color-black;
+    }
+}

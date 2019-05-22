@@ -109,5 +109,12 @@
         background-image: url($icon-path + "arrow.svg");
         background-size: 40%;
     }
+    &--location {
+        background-image: url($icon-path + "placeholder.svg");
+    }
+    &--fb {
+        background-image: url($icon-path + "facebook-letter-logo.svg");
+        background-color: #1166be;
+    }
 }
 

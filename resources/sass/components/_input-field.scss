@@ -1,12 +1,33 @@
 .input-field {
     display: flex;
+    width: 100%;
     align-items: center;
     max-width: 570px;
+    min-height: 50px;
     padding: $padding * 0.625;
     padding-left: 30px;
     background-color: $input-color;
     border-radius: 3.5rem;
     font-size: 1.6rem;
+
+    &--small {
+        max-width: 260px;
+        padding-left: $padding * 1.25;
+
+        .input-field__input {
+            width: 70%;
+            max-width: 70%;
+        }
+    }
+
+    &--textarea {
+        padding-left: $padding * 1.25;
+
+        textarea {
+            height: 25px;
+            padding: 0;
+        }
+    }
 
     &__input {
         flex: 1;
@@ -19,6 +40,10 @@
 
         &::placeholder {
             color: $font-color-black;
+        }
+
+        &--textarea {
+
         }
     }
 }

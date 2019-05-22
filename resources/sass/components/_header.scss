@@ -1,11 +1,11 @@
 .header {
-    min-height: 720px;
-    height: 100vh;
+    height: 780px;
     background-image: url('/img/header-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
+    padding-top: 1px;
 
     &::before {
         content: '';
@@ -19,8 +19,15 @@
     }
 
     &__top-line {
-        background-color: rgba(#363636, 0.3);
-        color: #fff;
+        background-color: $content-bg-color;
+        color: $font-color-black;
+        width: 100%;
+        transition:  all  $transition;
+        height: $header-height;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
     }
 
     &__top-line__container {

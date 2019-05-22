@@ -1,13 +1,24 @@
 .menu {
     display: flex;
 
+    &--dark {
+        .menu__link {
+            color: $font-color-black;
+
+            &:hover {
+                color: lighten($font-color-black, 25%)
+            }
+        }
+    }
+
     &__link {
         display: block;
         padding: $padding * 0.5 $padding * 1.25;
         transition: color $transition;
+        color: lighten($font-color-black, 10%);
 
         &:hover {
-            color: darken(#fff, 10%)
+            color: darken($font-color-black, 100%)
         }
     }
 }

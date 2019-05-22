@@ -21,7 +21,8 @@
 }
 
 .consultation {
-    width: 570px;
+    max-width: 580px;
+    width: 100%;
     color: $font-color-light;
     font-size: 1.8rem;
     font-weight: 500;

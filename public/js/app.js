@@ -14390,6 +14390,21 @@ var reviewslSlider = function reviewslSlider() {
 };
 
 reviewslSlider();
+
+var headerCollapse = function headerCollapse() {
+  var header = document.querySelector('.header');
+  document.addEventListener('scroll', function (evt) {
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrolled > 10) {
+      header.classList.add('header--compact');
+    } else {
+      header.classList.remove('header--compact');
+    }
+  });
+}; //headerCollapse()
+
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 /***/ }),

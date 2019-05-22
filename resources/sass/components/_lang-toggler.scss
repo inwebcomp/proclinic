@@ -7,8 +7,6 @@
         @extend .button-reset;
 
         width: 22px;
-        height: 40px;
-        line-height: 40px;
         overflow: hidden;
         display: block;
         font-weight: 700;
@@ -56,6 +54,8 @@
             width: 85px;
             background-color: $background-color;
             font-size: inherit;
+            height: 40px;
+            line-height: 40px;
         }
     }
 }

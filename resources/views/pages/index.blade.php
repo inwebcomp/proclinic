@@ -26,8 +26,17 @@
 
         @include('blocks.clients-reviews')
 
-         @include('blocks.articles-list')
+        @include('blocks.articles-list')
 
+        @include('blocks.has-quest')
+
+        @include('blocks.contacts')
+
+        @include('blocks.footer')
+
+        <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3YzninfSxe8Ml8YqLnNspvnAehzd5t38&callback=initMap">
+    </script>
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
         <script src="{{ mix('/js/app.js') }}"></script>

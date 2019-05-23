@@ -18,6 +18,10 @@
         opacity: 0.3;
     }
 
+    &__logo {
+        margin-top: -6px;
+    }
+
     &__top-line {
         background-color: $content-bg-color;
         color: $font-color-black;

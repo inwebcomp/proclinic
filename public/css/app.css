@@ -1546,6 +1546,10 @@ transition {
   opacity: 0.3;
 }
 
+.header__logo {
+  margin-top: -6px;
+}
+
 .header__top-line {
   background-color: #eef2f9;
   color: #3e415b;

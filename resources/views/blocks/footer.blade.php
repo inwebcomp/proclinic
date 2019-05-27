@@ -14,7 +14,7 @@
     <div class="footer__bottom">
         <div class="container footer__bottom__container">
             <span class="footer__copr">© ProClinic.md</span>
-            <p class="footer__text ">Powered by <a href="#"><b>InWeb.md</b></a></p>
+            <p class="footer__text ">Powered by <a href="#" class="footer__text__link"><b>InWeb.md</b></a></p>
         </div>
     </div>
 

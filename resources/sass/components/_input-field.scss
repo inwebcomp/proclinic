@@ -10,6 +10,10 @@
     border-radius: 3.5rem;
     font-size: 1.6rem;
 
+    @include media-max(425px) {
+        padding-left: 20px;
+    }
+
     &--small {
         max-width: 260px;
         padding-left: $padding * 1.25;
@@ -44,6 +48,12 @@
 
         &--textarea {
 
+        }
+    }
+
+    &__button {
+        @include media-max(520px) {
+            display: none;
         }
     }
 }

@@ -6,12 +6,32 @@
     margin-top: $padding * 2.5;
     position: relative;
 
+    @include media-max(1260px) {
+        padding: 0 40px;
+    }
+    @include media-max(620px) {
+        padding: 0 28px;
+    }
+
     &__item {
-        width: 24%;
-        max-width: 270px;
+        width: calc(25% - 22px);
         display: block;
-        margin-right: $padding * 1.875;
+        margin-right: 15px;
+        margin-left: 15px;
         padding-bottom: $padding * 1.5;
+
+        @include media-max(1140px) {
+            width: calc(33.3333% - 22px);
+        }
+
+        @include media-max(860px) {
+            width: calc(50% - 15px);
+        }
+
+        @include media-max(680px) {
+            width: 100%;
+            min-width: 100%;
+        }
     }
 
     &__photo {
@@ -46,32 +66,21 @@
     }
 
     &__button {
-        @extend .button-reset;
-
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 80px;
-        height: 80px;
-        background-color: $background-color;
-        border-radius: 50%;
-        z-index: 1;
-
-        &:hover {
-            .icon {
-                opacity: 0.83;
-            }
-        }
 
         &--prev {
             top: 107px;
             left: -40px;
             transform: rotate(180deg);
+            @include media-max(1260px) {
+                left: 0;
+            }
         }
         &--next {
             right: -40px;
             top: 107px;
+            @include media-max(1260px) {
+                right: 0;
+            }
         }
     }
 }

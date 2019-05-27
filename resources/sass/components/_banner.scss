@@ -1,14 +1,23 @@
 .banner {
     color: $font-color-light;
-    margin-top: 178px;
+    margin: auto;
 
     &__row {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        //flex-wrap: wrap;
+
+        @include media-max(1140px) {
+            flex-direction: column;
+        }
 
         &:not(:last-child) {
             margin-bottom: $padding * 7.5;
+
+            @include media-max(560px) {
+                margin-bottom: $padding * 4;
+            }
         }
     }
 
@@ -17,19 +26,52 @@
         font-size: 6rem;
         margin: 0;
         line-height: 1.3;
+
+        @include media-max(1140px) {
+            text-align: center;
+        }
+        @include media-max(768px) {
+            font-size: 5rem;
+        }
+        @include media-max(620px) {
+            font-size: 4rem;
+        }
+        @include media-max(425px) {
+            font-size: 3rem;
+        }
     }
     &__descr {
         flex: 1;
-        max-width: 220px;
+        max-width: 182px;
         margin-left: $padding * 1.75;
         align-self: baseline;
         margin-top: 24px;
+
+        @include media-max(1140px) {
+            align-self: auto;
+            max-width: initial;
+            margin-left: 0;
+            font-size: 2rem;
+            text-align: center;
+        }
+        @include media-max(768px) {
+            font-size: 1.8rem;
+        }
     }
 
     &__quest {
         font-size: 2rem;
         text-align: right;
         margin-right: $padding * 2;
+
+        @include media-max(1140px) {
+            margin-bottom: $padding * 2;
+            text-align: center;
+            margin-right: 0;
+        }
+        @include media-max(768px) {
+            font-size: 1.8rem;
+        }
 
         p {
             margin: 0;
@@ -39,5 +81,14 @@
     &__quest__title {
         font-size: 3rem;
         font-weight: 700;
+    }
+
+    &__input-button {
+        display: none;
+
+        @include media-max(520px) {
+            margin-top: $padding;
+            display: inline-block;
+        }
     }
 }

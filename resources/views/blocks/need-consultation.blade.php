@@ -6,8 +6,9 @@
         <div class="input-field">
             <span class="icon icon--phone-call input-field__icon"></span>
             <input class="input-field__input" type="text" placeholder="@lang('Как с вами связаться?')">
-            <button class="button">@lang('Отправить')</button>
+            <button class="button input-field__button">@lang('Отправить')</button>
         </div>
+        <button class="button consultation__btn">@lang('Отправить')</button>
     </div>
 
 </div>

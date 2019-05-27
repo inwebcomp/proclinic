@@ -5,8 +5,13 @@
     justify-content: center;
     text-align: center;
     background-image: url('/img/consult-bg.jpg');
+    background-repeat: no-repeat;
     position: relative;
     padding: $padding * 3 $padding;
+
+    @include media-max(520px) {
+        background-size: cover;
+    }
 
     &::after {
         content: '';
@@ -38,5 +43,15 @@
         margin-bottom: 0;
         margin-top: $padding * 0.25;
         margin-bottom: $padding * 1.75;
+    }
+
+    &__btn {
+        display: none;
+        margin-top: $padding;
+
+        @include media-max(520px) {
+            display: block;
+            width: 100%;
+        }
     }
 }

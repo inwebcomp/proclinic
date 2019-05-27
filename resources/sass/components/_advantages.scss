@@ -3,11 +3,19 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
-    padding: $padding * 7.5 0;
+    padding: $padding * 6 0;
+
+    @include media-max(768px) {
+        padding: $padding * 4 0;
+    }
 
     .block__title {
         color: $font-color-light;
         margin-bottom: $padding * 2.5;
+
+        @include media-max(560px) {
+            margin-bottom: $padding * 0.5;
+        }
     }
 }
 
@@ -16,6 +24,12 @@
     flex-wrap: wrap;
     margin-left: -$padding;
     margin-right: -$padding;
+    justify-content: center;
+
+    @include media-max(768px) {
+        margin-left: -$padding * 0.5;
+        margin-right: -$padding * 0.5;
+    }
 }
 
 .advantage {
@@ -27,20 +41,43 @@
     margin: $padding * 1.25 + 43px $padding 0;
     display: flex;
     flex-direction: column;
+
     width: calc(33.333% - 32px);
+    //width: 368px;
+
+    @include media-max(1024px) {
+        width: calc(50% - 32px);
+    }
+    @include media-max(800px) {
+        margin: $padding * 1.25 + 43px $padding * 0.5 0;
+        width: calc(100%);
+        max-width: 570px;
+    }
+    @include media-max(425px) {
+        background: radial-gradient(50px 50px at 73% -5px, rgba(0, 0, 0, 0) 41.5px, white 42.5px);
+    }
+
 
     &--lg {
         width: calc(50% - 32px);
 
-        .advantage__icon {
-            right: 102px;
+        @include media-max(800px) {
+            width: calc(100%);
+            max-width: 570px;
         }
     }
 
     &__icon {
         position: absolute;
-        right: 52px;
+        left: calc(75% - 40px);
         top: -43px;
+
+        @include media-max(425px) {
+            width: 60px;
+            height: 60px;
+            top: -33px;
+            left: calc(75% - 36px);
+        }
     }
 
     &__counter {

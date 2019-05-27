@@ -3,15 +3,30 @@
     top: 100%;
     left: 0;
     height: calc(100vh - 100%);
-    background-color: $input-color;
+    background-color: $content-bg-color;
     z-index: 4;
     width: 320px;
     box-shadow: 4px 0 4px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
     display: none;
+    flex-direction: column;
 
     &--open {
+        display: flex;
+    }
+
+    &__list {
+        background-color: $background-color;
+    }
+
+    &__link {
         display: block;
+        padding: $padding * 0.875;
+        border-bottom: 3px solid $content-bg-color;
+    }
+
+    &__phone {
+        margin: 0 0 $padding 0;
     }
 
     &__content {
@@ -19,12 +34,8 @@
         padding-bottom: 40px;
     }
 
-
     &__footer {
         padding: $padding;
-        padding-bottom: $padding * 1.75;
-        background-color: $input-color;
-
+        margin-top: auto;
     }
-
 }

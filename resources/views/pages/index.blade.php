@@ -6,6 +6,7 @@
 
         <title>ProClinic</title>
 
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
     <body>

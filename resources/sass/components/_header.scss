@@ -6,6 +6,8 @@
     background-position: top center;
     position: relative;
     padding-top: 1px;
+    display: flex;
+    flex-direction: column;
 
     &::before {
         content: '';
@@ -20,6 +22,10 @@
 
     &__logo {
         margin-top: -6px;
+
+        @include media-max(1202px) {
+            margin-right: auto;
+        }
     }
 
     &__top-line {
@@ -44,6 +50,20 @@
     &__menu {
         margin-right: $padding * 1.25;
         margin-left: auto;
+
+        @include media-max(1202px) {
+            display: none;
+        }
+    }
+
+    &__banner {
+        @include media-max(1140px) {
+            padding-top: $padding * 7;
+            //padding-bottom: $padding * 4;
+        }
+        @include media-max(768px) {
+            padding-top: $padding * 4;
+        }
     }
 
     &__phone {
@@ -51,6 +71,10 @@
         align-items: center;
         font-size: 1.6rem;
         margin-right: $padding * 2.5;
+
+        @include media-max(860px) {
+            display: none;
+        }
 
         &:hover {
             .icon {
@@ -72,6 +96,21 @@
             width: 39px;
             height: 39px;
             transition: opacity $transition;
+        }
+    }
+
+    &__burgher {
+        display: none;
+
+        @include media-max(1202px) {
+            display: inline-block;
+            margin-left: $padding;
+        }
+    }
+
+    .lang-toggler {
+        @include media-max(580px) {
+            display: none;
         }
     }
 }

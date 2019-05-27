@@ -7,9 +7,21 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: $padding * 1.875;
     margin-top: $padding * 3.5;
+
+
+    @include media-max(768px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: $padding * 2.5;
+    }
+    @include media-max(560px) {
+        grid-template-columns: repeat(1, minmax(0, 370px));
+        justify-content: center;
+    }
 }
 
 .article-prew {
+    max-width: 370px;
+
     &__photo {
         display: block;
     }

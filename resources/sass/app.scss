@@ -1,4 +1,4 @@
-@import "../../node_modules/flickity/css/flickity.css";
+//@import "../../node_modules/flickity/css/flickity.css";
 
 // Config
 @import "config/path";
@@ -20,6 +20,8 @@
 @import "general/icons";
 @import "general/grid";
 @import "general/page";
+
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 @import "general/includes";
 

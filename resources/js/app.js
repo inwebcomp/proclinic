@@ -12,8 +12,9 @@ require('./bootstrap');
 
 const initCarousel = () => {
     const carousel = document.querySelector('.slider-main');
-    const buttonPrev = document.querySelector('.dual-slider__button--prev');
-    const buttonNext = document.querySelector('.dual-slider__button--next');
+    const buttonPrev = document.querySelector('.slider-small__button--prev');
+    const buttonWrap = document.querySelectorAll('.slider-main__img-wrap');
+
 
     if(!carousel) return false;
 
@@ -22,7 +23,8 @@ const initCarousel = () => {
         pageDots: false,
         fade: true,
         wrapAround: true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        lazyLoad: true
     });
 
     new Flickity( document.querySelector('.slider-small'), {
@@ -32,15 +34,24 @@ const initCarousel = () => {
         draggable: false,
         asNavFor: document.querySelector('.slider-main'),
         pageDots: false,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        lazyLoad: true
+    });
+
+    buttonWrap.forEach(slideImgWrap => {
+        slideImgWrap.addEventListener('click', ({ target }) => {
+            if(target.closest('button').classList.contains('dual-slider__button--prev')) {
+                flkty.previous();
+            }
+            if(target.closest('button').classList.contains('dual-slider__button--next')) {
+                flkty.next()
+            }
+        })
     });
 
     buttonPrev.addEventListener('click', () => {
         flkty.previous()
     });
-    buttonNext.addEventListener('click', () => {
-        flkty.next()
-    })
 };
 
 initCarousel();
@@ -106,7 +117,6 @@ const reviewslSlider = () => {
         prevNextButtons: false,
         pageDots: false,
         contain: true,
-        cellAlign: 'left',
         wrapAround: true,
         groupCells: '100%',
         adaptiveHeight: true,

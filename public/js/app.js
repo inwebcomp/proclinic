@@ -14276,15 +14276,16 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // ест
 
 var initCarousel = function initCarousel() {
   var carousel = document.querySelector('.slider-main');
-  var buttonPrev = document.querySelector('.dual-slider__button--prev');
-  var buttonNext = document.querySelector('.dual-slider__button--next');
+  var buttonPrev = document.querySelector('.slider-small__button--prev');
+  var buttonWrap = document.querySelectorAll('.slider-main__img-wrap');
   if (!carousel) return false;
   var flkty = new Flickity(carousel, {
     prevNextButtons: false,
     pageDots: false,
     fade: true,
     wrapAround: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    lazyLoad: true
   });
   new Flickity(document.querySelector('.slider-small'), {
     prevNextButtons: false,
@@ -14293,13 +14294,24 @@ var initCarousel = function initCarousel() {
     draggable: false,
     asNavFor: document.querySelector('.slider-main'),
     pageDots: false,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    lazyLoad: true
+  });
+  buttonWrap.forEach(function (slideImgWrap) {
+    slideImgWrap.addEventListener('click', function (_ref) {
+      var target = _ref.target;
+
+      if (target.closest('button').classList.contains('dual-slider__button--prev')) {
+        flkty.previous();
+      }
+
+      if (target.closest('button').classList.contains('dual-slider__button--next')) {
+        flkty.next();
+      }
+    });
   });
   buttonPrev.addEventListener('click', function () {
     flkty.previous();
-  });
-  buttonNext.addEventListener('click', function () {
-    flkty.next();
   });
 };
 
@@ -14360,15 +14372,14 @@ var reviewslSlider = function reviewslSlider() {
     prevNextButtons: false,
     pageDots: false,
     contain: true,
-    cellAlign: 'left',
     wrapAround: true,
     groupCells: '100%',
     adaptiveHeight: true
   });
   activeButtonsFn();
   flkty.on('select', activeButtonsFn);
-  buttonsNav.addEventListener('click', function (_ref) {
-    var target = _ref.target;
+  buttonsNav.addEventListener('click', function (_ref2) {
+    var target = _ref2.target;
 
     if (target.classList.contains('reviews__man__img')) {
       var selector = target.parentElement.getAttribute('data-selector');

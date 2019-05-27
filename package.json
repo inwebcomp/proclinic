@@ -22,6 +22,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-
+        "flickity": "^2.2.0",
+        "hamburgers": "^1.1.3"
     }
 }

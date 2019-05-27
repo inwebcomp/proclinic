@@ -9,6 +9,10 @@
     position: relative;
     padding: $padding * 3 $padding;
 
+    @include media-max(560px) {
+        background-size: cover;
+    }
+
     &::after {
         content: '';
         position: absolute;

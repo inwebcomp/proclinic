@@ -2,6 +2,11 @@
     background-color: #0059bd;
     position: relative;
     margin-top: 0;
+
+    @include media-max(768px) {
+        background-color: $content-bg-color;
+        padding-bottom: $padding * 3;
+    }
 }
 
 .contacts {
@@ -11,6 +16,19 @@
     left: 50%;
     top: 50%;
     transform: translate(-588px, -50%);
+
+    @include media-max(1202px) {
+        left: 50px;
+        transform: translate(0, -50%);
+    }
+    @include media-max(768px) {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        margin-top: $padding * 3;
+        padding: 0 $padding * 1.5;
+        max-width: 350px + 16 * 3;
+    }
 
     &__head {
         text-align: center;
@@ -39,6 +57,7 @@
         background: radial-gradient(30px 30px at 100% 76%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
         position: relative;
         margin: -1px 0;
+        min-width: 51px;
 
         &__icon {
             position: absolute;
@@ -50,6 +69,7 @@
 
     &__list {
         max-width: 300px;
+        margin-right: -1px;
     }
 
     &__item {
@@ -57,6 +77,7 @@
         color: $font-color-black;
         line-height: 2.2rem;
         width: 100%;
+        position: relative;
 
         &:first-of-type {
             padding: 50px 10px 25px 60px;

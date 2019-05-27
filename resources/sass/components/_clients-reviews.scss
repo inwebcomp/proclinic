@@ -1,7 +1,11 @@
 .block--reviews {
-    padding: $padding * 7.5 0;
+    padding: $padding * 6 0;
     background-color: $content-bg-color;
     margin-top: 0;
+
+    @include media-max(768px) {
+        padding: $padding * 4 0;
+    }
 }
 
 .reviews {
@@ -12,6 +16,10 @@
         align-items: center;
         justify-content: space-between;
         padding: $padding 0;
+
+        @include media-max(1024px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__title {
@@ -20,17 +28,26 @@
 
     &__peoples {
         @extend .ul-reset;
-    }
 
-    &__peoples {
         padding: 0;
         list-style-type: none;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        margin-bottom: -$padding * 0.75;
+        margin-right: -13px;
+
+        @include media-max(1024px) {
+            width: 100%;
+            margin-top: $padding * 1.5;
+            justify-content: center;
+        }
     }
 
     &__man {
-        margin-right: 25px;
+        margin-right: 13px;
+        margin-left: 13px;
+        margin-bottom: $padding * 0.75;
         border-radius: 50%;
         overflow: hidden;
         cursor: pointer;
@@ -39,9 +56,9 @@
         opacity: 0.7;
         transition: box-shadow $transition, opacity $transition;
 
-        &:last-child {
-            margin-right: 0;
-        }
+            // &:last-child {
+            //     margin-right: 0;
+            // }
 
         &:hover {
             opacity: 0.85;
@@ -62,11 +79,23 @@
     &__list-wrap {
         position: relative;
         margin: $padding * 1.75 0;
+        padding: 0 $padding * 2;
         position: relative;
+
+        @include media-max(1100px) {
+            width: 100%;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include media-max(620px) {
+            padding: 0 22px;
+        }
     }
 
     &__item {
-        width: 50%;
+        width: calc(50% - 30px);
         min-height: 100%;
         //height: 190px;
         max-width: 570px;
@@ -76,17 +105,28 @@
         padding: $padding * 1.75;
         padding-left: 80px;
         position: relative;
-        background: radial-gradient(30px 30px at 0 50%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
 
         @include media-max(1100px) {
             width: 100%;
-            max-width: 100%;
+            max-width: 720px;
+            padding: $padding * 1.75 $padding * 3.75;
+            min-height: auto;
+            height: auto;
+        }
+        @include media-max(520px) {
+            padding: $padding * 2 $padding * 2.375;
         }
 
         &:nth-child(even) {
             padding-left: $padding * 2.5;
             padding-right: 70px;
-            background: radial-gradient(30px 30px at 100% 50%, rgba(0, 0, 0, 0) 40.5px, white 41.5px);
+
+            @include media-max(1100px) {
+                padding: $padding * 1.75 $padding * 3.75;
+            }
+            @include media-max(520px) {
+                padding: $padding * 2 $padding * 2.375;
+            }
         }
 
         &__name {
@@ -110,34 +150,54 @@
             position: absolute;
             right: 40px;
             top: 32px;
+
+            @include media-max(520px) {
+                position: static;
+            }
         }
     }
 
     &__footer {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         width: 100%;
+        margin-bottom: -$padding;
     }
 
     &__button {
+        margin-bottom: $padding;
+
         &:not(:last-child) {
             margin-right: $padding * 1.875;
             margin-left: $padding * 1.875;
+
+            @include media-max(425px) {
+                margin: 0 0 $padding;
+            }
         }
     }
 
     &__slider-btn {
-        background-color: transparent;
+        background-color: $content-bg-color;
         top: 50%;
         transform: translateY(-50%);
 
         &--prev {
-            left: -40px;
+            left: 6px;
             transform: translateY(-50%) rotate(180deg);
+
+            @include media-max(1100px) {
+                left: -9px;
+            }
         }
 
         &--next {
-            right: -40px;
+            right: 6px;
+
+            @include media-max(1100px) {
+                right: -9px;
+            }
         }
     }
 }

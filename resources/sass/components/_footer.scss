@@ -5,29 +5,56 @@
         min-height: 80px;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: space-between;
+
+        @include media-max(768px) {
+            justify-content: center;
+            padding: $padding 0;
+        }
     }
 
     &__menu {
-        margin-right: -$padding * 1.25;
+        margin-right: -$padding;
+        margin-top: $padding * 0.375;
+
+        @include media-max(768px) {
+            margin-top: $padding * 0.75;
+            margin-right: 0;
+        }
     }
 
     &__bottom {
         background-color: $content-bg-color;
-        min-height: 40px
+        //min-height: 40px
     }
 
     &__bottom__container {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: space-between;
-        padding: $padding * 0.625 0;
-        padding-bottom: $padding * 0.5;
+
+
+        @include media-max(425px) {
+            justify-content: center;
+            padding-top: $padding * 0.75;
+        }
     }
 
     &__text {
         margin: 0;
         font-size: 1.4rem;
+
+        @include media-max(425px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__text__link {
+        padding: $padding * 0.625 4px;
+        display: inline-block;
     }
 
     &__copr {

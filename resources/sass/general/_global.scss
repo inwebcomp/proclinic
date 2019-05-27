@@ -59,6 +59,16 @@ template {
     border-radius: 50%;
     z-index: 1;
 
+    @include media-max(620px) {
+        width: 60px;
+        height: 60px;
+
+        .icon {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
     &:hover {
         .icon {
             opacity: 0.83;

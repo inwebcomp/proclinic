@@ -22,10 +22,10 @@
                 @endfor
             </div>
 
-            <button class="cart-slider__button cart-slider__button--prev">
+            <button class="slider-button cart-slider__button--prev">
                 <span class="icon icon--circle icon--fill icon--chevron"></span>
             </button>
-            <button class="cart-slider__button cart-slider__button--next">
+            <button class="slider-button cart-slider__button--next">
                 <span class="icon icon--circle icon--fill icon--chevron"></span>
             </button>
         </div>

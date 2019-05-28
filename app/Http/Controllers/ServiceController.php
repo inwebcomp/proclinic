@@ -109,4 +109,19 @@ class ServiceController extends Controller
 
         return view('pages.index', compact('services', 'advantages'));
     }
+
+    public function service()
+    {
+        return view('pages.service');
+    }
+
+    public function blog()
+    {
+        return view('pages.blog');
+    }
+
+    public function doctor()
+    {
+        return view('pages.doctor');
+    }
 }

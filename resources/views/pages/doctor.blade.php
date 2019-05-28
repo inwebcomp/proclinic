@@ -5,30 +5,7 @@
 @endsection
 
 @section('content')
-    @include('blocks.header')
-
-    @include('blocks.services', [
-        'items' => $services
-    ])
-    @include('blocks.advantages', [
-        'items' => $advantages
-    ])
-
-    @include('blocks.dual-slider')
-
-    @include('blocks.personal-slider')
-
-    @include('blocks.need-consultation')
-
-    @include('blocks.clients-reviews')
-
-    @include('blocks.articles-list')
-
-    @include('blocks.has-quest')
-
-    @include('blocks.contacts')
-
-    @include('blocks.footer')
+    Doctor
 @endsection
 
 @section('scripts')

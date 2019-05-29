@@ -20,6 +20,8 @@
                 </div>
             @endfor
         </div>
+        <a href="#" class="button articles-list__more-btn">Все статьи</a>
+
     </div>
 </div>
 

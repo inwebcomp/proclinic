@@ -1,12 +1,12 @@
 .mob-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
-    height: calc(100vh - 100%);
-    background-color: $content-bg-color;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: $background-color;
     z-index: 4;
-    width: 320px;
-    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.15);
+    width: 260px;
+    box-shadow: -4px 0 4px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
     display: none;
     flex-direction: column;
@@ -15,18 +15,56 @@
         display: flex;
     }
 
+    &__logo {
+        margin: $padding * 0.875 $padding $padding auto;
+    }
+
+    &__langs {
+        padding: $padding * 0.75 0;
+        background-color: $content-bg-color;
+        text-align: center;
+
+        .lang-toggler {
+            width: 75%;
+            justify-content: space-between;
+        }
+    }
+
     &__list {
         background-color: $background-color;
+        padding: $padding * 1.35 0;
     }
 
     &__link {
         display: block;
-        padding: $padding * 0.875;
-        border-bottom: 3px solid $content-bg-color;
+        padding: $padding * 1.35 0;
+        padding-left: $padding * 3.25;
+        transition: background-color $transition;
+
+        &:hover,
+        &:active {
+            background-color: $content-bg-color;
+        }
+
+        .icon {
+            margin-right: $padding * 0.5;
+            width: 20px;
+            height: 22px;
+            position: relative;
+            top: -3px;
+        }
     }
 
     &__phone {
-        margin: 0 0 $padding 0;
+        margin: 0;
+        margin-right: 0;
+        font-size: 1.6rem;
+        display: flex;
+        color: #333333;
+
+        .header__phone-bold {
+            font-size: 1.6rem;
+        }
     }
 
     &__content {
@@ -35,7 +73,23 @@
     }
 
     &__footer {
-        padding: $padding;
+        padding: $padding * 0.625 $padding * 1.5;
+        padding-right: 0;
         margin-top: auto;
+        background-color: $content-bg-color;
+    }
+
+    &__close {
+        @extend .button-reset;
+        display: inline-flex;
+        padding: $padding * 0.75;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__close-icon {
+        width: 14px;
+        height: 14px;
     }
 }

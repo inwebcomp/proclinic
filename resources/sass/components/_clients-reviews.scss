@@ -26,28 +26,38 @@
         padding-right: $padding * 1.5;
     }
 
+    &__peoples-container {
+        overflow-x: auto;
+        height: 88px;
+        width: 100%;
+        position: relative;
+
+        @include media-max(1024px) {
+            margin-top: $padding * 1.5;
+        }
+    }
+
     &__peoples {
         @extend .ul-reset;
-
-        padding: 0;
+        width: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 0;
         list-style-type: none;
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         margin-bottom: -$padding * 0.75;
         margin-right: -13px;
 
         @include media-max(1024px) {
-            width: 100%;
-            margin-top: $padding * 1.5;
-            justify-content: center;
+            right: auto;
+            left: 0;
         }
     }
 
     &__man {
-        margin-right: 13px;
-        margin-left: 13px;
-        margin-bottom: $padding * 0.75;
+        margin: 0 13px;
         border-radius: 50%;
         overflow: hidden;
         cursor: pointer;
@@ -56,9 +66,9 @@
         opacity: 0.7;
         transition: box-shadow $transition, opacity $transition;
 
-            // &:last-child {
-            //     margin-right: 0;
-            // }
+        @include media-max(560px) {
+            margin: 0 $padding * 0.5;
+        }
 
         &:hover {
             opacity: 0.85;
@@ -91,6 +101,7 @@
 
         @include media-max(620px) {
             padding: 0 22px;
+            margin-top: 0;
         }
     }
 
@@ -168,6 +179,12 @@
     &__button {
         margin-bottom: $padding;
 
+        @include media-max(425px) {
+            padding-left: $padding;
+            padding-right: $padding;
+            width: 100%;
+        }
+
         &:not(:last-child) {
             margin-right: $padding * 1.875;
             margin-left: $padding * 1.875;
@@ -175,6 +192,10 @@
             @include media-max(425px) {
                 margin: 0 0 $padding;
             }
+        }
+
+        &--fb {
+            background-color: #0066c2;
         }
     }
 

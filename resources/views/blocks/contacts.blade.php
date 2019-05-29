@@ -1,6 +1,5 @@
 <div class="block block--map">
-    <div class="map" id="map" style="height: 505px">
-
+    <div class="map" id="map">
     </div>
 
     <script>
@@ -16,14 +15,14 @@
                     position: coordinates,
                     map: map,
                     animation: google.maps.Animation.DROP,
-                    icon: './img/icons/map-icon.png'
+                    icon: './img/icons/png/map-icon.png'
                 });
         }
     </script>
 
     <div class="contacts">
         <div class="contacts__head">@lang('Контакты клиники')</div>
-
+        <div class="contacts__head-mg"></div>
         <div class="contacts__content">
             <div class="contacts__list">
                 <p class="contacts__item">

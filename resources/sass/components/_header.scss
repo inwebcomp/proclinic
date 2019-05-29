@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
 
+    @include media-max(560px) {
+        height: 600px;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -29,7 +33,7 @@
     }
 
     &__top-line {
-        background-color: $content-bg-color;
+        background-color: $background-color;
         color: $font-color-black;
         width: 100%;
         transition:  all  $transition;
@@ -38,6 +42,10 @@
         top: 0;
         left: 0;
         z-index: 3;
+
+        @include media-max(1024px) {
+            height: $header-height - 20;
+        }
     }
 
     &__top-line__container {
@@ -45,6 +53,10 @@
         align-items: center;
         justify-content: space-between;
         height: $header-height;
+
+        @include media-max(1024px) {
+            height: $header-height - 20;
+        }
     }
 
     &__menu {
@@ -101,10 +113,18 @@
 
     &__burgher {
         display: none;
+        padding: 8px 10px;
+        padding-right: 0;
+
+        .icon {
+            width: 33px;
+            height: 33px;
+            background-size: contain;
+        }
 
         @include media-max(1202px) {
-            display: inline-block;
-            margin-left: $padding;
+            display: block;
+            margin-left: $padding * 2;
         }
     }
 
@@ -117,6 +137,11 @@
 
 .logo {
     display: inline-block;
+    max-width: 200px;
+
+    @include media-max(1024px) {
+        max-width: 160px;
+    }
 
     &__img {
         max-width: 100%;

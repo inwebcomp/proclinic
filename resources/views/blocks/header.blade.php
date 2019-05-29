@@ -1,3 +1,4 @@
+@include('blocks.mob-menu')
 <header class="header">
     <div class="header__top-line">
         <div class="container header__top-line__container">
@@ -16,12 +17,14 @@
             </a>
 
             @include('blocks.lang-toggler')
-            @include('blocks.burgher-btn', [
+            {{-- @include('blocks.burgher-btn', [
                 'classMod' => 'header__burgher',
-            ])
+            ]) --}}
+             <button class="header__burgher">
+                 <span class="icon icon--menu "></span>
+            </button>
 
         </div>
-        @include('blocks.mob-menu')
     </div>
 
 
@@ -48,6 +51,7 @@
 <script>
     const buttons = document.querySelectorAll('.lang-toggler__button');
     const burgher = document.querySelector('.header__burgher');
+    const menu = document.querySelector('.mob-menu');
 
     buttons.forEach((item) => {
         item.addEventListener('click', (e) => {
@@ -59,6 +63,6 @@
     });
 
     burgher.addEventListener('click', () => {
-        burgher.classList.toggle('is-active')
+        menu.classList.toggle('mob-menu--open')
     })
 </script>

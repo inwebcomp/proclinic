@@ -15,8 +15,8 @@
                     <input class="input-field__input" type="text" placeholder="@lang('Эл. почта')">
                 </div>
             </div>
-            <div class="contact-form__row">
-                <div class="input-field input-field--textarea">
+            <div class="contact-form__row contact-form__textarea">
+                <div class="input-field input-field--textarea ">
                     <span class="icon icon--phone-call input-field__icon"></span>
                     <textarea name="" class="input-field__input" placeholder="@lang('Сообщение')" ></textarea>
                 </div>

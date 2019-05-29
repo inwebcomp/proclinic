@@ -3,16 +3,18 @@
         <div class="reviews">
             <div class="reviews__head">
                 <h3 class="block__title reviews__title">@lang('Клиенты говорят о нас')</h3>
-                <ul class="reviews__peoples">
-                    @for ($i = 0; $i < 6; $i++)
-                        <li class="reviews__man" data-selector=".reviews__item--{{$i}}">
-                            <img src="{{ asset('img/reviews-people/1.jpg') }}" alt="Клиент" class="reviews__man__img">
-                        </li>
-                        <li class="reviews__man" data-selector=".reviews__item--{{++$i}}">
-                            <img src="{{ asset('img/reviews-people/2.jpg') }}" alt="Клиент" class="reviews__man__img">
-                        </li>
-                    @endfor
-                </ul>
+                <div class="reviews__peoples-container">
+                    <ul class="reviews__peoples">
+                        @for ($i = 0; $i < 6; $i++)
+                            <li class="reviews__man" data-selector=".reviews__item--{{$i}}">
+                                <img src="{{ asset('img/reviews-people/1.jpg') }}" alt="Клиент" class="reviews__man__img">
+                            </li>
+                            <li class="reviews__man" data-selector=".reviews__item--{{++$i}}">
+                                <img src="{{ asset('img/reviews-people/2.jpg') }}" alt="Клиент" class="reviews__man__img">
+                            </li>
+                        @endfor
+                    </ul>
+                </div>
             </div>
 
 
@@ -47,7 +49,7 @@
 
             <div class="reviews__footer">
                 <a href="#" class="button reviews__button">@lang('Оставить отзыв на сайте')</a>
-                <a href="#" class="button reviews__button">@lang('Оставить отзыв на Facebook')</a>
+                <a href="#" class="button reviews__button reviews__button--fb">@lang('Оставить отзыв на Facebook')</a>
             </div>
         </div>
     </div>

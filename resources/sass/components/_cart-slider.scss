@@ -11,6 +11,7 @@
     }
     @include media-max(620px) {
         padding: 0 28px;
+        margin-top: $padding;
     }
 
     &__item {

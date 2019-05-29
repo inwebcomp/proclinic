@@ -1,9 +1,5 @@
 @extends('layout.default')
 
-@section('styles')
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-@endsection
-
 @section('content')
     @include('blocks.header')
 

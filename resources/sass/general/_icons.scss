@@ -2,6 +2,7 @@
     display: inline-block;
     width: 27px;
     height: 27px;
+    vertical-align: middle;
     border-radius: 0;
     background-color: transparent;
     background-size: contain;
@@ -115,6 +116,29 @@
     &--fb {
         background-image: url($icon-path + "facebook-letter-logo.svg");
         background-color: #1166be;
+    }
+    &--close {
+        background-image: url($icon-path + "close.svg");
+    }
+    &--menu {
+        background-image: url($icon-path + "menu.svg");
+    }
+
+    // png icons
+    &--busines {
+        background-image: url($icon-path + "png/busines.png");
+    }
+    &--chat {
+        background-image: url($icon-path + "png/chat.png");
+    }
+    &--email {
+        background-image: url($icon-path + "png/email.png");
+    }
+    &--man {
+        background-image: url($icon-path + "png/man.png");
+    }
+    &--peoples {
+        background-image: url($icon-path + "png/peoples.png");
     }
 }
 

@@ -19,7 +19,6 @@
 
         @include media-max(1024px) {
             width: 100%;
-            //padding: 0 40px;
         }
 
         &:first-child {
@@ -27,8 +26,7 @@
 
             @include media-max(1024px) {
                 width: 100%;
-                max-width: 620px;
-                margin-bottom: $padding * 2;
+                margin-bottom: $padding;
                 padding: 0;
             }
         }
@@ -38,11 +36,15 @@
         max-width: 370px;
         font-weight: 700;
         color: $font-color-black;
+
+        @include media-max(768px) {
+            text-align: center;
+            margin: $padding auto 0;
+        }
     }
 
     &__button {
          &--prev {
-            //transform: rotate(180deg);
             display: none;
 
             @include media-max(1024px) {

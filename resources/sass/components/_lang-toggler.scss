@@ -1,5 +1,5 @@
 .lang-toggler {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     height: 40px;
 
@@ -35,18 +35,18 @@
 
         &--ru {
             &::before {
-                background-image: url('/img/icons/russia.png');
+                background-image: url('/img/icons/png/russia.png');
             }
 
         }
         &--md {
             &::before {
-                background-image: url('/img/icons/romania.png');
+                background-image: url('/img/icons/png/romania.png');
             }
         }
         &--en {
             &::before {
-                background-image: url('/img/icons/united-states.png');
+                background-image: url('/img/icons/png/united-states.png');
             }
         }
 

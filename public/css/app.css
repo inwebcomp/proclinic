@@ -1459,86 +1459,100 @@ transition {
 }
 
 .input-field {
-  display: flex;
   width: 100%;
-  align-items: center;
   max-width: 570px;
-  min-height: 50px;
-  padding: 10px;
-  padding-left: 30px;
-  background-color: #fff;
-  border-radius: 3.5rem;
+  position: relative;
   font-size: 1.6rem;
-}
-
-.input-field:hover,
-.input-field:active {
-  box-shadow: 0 0 0 1px #67a5eb;
-}
-
-@media screen and (max-width: 425px) {
-  .input-field {
-    padding-left: 20px;
-  }
 }
 
 .input-field--small {
   max-width: 260px;
-  padding-left: 20px;
-}
-
-.input-field--small .input-field__input {
-  width: 70%;
-  max-width: 70%;
-}
-
-.input-field--textarea {
-  padding-left: 20px;
 }
 
 .input-field--textarea textarea {
   height: 25px;
-  padding: 0;
+}
+
+.input-field--buttoned .input-field__input {
+  height: 70px;
+}
+
+@media screen and (max-width: 520px) {
+  .input-field--buttoned .input-field__input {
+    height: 50px;
+  }
 }
 
 .input-field__input {
-  flex: 1;
   border: none;
   outline: none;
-  padding: 4px;
-  font-weight: 500;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  min-height: 50px;
+  padding: 10px;
+  padding-left: 60px;
+  background-color: #fff;
+  border-radius: 3.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #3e415b;
-  margin-left: 16px;
+  transition: box-shadow ease 0.15s;
 }
 
 .input-field__input::-webkit-input-placeholder {
   color: #3e415b;
+  font-weight: 500;
 }
 
 .input-field__input::-moz-placeholder {
   color: #3e415b;
+  font-weight: 500;
 }
 
 .input-field__input:-ms-input-placeholder {
   color: #3e415b;
+  font-weight: 500;
 }
 
 .input-field__input::-ms-input-placeholder {
   color: #3e415b;
+  font-weight: 500;
 }
 
 .input-field__input::placeholder {
   color: #3e415b;
+  font-weight: 500;
 }
 
-.input-field__input:focus .input-field {
+.input-field__input:hover,
+.input-field__input:active,
+.input-field__input:focus {
   box-shadow: 0 0 0 1px #67a5eb;
+}
+
+.input-field__button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 @media screen and (max-width: 520px) {
   .input-field__button {
     display: none;
   }
+}
+
+.input-field__icon {
+  position: absolute;
+  left: 19px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
 }
 
 .contact-form {
@@ -2676,7 +2690,7 @@ transition {
 
 .reviews__peoples-container {
   overflow-x: auto;
-  height: 88px;
+  height: 89px;
   width: 100%;
   position: relative;
 }
@@ -2696,8 +2710,6 @@ transition {
   list-style-type: none;
   display: flex;
   align-items: center;
-  margin-bottom: -12px;
-  margin-right: -13px;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,4 +1,4 @@
-<div class="block block--advantages">
+<section class="block block--advantages">
     <div class="container">
         <h3 class="block__title">@lang('Наши преимущества')</h3>
 
@@ -13,4 +13,4 @@
             @endforeach
         </div>
     </div>
-</div>
+</section>

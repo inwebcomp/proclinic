@@ -123,6 +123,10 @@
     &--menu {
         background-image: url($icon-path + "menu.svg");
     }
+    &--home {
+        background-image: url($icon-path + "home.svg");
+        background-size: 67%;
+    }
 
     // png icons
     &--busines {

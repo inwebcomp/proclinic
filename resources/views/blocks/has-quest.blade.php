@@ -1,4 +1,4 @@
-<div class="block block--has-quest">
+<section class="block block--has-quest">
     <div class="consultation">
         <h3 class="consultation__title">@lang('Остались вопросы?')</h3>
         <p class="consultation__text" >@lang('Получите ответ от наших специалистов за несколько минут')</p>
@@ -28,4 +28,4 @@
 
     </div>
 
-</div>
+</section>

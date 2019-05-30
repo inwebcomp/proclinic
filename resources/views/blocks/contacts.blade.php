@@ -1,4 +1,4 @@
-<div class="block block--map">
+<section class="block block--map">
     <div class="map" id="map">
     </div>
 
@@ -46,4 +46,4 @@
             <a href="#" class="button">@lang('Как к нам добраться')</a>
         </div>
     </div>
-</div>
+</section>

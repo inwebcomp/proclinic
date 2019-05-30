@@ -1,0 +1,30 @@
+.page-header {
+    //min-height: 165px;
+    width: 100%;
+    background-image: url('/img/backgrounds/page-header-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    position: relative;
+    padding: $padding * 2.75 0;
+    color: $font-color-light;
+
+    @include media-max(560px) {
+        padding: $padding * 2 0;
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(47, 75, 96, 0.5);
+    }
+
+    &__title {
+        margin-bottom: $padding * 0.5;
+    }
+}

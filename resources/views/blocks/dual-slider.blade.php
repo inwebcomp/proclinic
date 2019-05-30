@@ -1,4 +1,4 @@
-<div class="block block--dual-slider">
+<section class="block block--dual-slider">
     <div class="container">
 
         <div class="dual-slider">
@@ -55,4 +55,4 @@
 
         </div>
     </div>
-</div>
+</section>

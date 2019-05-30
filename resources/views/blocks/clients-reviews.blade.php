@@ -1,4 +1,4 @@
-<div class="block block--reviews">
+<section class="block block--reviews">
     <div class="container">
         <div class="reviews">
             <div class="reviews__head">
@@ -53,4 +53,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

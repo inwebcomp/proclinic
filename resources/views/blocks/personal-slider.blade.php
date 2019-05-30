@@ -1,4 +1,4 @@
-<div class="block block--personals">
+<section class="block block--personals">
     <div class="container">
         <h3 class="block__title">@lang('Наши врачи')</h3>
 
@@ -30,4 +30,4 @@
             </button>
         </div>
     </div>
-</div>
+</section>

@@ -165,6 +165,12 @@ const headerCollapse = () => {
     })
 };
 
-//headerCollapse()
+// for test
+const burgher = document.querySelector('.header__burgher');
+const menu = document.querySelector('.mob-menu');
+
+burgher.addEventListener('click', () => {
+    menu.classList.toggle('mob-menu--open')
+})
 
 window.Vue = require('vue');

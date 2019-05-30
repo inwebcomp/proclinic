@@ -10,12 +10,23 @@
 
      @yield('styles')
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-
 </head>
 <body>
-    @yield('content')
+    @include('blocks.mob-menu')
+    <header class="empty-header">
+        @include('blocks.header__top-line')
+    </header>
+
+        @yield('content')
+
+    @include('blocks.has-quest')
+
+    @include('blocks.contacts')
+
+    @include('blocks.footer')
 
     @yield('scripts')
+
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

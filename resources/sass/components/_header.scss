@@ -1,6 +1,13 @@
+.empty-header {
+    height: $header-height;
+    @include media-max(1024px) {
+        height: $header-height - 20;
+    }
+}
+
 .header {
     height: 780px;
-    background-image: url('/img/header-bg.jpg');
+    background-image: url('/img/backgrounds/header-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -45,6 +52,12 @@
 
         @include media-max(1024px) {
             height: $header-height - 20;
+        }
+
+        .lang-toggler {
+            @include media-max(580px) {
+                display: none;
+            }
         }
     }
 
@@ -125,12 +138,6 @@
         @include media-max(1202px) {
             display: block;
             margin-left: $padding * 2;
-        }
-    }
-
-    .lang-toggler {
-        @include media-max(580px) {
-            display: none;
         }
     }
 }

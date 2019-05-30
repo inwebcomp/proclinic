@@ -1,32 +1,6 @@
 @include('blocks.mob-menu')
 <header class="header">
-    <div class="header__top-line">
-        <div class="container header__top-line__container">
-            <a class="logo header__logo" href="#">
-                <img src="{{ asset('img/logo.svg') }}" width="200" alt="{{ config('app.name') }}" class="logo__img">
-            </a>
-
-            @include('blocks.menu', [
-                'classMod' => 'header__menu',
-            ])
-
-            <a href="#" class="header__phone">
-                <span class="icon icon--circle icon--fill icon--phone-call-white"></span>
-                +373
-                <span class="header__phone-bold">78 90 60 60</span>
-            </a>
-
-            @include('blocks.lang-toggler')
-            {{-- @include('blocks.burgher-btn', [
-                'classMod' => 'header__burgher',
-            ]) --}}
-             <button class="header__burgher">
-                 <span class="icon icon--menu "></span>
-            </button>
-
-        </div>
-    </div>
-
+    @include('blocks.header__top-line')
 
     <div class="container banner header__banner">
         <div class="banner__row">
@@ -50,8 +24,6 @@
 
 <script>
     const buttons = document.querySelectorAll('.lang-toggler__button');
-    const burgher = document.querySelector('.header__burgher');
-    const menu = document.querySelector('.mob-menu');
 
     buttons.forEach((item) => {
         item.addEventListener('click', (e) => {
@@ -61,8 +33,4 @@
             e.target.classList.toggle('active')
         })
     });
-
-    burgher.addEventListener('click', () => {
-        menu.classList.toggle('mob-menu--open')
-    })
 </script>

@@ -1,4 +1,4 @@
-<div class="block block--articles">
+<section class="block block--articles">
     <div class="container">
         <h3 class="block__title">@lang('Мы ответим на ваши вопросы')</h3>
 
@@ -23,6 +23,6 @@
         <a href="#" class="button articles-list__more-btn">Все статьи</a>
 
     </div>
-</div>
+</section>
 
 

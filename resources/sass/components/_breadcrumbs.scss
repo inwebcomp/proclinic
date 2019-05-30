@@ -1,0 +1,62 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-left: -$padding;
+    flex-wrap: wrap;
+
+    &__item {
+        display: block;
+        line-height: 1;
+        padding: $padding * 0.5 $padding $padding * 0.5  $padding * 0.875;
+        position: relative;
+        font-size: 1.6rem;
+
+        @include media-max(560px) {
+            font-size: 1.4rem;
+        }
+
+        &::after {
+            content: '/';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5px;
+            transition: width $transition, opacity $transition;
+        }
+
+        &:hover {
+            &::before {
+                width: 80%;
+            }
+        }
+
+        &:first-child {
+            padding: 0 $padding 0 $padding * 0.875;
+
+            &::before {
+                content: none;
+            }
+
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+
+        &:last-child {
+            &::after {
+                content: none;
+            }
+        }
+    }
+}

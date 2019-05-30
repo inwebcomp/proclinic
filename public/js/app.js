@@ -14413,9 +14413,14 @@ var headerCollapse = function headerCollapse() {
       header.classList.remove('header--compact');
     }
   });
-}; //headerCollapse()
+}; // for test
 
 
+var burgher = document.querySelector('.header__burgher');
+var menu = document.querySelector('.mob-menu');
+burgher.addEventListener('click', function () {
+  menu.classList.toggle('mob-menu--open');
+});
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 /***/ }),

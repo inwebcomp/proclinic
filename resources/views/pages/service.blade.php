@@ -6,6 +6,8 @@
 @section('content')
     @include('blocks.page-header')
 
+    @include('blocks.text-block')
+
     @include('blocks.table', [
         'rows' => [
             [

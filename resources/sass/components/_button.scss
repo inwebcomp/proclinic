@@ -27,3 +27,47 @@
         transform: scale(0.95)
     }
 }
+
+.button-tag {
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: $padding - 2 $padding * 2.5;
+    color: $accent-color;
+    border-radius: $border-radius;
+    background-color: $content-bg-color;
+    transition: background-color $transition, transform $transition;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+        background-color: darken($content-bg-color, 5%);
+    }
+
+    &--active {
+        background-color: $accent-color;
+        box-shadow: 0 0.7rem 3rem rgba(62, 65, 91, 0.2);
+        color: $font-color-light;
+
+        &:hover {
+            background-color: $accent-hover-color;
+        }
+    }
+
+    &__count {
+        position: absolute;
+        right: -19px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        padding: 3px 8px;
+        background-color: $background-color;
+        border: 2px solid $content-bg-color;
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 700;
+        color: $accent-color;
+    }
+}

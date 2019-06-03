@@ -1,11 +1,13 @@
 @extends('layout.default')
 
-{{-- @section('styles')
+@section('styles')
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-@endsection --}}
+@endsection
 
 @section('content')
-    Blog
+    @include('blocks.page-header')
+
+    @include('blocks.tag-cloud')
 @endsection
 
 @section('scripts')

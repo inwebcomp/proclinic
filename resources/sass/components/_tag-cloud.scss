@@ -1,0 +1,13 @@
+.tag-cloud {
+    margin: 0;
+    padding: $padding * 4 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &__item {
+        margin: 0 $padding * 2.25 $padding * 1.25 0;
+        width: auto;
+        background-color: #fff;
+    }
+}

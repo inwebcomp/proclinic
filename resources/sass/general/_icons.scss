@@ -110,6 +110,10 @@
         background-image: url($icon-path + "arrow.svg");
         background-size: 40%;
     }
+    &--chevron-inverse {
+        background-image: url($icon-path + "arrow-inverse.svg");
+        background-size: 55%;
+    }
     &--location {
         background-image: url($icon-path + "placeholder.svg");
     }

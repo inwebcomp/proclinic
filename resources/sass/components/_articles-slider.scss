@@ -1,0 +1,111 @@
+.block--articles-slider {
+    padding: $padding * 3.75 0;
+    background-color: $content-bg-color;
+
+    @include media-max(768px) {
+        padding: $padding * 2.5 0;
+    }
+}
+
+.articles-slider {
+    position: relative;
+    margin-top: $padding * 3.25;
+
+    @include media-max(768px) {
+        margin-top: 0;
+    }
+
+    &__list {
+        margin-top: $padding * 2.5;
+        position: relative;
+
+        @include media-max(1260px) {
+            padding: 0 40px;
+        }
+        @include media-max(620px) {
+            padding: 0 28px;
+            margin-top: $padding;
+        }
+    }
+
+    .article-prew {
+        width: calc(33.3333% - 15px);
+        display: block;
+        margin-right: 30px;
+
+        padding-bottom: $padding * 1.5;
+
+        @include media-max(1260px) {
+            width: calc(33.3333% - 20px);
+        }
+
+        @include media-max(1024px) {
+            width: calc(50% - 15px);
+        }
+
+        @include media-max(680px) {
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+
+    &__button {
+        &--prev {
+            top: 65px;
+            left: -40px;
+            transform: rotate(180deg);
+            background-color: $content-bg-color;
+
+            @include media-max(1260px) {
+                left: 0;
+            }
+
+            @include media-max(1202px) {
+                top: 4.3vw;
+            }
+            @include media-max(1024px) {
+                top: 7.7vw;
+            }
+            @include media-max(768px) {
+                top: calc(9vw - 20px);
+            }
+            @include media-max(680px) {
+                top: 68px;
+            }
+            @include media-max(620px) {
+                top: 77px;
+            }
+            @include media-max(468px) {
+                top: calc(23.5vw - 35px);
+            }
+        }
+        &--next {
+            right: -40px;
+            top: 65px;
+            background-color: $content-bg-color;
+
+            @include media-max(1260px) {
+                right: 0;
+            }
+
+            @include media-max(1202px) {
+                top: 4.3vw;
+            }
+            @include media-max(1024px) {
+                top: 7.7vw;
+            }
+            @include media-max(768px) {
+                top: calc(9vw - 20px);
+            }
+            @include media-max(680px) {
+                top: 68px;
+            }
+            @include media-max(620px) {
+                top: 77px;
+            }
+            @include media-max(468px) {
+                top: calc(23.5vw - 35px);
+            }
+        }
+    }
+}

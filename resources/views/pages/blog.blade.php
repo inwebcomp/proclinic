@@ -1,4 +1,4 @@
-@extends('layout.default')
+@extends('layout.second-page')
 
 @section('styles')
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -8,6 +8,17 @@
     @include('blocks.page-header')
 
     @include('blocks.tag-cloud')
+
+    @include('blocks.articles-slider')
+
+    <section class="block block--articles">
+        <div class="container">
+            @include('blocks.articles-list')
+            @include('blocks.pagination')
+        </div>
+    </section>
+
+
 @endsection
 
 @section('scripts')

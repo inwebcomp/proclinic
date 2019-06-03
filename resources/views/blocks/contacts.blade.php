@@ -2,7 +2,7 @@
     <div class="map" id="map">
     </div>
 
-    <script>
+    {{-- <script>
         function initMap() {
             var coordinates = {lat: 46.993857, lng: 28.857413},
 
@@ -18,7 +18,7 @@
                     icon: './img/icons/png/map-icon.png'
                 });
         }
-    </script>
+    </script> --}}
 
     <div class="contacts">
         <div class="contacts__head">@lang('Контакты клиники')</div>

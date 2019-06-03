@@ -4,11 +4,20 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
 
-// есть flickity для VUE
+import fieldContact from './components/field-contact';
+
+window.Vue = require('vue');
+
+new Vue({
+    el: '#app',
+    components: {
+        fieldContact
+    }
+});
+
 //import Flickity from 'flickity';
-
 
 const initCarousel = () => {
     const carousel = document.querySelector('.slider-main');
@@ -58,8 +67,8 @@ initCarousel();
 
 const personalSlider = () => {
     const carousel = document.querySelector('.js-slider');
-    const buttonPrev = document.querySelector('.cart-slider__button--prev');
-    const buttonNext = document.querySelector('.cart-slider__button--next');
+    const buttonPrev = document.querySelector('.slider-button--prev');
+    const buttonNext = document.querySelector('.slider-button--next');
 
     if(!carousel) return false;
 
@@ -173,4 +182,4 @@ burgher.addEventListener('click', () => {
     menu.classList.toggle('mob-menu--open')
 })
 
-window.Vue = require('vue');
+

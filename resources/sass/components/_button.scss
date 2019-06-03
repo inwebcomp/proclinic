@@ -24,7 +24,8 @@
         //background-image: linear-gradient(to top, #1166be 0%, #2588cb 100%);
     }
     &:active  {
-        transform: scale(0.95)
+        //transform: scale(0.95)
+        background-color: darken($accent-color, 25%);
     }
 }
 
@@ -38,9 +39,13 @@
     background-color: $content-bg-color;
     transition: background-color $transition, transform $transition;
     cursor: pointer;
-    white-space: nowrap;
     text-align: center;
     position: relative;
+
+    @include media-max(560px) {
+        text-align: left;
+        padding: $padding * 0.75 $padding * 2;
+    }
 
     &:hover {
         background-color: darken($content-bg-color, 5%);
@@ -54,6 +59,10 @@
         &:hover {
             background-color: $accent-hover-color;
         }
+
+        .button-tag__count {
+            border: 2px solid $accent-color;
+        }
     }
 
     &__count {
@@ -62,7 +71,7 @@
         top: 50%;
         transform: translateY(-50%);
         display: block;
-        padding: 3px 8px;
+        padding: 2px 8px;
         background-color: $background-color;
         border: 2px solid $content-bg-color;
         border-radius: 14px;

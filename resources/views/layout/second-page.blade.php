@@ -10,21 +10,22 @@
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body>
-    @include('blocks.mob-menu')
-    <header class="empty-header">
-        @include('blocks.header__top-line')
-    </header>
+    <div id="app">
+        @include('blocks.mob-menu')
+        <header class="empty-header">
+            @include('blocks.header__top-line')
+        </header>
 
-        @yield('content')
+            @yield('content')
 
-    @include('blocks.has-quest')
+        @include('blocks.has-quest')
 
-    @include('blocks.contacts')
+        @include('blocks.contacts')
 
-    @include('blocks.footer')
+        @include('blocks.footer')
+    </div>
 
     @yield('scripts')
-
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

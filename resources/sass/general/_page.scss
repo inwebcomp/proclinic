@@ -78,8 +78,10 @@ body {
     font-size: 3.6rem;
     font-weight: bold;
     margin-top: -0.2em;
+    margin-bottom: $padding;
     display: block;
     width: fit-content;
+    color: $font-color-black;
 
     @include media-max(768px) {
         font-size: 3rem;

@@ -1,0 +1,141 @@
+.doctor-info {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: $padding * 3.75;
+
+    &__content {
+        flex: 1;
+        margin-right: $padding * 1.75;
+        max-width: 772px;
+    }
+
+    &__name {
+        margin-bottom: $padding * 0.5;
+    }
+
+    &__photo {
+        @extend .img-in-box;
+        width: 100%;
+        max-width: 370px;
+        border-radius: 15px;
+    }
+
+    &__tags {
+        @extend .ul-reset;
+        margin-bottom: $padding * 2.25;
+    }
+
+    &__tag {
+        font-weight: 700;
+        color: $accent-color;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: $padding * 0.2;
+        }
+    }
+
+    &__descr {
+        font-family: "OpenSans",sans-serif;
+    }
+
+    &__features {
+        @extend .ul-reset;
+        font-weight: 700;
+        color: $font-color-black;
+        display: flex;
+        flex-wrap: wrap;
+
+        &__item {
+            display: flex;
+            align-items: flex-start;
+            width: 50%;
+
+            &:nth-child(odd) {
+                padding-right: $padding * 2.25;
+            }
+        }
+
+        &__icon {
+            margin-right: $padding  * 1.25;
+        }
+
+        &__text {
+            flex: 1;
+        }
+    }
+}
+
+.doctor-quote {
+    padding: $padding * 3 $padding * 1.25 $padding * 1.325;
+    background-color: $content-bg-color;
+    border-radius: $border-radius;
+    position: relative;
+    margin: $padding * 1.25 + 40px 0 $padding * 2.5 0;
+    font-weight: 700;
+    color: $accent-color;
+
+    &__icon {
+        position: absolute;
+        left: 30px;
+        top: -40px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $background-color;
+        border-radius: 50%;
+    }
+}
+
+
+.doctor-experience {
+    p {
+        font-family: "OpenSans", sans-serif;
+        margin: $padding * 1.75 0;
+
+        b {
+            color: $font-color-black
+        }
+    }
+}
+
+.doctor-slider {
+    position: relative;
+    width: 100%;
+    max-width: 570px;
+    float: left;
+    margin: 0 $padding * 2.75 $padding * 1.5 0;
+
+    &__list {
+        @extend .ul-reset;
+    }
+
+    &__item {
+        width: 100%;
+        border-radius: $border-radius;
+    }
+
+    &__img {
+        @extend .img-in-box;
+        width: 100%;
+    }
+
+    &__button {
+        &--prev {
+            top: 50%;
+            left: -40px;
+            transform: rotate(180deg) translateY(50%);
+            background-color: $background-color;
+        }
+
+        &--next {
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $background-color;
+        }
+    }
+}

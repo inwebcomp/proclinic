@@ -131,6 +131,9 @@
         background-image: url($icon-path + "home.svg");
         background-size: 67%;
     }
+    &--quotes {
+        background-image: url($icon-path + "quotes.svg");
+    }
 
     // png icons
     &--busines {
@@ -147,6 +150,20 @@
     }
     &--peoples {
         background-image: url($icon-path + "png/peoples.png");
+    }
+
+    // DOCTOR PAGE
+    &--education {
+        background-image: url($icon-path + "png/education.png");
+    }
+    &--aid-kit {
+        background-image: url($icon-path + "png/first-aid-kit.png");
+    }
+    &--happy {
+        background-image: url($icon-path + "png/happy.png");
+    }
+    &--planning {
+        background-image: url($icon-path + "png/planning.png");
     }
 }
 

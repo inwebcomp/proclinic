@@ -1773,12 +1773,16 @@ transition {
   text-align: center;
   color: #fff;
   background-color: #f26522;
-  opacity: 0;
-  transition: opacity 0.15s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  transition: -webkit-transform 0.2s cubic-bezier(0.53, 0.25, 0.47, 2.3);
+  transition: transform 0.2s cubic-bezier(0.53, 0.25, 0.47, 2.3);
+  transition: transform 0.2s cubic-bezier(0.53, 0.25, 0.47, 2.3), -webkit-transform 0.2s cubic-bezier(0.53, 0.25, 0.47, 2.3);
 }
 
 .input-field--error::after {
-  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .input-field__input {
@@ -3957,7 +3961,6 @@ transition {
 @media screen and (max-width: 680px) {
   .articles-slider .article-prew {
     width: 100%;
-    min-width: 100%;
   }
 }
 

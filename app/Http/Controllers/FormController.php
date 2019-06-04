@@ -17,7 +17,7 @@ class FormController extends Controller
             'contact' => 'required'
         ]);
 
-        Mail::to(config('contacts.mail_to'))->queue(new ConsultationMail($request->input()));
+        //Mail::to(config('contacts.mail_to'))->queue(new ConsultationMail($request->input()));
 
         return [
             'message' => __("Сообщение отправлено!"),

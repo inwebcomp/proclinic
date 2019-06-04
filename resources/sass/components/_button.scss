@@ -27,6 +27,11 @@
         //transform: scale(0.95)
         background-color: darken($accent-color, 25%);
     }
+
+    &:disabled {
+        pointer-events: none;
+        background-color: lighten($accent-color, 12%);
+    }
 }
 
 .button-tag {
@@ -79,4 +84,22 @@
         font-weight: 700;
         color: $accent-color;
     }
+}
+
+
+.swal-button {
+    @extend .button;
+
+    &:not([disabled]):hover {
+        background-color: darken($accent-color, 17%);
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.swal-button-container {
+    width: 100%;
+    text-align: center;
 }

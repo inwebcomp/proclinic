@@ -1,10 +1,5 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 import './bootstrap';
+import swal from 'sweetalert';
 
 import fieldContact from './components/field-contact';
 
@@ -16,8 +11,6 @@ new Vue({
         fieldContact
     }
 });
-
-//import Flickity from 'flickity';
 
 const initCarousel = () => {
     const carousel = document.querySelector('.slider-main');
@@ -180,6 +173,22 @@ const menu = document.querySelector('.mob-menu');
 
 burgher.addEventListener('click', () => {
     menu.classList.toggle('mob-menu--open')
-})
+});
+
+const langToggler = () => {
+    const buttons = document.querySelectorAll('.lang-toggler__button');
+
+    buttons.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            buttons.forEach((item)=> {
+                item.classList.remove('active')
+            })
+            e.target.classList.toggle('active')
+        })
+    })
+}
+
+langToggler();
+
 
 

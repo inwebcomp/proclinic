@@ -15,8 +15,11 @@
     }
 
     &--textarea {
-        textarea {
+        .input-field__input {
             height: 25px;
+            resize: vertical;
+            max-height: 130px;
+            padding-top: 14px;
         }
     }
 
@@ -106,8 +109,7 @@
     &__icon {
         position: absolute;
         left: 19px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 13px;
         width: 24px;
         height: 24px;
     }

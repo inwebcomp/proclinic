@@ -747,11 +747,11 @@ button {
   background-image: url("/img/icons/png/busines.png");
 }
 
-.icon--chat {
+.icon--chat-2 {
   background-image: url("/img/icons/png/chat.png");
 }
 
-.icon--email {
+.icon--email-2 {
   background-image: url("/img/icons/png/email.png");
 }
 
@@ -1771,8 +1771,11 @@ transition {
   max-width: 260px;
 }
 
-.input-field--textarea textarea {
+.input-field--textarea .input-field__input {
   height: 25px;
+  resize: vertical;
+  max-height: 130px;
+  padding-top: 14px;
 }
 
 .input-field--buttoned .input-field__input {
@@ -1889,9 +1892,7 @@ transition {
 .input-field__icon {
   position: absolute;
   left: 19px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  top: 13px;
   width: 24px;
   height: 24px;
 }

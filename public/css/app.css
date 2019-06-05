@@ -1758,6 +1758,12 @@ transition {
   width: 100%;
   max-width: 570px;
   position: relative;
+  height: 70px;
+}
+
+field-contact {
+  width: 100%;
+  max-width: 570px;
 }
 
 .input-field {

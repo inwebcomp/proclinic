@@ -1,15 +1,26 @@
-import './bootstrap';
-import swal from 'sweetalert';
+import './bootstrap'
+import swal from 'sweetalert'
+import Translator from './services/Translator'
+import Vue from 'vue'
 
-import fieldContact from './components/field-contact';
+// components
+import FieldContact from './components/FieldContact'
 
-window.Vue = require('vue');
+let Lang = new Translator({});
+
+Vue.mixin({
+    methods: {
+        __: function(...args) {
+            return Lang.get(...args);
+        }
+    }
+});
 
 new Vue({
     el: '#app',
     components: {
-        fieldContact
-    }
+        FieldContact
+    },
 });
 
 const initCarousel = () => {

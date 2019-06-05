@@ -1754,35 +1754,70 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/field-contact.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/field-contact.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FieldContact.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FieldContact.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _mixins_sendContacts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/sendContacts */ "./resources/js/mixins/sendContacts.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _mixins_alerts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/alerts */ "./resources/js/mixins/alerts.js");
+/* harmony import */ var _mixins_validationForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mixins/validationForm */ "./resources/js/mixins/validationForm.js");
 //
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'fieldContact',
-  mixins: [_mixins_sendContacts__WEBPACK_IMPORTED_MODULE_0__["default"]]
+  name: 'field-contact',
+  mixins: [_mixins_alerts__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_validationForm__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  data: function data() {
+    return {
+      form: {
+        contact: ''
+      },
+      errors: {
+        contact: false
+      }
+    };
+  },
+  computed: {
+    buttonText: function buttonText() {
+      return this.loading ? 'Отправка...' : 'Отправить';
+    },
+    checkField: function checkField() {
+      return !!this.form.contact;
+    }
+  },
+  methods: {
+    inputHandler: function inputHandler() {
+      this.errors.contact = !this.checkField;
+    },
+    submitHandler: function submitHandler() {
+      var _this = this;
+
+      if (!this.checkField || this.loading) {
+        return false;
+      }
+
+      this.loading = true;
+      axios.post('/api/consultation', {
+        contact: this.form.contact
+      }).then(function (_ref) {
+        var data = _ref.data;
+        _this.loading = false;
+        _this.form.contact = '';
+
+        _this.showSuccessAlert(data.description, data.message);
+      })["catch"](function (error) {
+        _this.loading = false;
+
+        _this.showSuccessAlert(data.description, data.message);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2299,10 +2334,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/field-contact.vue?vue&type=template&id=193a08dc&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/field-contact.vue?vue&type=template&id=193a08dc& ***!
-  \****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FieldContact.vue?vue&type=template&id=48ee0eb1&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FieldContact.vue?vue&type=template&id=48ee0eb1& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2314,75 +2349,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      staticClass: "input-field-contact",
-      on: {
-        submit: function($event) {
-          $event.preventDefault()
-          return _vm.submitHandler($event)
-        }
-      }
-    },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "input-field input-field--buttoned",
-          class: { "input-field--error": _vm.errorForm }
-        },
-        [
-          _c("span", {
-            staticClass: "icon icon--phone-call input-field__icon"
-          }),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.inputVal,
-                expression: "inputVal"
-              }
-            ],
-            staticClass: "input-field__input",
-            attrs: { type: "text", placeholder: "Как с вами связаться?" },
-            domProps: { value: _vm.inputVal },
-            on: {
-              input: [
-                function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.inputVal = $event.target.value
-                },
-                _vm.inputEvent
-              ]
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "button input-field__button",
-              attrs: { disabled: _vm.loading }
-            },
-            [_vm._v("\n            " + _vm._s(_vm.buttonText) + "\n        ")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "button input-field__mobl-btn",
-          attrs: { type: "submit", disabled: _vm.loading }
-        },
-        [_vm._v(_vm._s(_vm.buttonText))]
-      )
-    ]
-  )
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -14507,7 +14474,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
 /* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_field_contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/field-contact */ "./resources/js/components/field-contact.vue");
+/* harmony import */ var _services_Translator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/Translator */ "./resources/js/services/Translator.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_FieldContact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/FieldContact */ "./resources/js/components/FieldContact.vue");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -14519,11 +14489,21 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-new Vue({
+ // components
+
+
+var Lang = new _services_Translator__WEBPACK_IMPORTED_MODULE_2__["default"]({});
+vue__WEBPACK_IMPORTED_MODULE_3___default.a.mixin({
+  methods: {
+    __: function __() {
+      return Lang.get.apply(Lang, arguments);
+    }
+  }
+});
+new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
   el: '#app',
   components: {
-    fieldContact: _components_field_contact__WEBPACK_IMPORTED_MODULE_2__["default"]
+    FieldContact: _components_FieldContact__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
@@ -14721,17 +14701,17 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/field-contact.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/field-contact.vue ***!
-  \***************************************************/
+/***/ "./resources/js/components/FieldContact.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/FieldContact.vue ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _field_contact_vue_vue_type_template_id_193a08dc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./field-contact.vue?vue&type=template&id=193a08dc& */ "./resources/js/components/field-contact.vue?vue&type=template&id=193a08dc&");
-/* harmony import */ var _field_contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./field-contact.vue?vue&type=script&lang=js& */ "./resources/js/components/field-contact.vue?vue&type=script&lang=js&");
+/* harmony import */ var _FieldContact_vue_vue_type_template_id_48ee0eb1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FieldContact.vue?vue&type=template&id=48ee0eb1& */ "./resources/js/components/FieldContact.vue?vue&type=template&id=48ee0eb1&");
+/* harmony import */ var _FieldContact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FieldContact.vue?vue&type=script&lang=js& */ "./resources/js/components/FieldContact.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -14741,9 +14721,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _field_contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _field_contact_vue_vue_type_template_id_193a08dc___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _field_contact_vue_vue_type_template_id_193a08dc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _FieldContact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FieldContact_vue_vue_type_template_id_48ee0eb1___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FieldContact_vue_vue_type_template_id_48ee0eb1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -14753,47 +14733,85 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/field-contact.vue"
+component.options.__file = "resources/js/components/FieldContact.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/field-contact.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/field-contact.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
+/***/ "./resources/js/components/FieldContact.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/FieldContact.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_field_contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./field-contact.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/field-contact.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_field_contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldContact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FieldContact.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FieldContact.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldContact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/field-contact.vue?vue&type=template&id=193a08dc&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/field-contact.vue?vue&type=template&id=193a08dc& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/FieldContact.vue?vue&type=template&id=48ee0eb1&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/FieldContact.vue?vue&type=template&id=48ee0eb1& ***!
+  \*********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_field_contact_vue_vue_type_template_id_193a08dc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./field-contact.vue?vue&type=template&id=193a08dc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/field-contact.vue?vue&type=template&id=193a08dc&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_field_contact_vue_vue_type_template_id_193a08dc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldContact_vue_vue_type_template_id_48ee0eb1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FieldContact.vue?vue&type=template&id=48ee0eb1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FieldContact.vue?vue&type=template&id=48ee0eb1&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldContact_vue_vue_type_template_id_48ee0eb1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_field_contact_vue_vue_type_template_id_193a08dc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldContact_vue_vue_type_template_id_48ee0eb1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/mixins/sendContacts.js":
-/*!*********************************************!*\
-  !*** ./resources/js/mixins/sendContacts.js ***!
-  \*********************************************/
+/***/ "./resources/js/mixins/alerts.js":
+/*!***************************************!*\
+  !*** ./resources/js/mixins/alerts.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    showSuccessAlert: function showSuccessAlert() {
+      var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Ок';
+      var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      swal({
+        title: title,
+        text: text,
+        icon: "success",
+        button: {
+          text: "Продолжить"
+        }
+      });
+    },
+    showFailAlert: function showFailAlert(title, text) {
+      swal({
+        title: title,
+        text: text,
+        icon: "error",
+        button: {
+          text: "Продолжить"
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/mixins/validationForm.js":
+/*!***********************************************!*\
+  !*** ./resources/js/mixins/validationForm.js ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -14802,69 +14820,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      inputVal: '',
-      errorForm: false,
+      form: {},
+      errors: {},
       loading: false
     };
   },
   methods: {
-    checkField: function checkField() {
-      if (!this.inputVal.length) {
-        this.errorForm = true;
-      } else {
-        this.errorForm = false;
-      }
-    },
-    inputEvent: function inputEvent() {
-      this.checkField();
-    },
-    submitHandler: function submitHandler() {
-      var _this = this;
-
-      this.checkField();
-
-      if (this.errorForm) {
-        return false;
-      }
-
-      this.loading = true;
-      axios.post('/api/consultation', {
-        contact: this.inputVal
-      }).then(function (_ref) {
-        var data = _ref.data;
-        _this.loading = false;
-        _this.inputVal = '';
-        swal({
-          title: data.message,
-          text: data.description,
-          icon: "success",
-          button: {
-            text: "Продолжить",
-            value: true,
-            visible: true
-          }
-        });
-      })["catch"](function (error) {
-        _this.loading = false;
-        swal({
-          title: 'Ошибка!',
-          text: 'Что-то пошло не так!',
-          icon: "error",
-          button: {
-            text: "Продолжить",
-            value: true,
-            visible: true
-          }
-        });
-      });
-    }
-  },
-  computed: {
-    buttonText: function buttonText() {
-      return this.loading ? 'Отправка...' : 'Отправить';
+    hasErrors: function hasErrors() {
+      return Object.keys(this.errors).length;
     }
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/services/Translator.js":
+/*!*********************************************!*\
+  !*** ./resources/js/services/Translator.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Translator; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Translator =
+/*#__PURE__*/
+function () {
+  function Translator(translations) {
+    _classCallCheck(this, Translator);
+
+    this.translations = translations;
+  }
+
+  _createClass(Translator, [{
+    key: "get",
+    value: function get(key) {
+      var replacements = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var message = this.translations[key] ? this.translations[key] : key;
+
+      if (replacements !== null) {
+        message = Translator._applyReplacements(message, replacements);
+      }
+
+      return message;
+    }
+  }], [{
+    key: "_sortReplacementKeys",
+    value: function _sortReplacementKeys(a, b) {
+      return b.length - a.length;
+    }
+  }, {
+    key: "_applyReplacements",
+    value: function _applyReplacements(message, replacements) {
+      var keys = Object.keys(replacements).sort(Translator._sortReplacementKeys);
+      keys.forEach(function (replace) {
+        message = message.replace(new RegExp(':' + replace, 'gi'), function (match) {
+          var value = replacements[replace]; // Capitalize all characters.
+
+          var allCaps = match === match.toUpperCase();
+
+          if (allCaps) {
+            return value.toUpperCase();
+          } // Capitalize first letter.
+
+
+          var firstCap = match === match.replace(/\w/i, function (letter) {
+            return letter.toUpperCase();
+          });
+
+          if (firstCap) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          }
+
+          return value;
+        });
+      });
+      return message;
+    }
+  }]);
+
+  return Translator;
+}();
+
+
 
 /***/ }),
 

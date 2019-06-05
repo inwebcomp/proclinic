@@ -1788,6 +1788,12 @@ transition {
   }
 }
 
+.input-field--buttoned .input-field__icon {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .input-field::after {
   content: "!";
   cursor: default;

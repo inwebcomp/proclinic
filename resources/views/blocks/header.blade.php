@@ -31,8 +31,6 @@
                     </div>
                     <button type="submit" class="button input-field__mobl-btn" :disabled="loading" v-text="buttonText">@lang('Отправить')</button>
                 </form>
-
-
             </field-contact>
 
         </div>

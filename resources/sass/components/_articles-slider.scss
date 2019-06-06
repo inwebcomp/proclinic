@@ -26,6 +26,11 @@
             padding: 0 28px;
             margin-top: $padding;
         }
+        @include media-max(425px) {
+            margin-left: -26px;
+            margin-right: -26px;
+            width: auto;
+        }
     }
 
     .article-prew {
@@ -77,6 +82,9 @@
             @include media-max(468px) {
                 top: calc(23.5vw - 35px);
             }
+            @include media-max(425px) {
+                left: -27px;
+            }
         }
         &--next {
             right: -40px;
@@ -104,6 +112,9 @@
             }
             @include media-max(468px) {
                 top: calc(23.5vw - 35px);
+            }
+            @include media-max(425px) {
+                right: -27px;
             }
         }
     }

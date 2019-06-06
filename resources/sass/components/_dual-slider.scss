@@ -85,6 +85,12 @@
 .slider-main {
     width: 100%;
 
+    @include media-max(425px) {
+        margin-left: -30px;
+        margin-right: -30px;
+        width: auto;
+    }
+
     &__slide {
         width: 100%;
     }
@@ -117,7 +123,10 @@
         z-index: 2;
 
         @include media-max(680px) {
-            padding-left: 40px;
+            padding-left: 30px;
+        }
+        @include media-max(425px) {
+            padding-right: 30px;
         }
     }
 

@@ -13,6 +13,11 @@
         padding: 0 28px;
         margin-top: $padding;
     }
+    @include media-max(425px) {
+        margin-left: -26px;
+        margin-right: -26px;
+        width: auto;
+    }
 
     &__item {
         width: calc(25% - 22px);

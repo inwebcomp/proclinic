@@ -23,7 +23,7 @@
             </div>
 
             <button class="slider-button slider-button--prev cart-slider__button--prev">
-                <span class="icon icon--circle icon--fill icon--chevron"></span>
+                <span class="icon icon--circle icon--fill icon--chevron-left"></span>
             </button>
             <button class="slider-button slider-button--next cart-slider__button--next">
                 <span class="icon icon--circle icon--fill icon--chevron"></span>

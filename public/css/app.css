@@ -572,10 +572,6 @@ button {
   }
 }
 
-.slider-button:hover .icon {
-  opacity: 0.83;
-}
-
 .icon {
   display: inline-block;
   width: 27px;
@@ -1764,6 +1760,12 @@ transition {
   max-width: 570px;
   position: relative;
   height: 70px;
+}
+
+@media screen and (max-width: 520px) {
+  .input-field-contact {
+    height: 117px;
+  }
 }
 
 field-contact {
@@ -3144,8 +3146,6 @@ field-contact {
 .cart-slider__button--prev {
   top: 107px;
   left: -40px;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 @media screen and (max-width: 1260px) {

@@ -3,6 +3,10 @@
     max-width: 570px;
     position: relative;
     height: 70px;
+
+    @include media-max(520px) {
+        height: 117px;
+    }
 }
 
 // then js disabled

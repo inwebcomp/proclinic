@@ -14,12 +14,12 @@
             </div>
 
             <field-contact inline-template>
-                <form @submit.prevent="submitHandler" @keyup.enter="inputHandler" class="input-field-contact">
+                <form @submit.prevent="submitHandler" class="input-field-contact">
                     <div class="input-field input-field--buttoned" :class="{'input-field--error': errors.contact}">
                         <span class="icon icon--phone-call input-field__icon"></span>
                         <input class="input-field__input"
                             v-model="form.contact"
-                            @input="inputHandler"
+                            @input="validate"
                             type="text"
                             placeholder="Как с вами связаться?">
                         <button

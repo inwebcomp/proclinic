@@ -1786,29 +1786,27 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     buttonText: function buttonText() {
       return this.loading ? 'Отправка...' : 'Отправить';
-    },
-    checkField: function checkField() {
-      return !!this.form.contact;
     }
   },
   methods: {
-    inputHandler: function inputHandler() {
-      this.errors.contact = !this.checkField;
+    validate: function validate() {
+      this.errors.contact = !this.form.contact;
     },
     submitHandler: function submitHandler() {
       var _this = this;
 
-      if (!this.checkField || this.loading) {
+      this.validate();
+
+      if (!this.hasErrors() || this.loading) {
         return false;
       }
 
       this.loading = true;
-      axios.post('/api/consultation', {
-        contact: this.form.contact
-      }).then(function (_ref) {
+      axios.post('/api/consultation', this.form).then(function (_ref) {
         var data = _ref.data;
         _this.loading = false;
-        _this.form.contact = '';
+
+        _this.reset();
 
         _this.showSuccessAlert(data.description, data.message);
       })["catch"](function (error) {
@@ -14828,6 +14826,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     hasErrors: function hasErrors() {
       return Object.keys(this.errors).length;
+    },
+    reset: function reset() {
+      for (var field in this.form) {
+        this.form[field] = '';
+      }
     }
   }
 });
@@ -14931,8 +14934,8 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Work\proclinic\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Work\proclinic\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/escral/Server/www/proclinic/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/escral/Server/www/proclinic/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

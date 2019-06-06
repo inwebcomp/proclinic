@@ -22,29 +22,26 @@ export default {
         buttonText() {
             return this.loading ? 'Отправка...' : 'Отправить'
         },
-        checkField() {
-            return !!this.form.contact
-        },
     },
 
     methods: {
-        inputHandler() {
-            this.errors.contact = !this.checkField
+        validate() {
+            this.errors.contact = ! this.form.contact
         },
 
         submitHandler() {
-            if(!this.checkField || this.loading) {
+            this.validate()
+
+            if(! this.hasErrors() || this.loading) {
                 return false;
             }
 
             this.loading = true;
 
-            axios.post('/api/consultation', {
-                contact: this.form.contact
-            })
+            axios.post('/api/consultation', this.form)
             .then( ({data}) => {
                 this.loading = false;
-                this.form.contact = '';
+                this.reset()
                 this.showSuccessAlert(data.description, data.message)
             })
             .catch((error) => {

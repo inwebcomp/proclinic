@@ -8,11 +8,11 @@
                 </li>
                 @endfor
             </ul>
-            <button class="slider-button slider-button--prev doctor-slider__button--prev">
-                    <span class="icon icon--circle icon--fill icon--chevron"></span>
+            <button type="button" class="slider-button slider-button--prev doctor-slider__button--prev">
+                    <span class="icon icon--circle icon--fill icon--location"></span>
             </button>
-            <button class="slider-button slider-button--next doctor-slider__button--next">
-                <span class="icon icon--circle icon--fill icon--chevron"></span>
+            <button type="button" class="slider-button slider-button--next doctor-slider__button--next">
+                <span class="icon icon--circle icon--fill icon--fb"></span>
             </button>
         </div>
 

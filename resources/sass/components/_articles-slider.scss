@@ -68,7 +68,7 @@
                 top: 4.3vw;
             }
             @include media-max(1024px) {
-                top: 7.7vw;
+                top:6.5vw;
             }
             @include media-max(768px) {
                 top: calc(9vw - 20px);
@@ -80,10 +80,13 @@
                 top: 77px;
             }
             @include media-max(468px) {
-                top: calc(23.5vw - 35px);
+                top: calc(24vw - 35px);
             }
             @include media-max(425px) {
                 left: -27px;
+            }
+            @include media-max(380px) {
+                top: calc(27.5vw - 35px);
             }
         }
         &--next {
@@ -95,11 +98,11 @@
                 right: 0;
             }
 
-            @include media-max(1202px) {
-                top: 4.3vw;
-            }
             @include media-max(1024px) {
-                top: 7.7vw;
+                top:6.5vw;
+            }
+            @include media-max(768px) {
+                top: calc(9vw - 20px);
             }
             @include media-max(768px) {
                 top: calc(9vw - 20px);
@@ -111,10 +114,13 @@
                 top: 77px;
             }
             @include media-max(468px) {
-                top: calc(23.5vw - 35px);
+                top: calc(24vw - 35px);
             }
             @include media-max(425px) {
                 right: -27px;
+            }
+            @include media-max(380px) {
+                top: calc(27.5vw - 35px);
             }
         }
     }

@@ -1,5 +1,5 @@
 .icon {
-    display: inline-block;
+    display: inline-flex;
     width: 27px;
     height: 27px;
     vertical-align: middle;
@@ -111,7 +111,7 @@
         background-size: 40%;
     }
     &--chevron-left {
-        background-image: url($icon-path + "arrow-left.svg");
+        background-image: url($icon-path + "arrow-left-2.svg");
         background-size: 40%;
     }
     &--chevron-inverse {

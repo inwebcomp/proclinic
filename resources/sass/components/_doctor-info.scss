@@ -215,8 +215,9 @@
         &--prev {
             top: 50%;
             left: -40px;
-            transform: rotate(180deg) translateY(50%);
+            //transform: rotate(180deg) translateY(50%);
             background-color: $background-color;
+            z-index: 3;
 
             @include media-max(620px) {
                 left: -10px;
@@ -226,7 +227,7 @@
         &--next {
             right: -40px;
             top: 50%;
-            transform: translateY(-50%);
+            //transform: translateY(-50%);
             background-color: $background-color;
 
             @include media-max(620px) {

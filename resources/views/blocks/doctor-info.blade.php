@@ -31,6 +31,15 @@
             </ul>
         </div>
 
-        <img src="{{ asset('img/doctors/Samofalov1.jpg') }}" alt="Фото врача" class="doctor-info__photo">
+        <div class="doctor-info__photo-box">
+            <h2 class="title doctor-info__name doctor-info__name--hidden">@lang('Иванов Иван Иванович')</h2>
+            <ul class="doctor-info__tags doctor-info__tags--hidden">
+                <li class="doctor-info__tag">@lang('главный врач,')</li>
+                <li class="doctor-info__tag">@lang('учредитель,')</li>
+                <li class="doctor-info__tag">@lang('главный врач')</li>
+            </ul>
+
+            <img src="{{ asset('img/doctors/Samofalov1.jpg') }}" alt="Фото врача" class="doctor-info__photo">
+        </div>
     </div>
 

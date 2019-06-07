@@ -4542,6 +4542,8 @@ field-contact {
 .doctor-slider__button--prev {
   top: 50%;
   left: -40px;
+  -webkit-transform: rotate(180deg) translateY(50%);
+          transform: rotate(180deg) translateY(50%);
   background-color: #fff;
   z-index: 3;
 }
@@ -4555,6 +4557,8 @@ field-contact {
 .doctor-slider__button--next {
   right: -40px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background-color: #fff;
 }
 

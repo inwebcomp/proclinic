@@ -37,7 +37,6 @@ const initCarousel = () => {
         fade: true,
         wrapAround: true,
         adaptiveHeight: true,
-        lazyLoad: true
     });
 
     new Flickity( document.querySelector('.slider-small'), {
@@ -48,7 +47,6 @@ const initCarousel = () => {
         asNavFor: document.querySelector('.slider-main'),
         pageDots: false,
         adaptiveHeight: true,
-        lazyLoad: true
     });
 
     buttonWrap.forEach(slideImgWrap => {
@@ -199,7 +197,24 @@ const langToggler = () => {
     })
 }
 
-langToggler();
+langToggler()
 
+function initMap() {
+    const coordinates = {lat: 46.993857, lng: 28.857413}
+
+    const map = new google.maps.Map(document.getElementById('map'), {
+            center: coordinates,
+            zoom: 16,
+        });
+
+        const marker = new google.maps.Marker({
+            position: coordinates,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: './img/icons/png/map-icon.png'
+        });
+}
+
+initMap()
 
 

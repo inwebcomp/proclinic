@@ -14515,8 +14515,7 @@ var initCarousel = function initCarousel() {
     pageDots: false,
     fade: true,
     wrapAround: true,
-    adaptiveHeight: true,
-    lazyLoad: true
+    adaptiveHeight: true
   });
   new Flickity(document.querySelector('.slider-small'), {
     prevNextButtons: false,
@@ -14525,8 +14524,7 @@ var initCarousel = function initCarousel() {
     draggable: false,
     asNavFor: document.querySelector('.slider-main'),
     pageDots: false,
-    adaptiveHeight: true,
-    lazyLoad: true
+    adaptiveHeight: true
   });
   buttonWrap.forEach(function (slideImgWrap) {
     slideImgWrap.addEventListener('click', function (_ref) {
@@ -14666,6 +14664,25 @@ var langToggler = function langToggler() {
 };
 
 langToggler();
+
+function initMap() {
+  var coordinates = {
+    lat: 46.993857,
+    lng: 28.857413
+  };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: coordinates,
+    zoom: 16
+  });
+  var marker = new google.maps.Marker({
+    position: coordinates,
+    map: map,
+    animation: google.maps.Animation.DROP,
+    icon: './img/icons/png/map-icon.png'
+  });
+}
+
+initMap();
 
 /***/ }),
 
@@ -14934,8 +14951,8 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/escral/Server/www/proclinic/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/escral/Server/www/proclinic/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Work\proclinic\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Work\proclinic\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

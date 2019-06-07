@@ -14,7 +14,7 @@
             </div>
 
             <field-contact inline-template>
-                <form @submit.prevent="submitHandler" class="input-field-contact">
+                <form @submit.prevent="submitHandler" @keyup.enter="validate" class="input-field-contact">
                     <div class="input-field input-field--buttoned" :class="{'input-field--error': errors.contact}">
                         <span class="icon icon--phone-call input-field__icon"></span>
                         <input class="input-field__input"

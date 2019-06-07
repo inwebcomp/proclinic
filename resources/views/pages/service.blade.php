@@ -39,8 +39,5 @@
 @endsection
 
 @section('scripts')
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3YzninfSxe8Ml8YqLnNspvnAehzd5t38&callback=initMap">
-    </script>
 @endsection
 

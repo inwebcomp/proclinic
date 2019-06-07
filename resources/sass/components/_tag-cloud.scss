@@ -5,6 +5,10 @@
     flex-wrap: wrap;
     align-items: flex-start;
 
+    @include media-max(560px) {
+        padding: $padding * 2.5 0 0 0;
+    }
+
     &__item {
         margin: 0 $padding * 2.375 $padding * 1.25 0;
         width: auto;

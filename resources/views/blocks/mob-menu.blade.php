@@ -21,7 +21,7 @@
             Клиника
         </a>
         <a href="#" class="mob-menu__link">
-            <span class="icon icon--email"></span>
+            <span class="icon icon--email-2"></span>
             Клиника
         </a>
         <a href="#" class="mob-menu__link">

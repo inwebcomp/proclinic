@@ -3546,6 +3546,12 @@ field-contact {
   }
 }
 
+@media screen and (max-width: 425px) {
+  .block--articles {
+    margin-top: 36px;
+  }
+}
+
 .articles-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3569,9 +3575,15 @@ field-contact {
 }
 
 .articles-list__more-btn {
-  display: block;
+  display: none;
   max-width: 275px;
   margin: 32px auto 0;
+}
+
+@media screen and (max-width: 560px) {
+  .articles-list__more-btn {
+    display: block;
+  }
 }
 
 .article-prew {
@@ -3796,7 +3808,7 @@ field-contact {
   right: 0;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  top: 67%;
+  top: 65%;
 }
 
 .contacts__list {
@@ -3988,6 +4000,12 @@ field-contact {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+}
+
+@media screen and (max-width: 560px) {
+  .tag-cloud {
+    padding: 40px 0 0 0;
+  }
 }
 
 .tag-cloud__item {

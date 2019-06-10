@@ -1876,6 +1876,13 @@ field-contact {
           transform: scale(1);
 }
 
+.input-field--error-right::after {
+  left: auto;
+  right: -8px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .input-field__input {
   border: none;
   outline: none;

@@ -16,7 +16,7 @@
                             v-model="form.phone">
                     </div>
                     <span class="contact-form__or">@lang('или')</span>
-                    <div class="input-field input-field--small" :class="{'input-field--error': phoneEmailErrors}">
+                    <div class="input-field input-field--small" :class="{'input-field--error-right': phoneEmailErrors}">
                         <span class="icon icon--message input-field__icon"></span>
                         <input type="email"
                             class="input-field__input"

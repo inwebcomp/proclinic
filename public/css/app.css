@@ -869,6 +869,7 @@ body {
   overflow-x: hidden;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 #content {
@@ -2243,6 +2244,7 @@ field-contact {
   top: 0;
   left: 0;
   z-index: 3;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1024px) {
@@ -2395,21 +2397,27 @@ field-contact {
 }
 
 .mob-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100%;
   background-color: #fff;
-  z-index: 4;
+  z-index: 5;
   width: 260px;
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.15);
   overflow-y: auto;
-  display: none;
+  display: flex;
   flex-direction: column;
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+  transition: -webkit-transform ease 0.15s;
+  transition: transform ease 0.15s;
+  transition: transform ease 0.15s, -webkit-transform ease 0.15s;
 }
 
 .mob-menu--open {
-  display: flex;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .mob-menu__logo {
@@ -2487,6 +2495,19 @@ field-contact {
 .mob-menu__close-icon {
   width: 14px;
   height: 14px;
+}
+
+.mob-menu__overlay {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 4;
+  display: block;
 }
 
 .banner {
@@ -4589,13 +4610,14 @@ field-contact {
 
 .footer__menu {
   margin-right: -16px;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 @media screen and (max-width: 768px) {
   .footer__menu {
     margin-top: 12px;
     margin-right: 0;
+    width: 100%;
   }
 }
 

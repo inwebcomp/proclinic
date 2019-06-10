@@ -5,6 +5,8 @@ import Vue from 'vue'
 
 // components
 import FieldContact from './components/FieldContact'
+import MobMenu from './components/MobMenu'
+import stopBodyScroll from './mixins/stopBodyScroll'
 
 let Lang = new Translator({});
 
@@ -19,9 +21,33 @@ Vue.mixin({
 new Vue({
     el: '#app',
     components: {
-        FieldContact
+        FieldContact,
+        MobMenu
+    },
+
+    mixins: [stopBodyScroll],
+
+    data: {
+        mobMenuIsOpen: false
+    },
+
+    methods: {
+        burgherClick() {
+            this.mobMenuIsOpen = !this.mobMenuIsOpen;
+        },
+
+        menuCloseHandler() {
+            this.mobMenuIsOpen = false;
+        }
+    },
+
+    watch: {
+        mobMenuIsOpen(val) {
+            this.stopBodyScroll(val, 'mob-menu')
+        }
     },
 });
+
 
 const initCarousel = () => {
     const carousel = document.querySelector('.slider-main');
@@ -175,14 +201,6 @@ const headerCollapse = () => {
         }
     })
 };
-
-// for test
-const burgher = document.querySelector('.header__burgher');
-const menu = document.querySelector('.mob-menu');
-
-burgher.addEventListener('click', () => {
-    menu.classList.toggle('mob-menu--open')
-});
 
 const langToggler = () => {
     const buttons = document.querySelectorAll('.lang-toggler__button');

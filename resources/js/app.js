@@ -6,6 +6,9 @@ import Vue from 'vue'
 // components
 import FieldContact from './components/FieldContact'
 import MobMenu from './components/MobMenu'
+import ContactForm from './components/ContactForm'
+
+// mixins
 import stopBodyScroll from './mixins/stopBodyScroll'
 
 let Lang = new Translator({});
@@ -22,7 +25,8 @@ new Vue({
     el: '#app',
     components: {
         FieldContact,
-        MobMenu
+        MobMenu,
+        ContactForm
     },
 
     mixins: [stopBodyScroll],

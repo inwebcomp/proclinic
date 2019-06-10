@@ -32,7 +32,7 @@ export default {
         submitHandler() {
             this.validate()
 
-            if(! this.hasErrors() || this.loading) {
+            if(this.hasErrors() || this.loading) {
                 return false;
             }
 
@@ -46,7 +46,7 @@ export default {
             })
             .catch((error) => {
                 this.loading = false;
-                this.showSuccessAlert(data.description, data.message)
+                this.showFailAlert(data.description, data.message)
             });
         }
     },

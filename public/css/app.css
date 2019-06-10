@@ -1883,6 +1883,13 @@ field-contact {
           transform: scale(1);
 }
 
+@media screen and (max-width: 560px) {
+  .input-field--error-right::after {
+    right: auto;
+    left: -8px;
+  }
+}
+
 .input-field__input {
   border: none;
   outline: none;
@@ -2004,12 +2011,6 @@ field-contact {
 @media screen and (max-width: 560px) {
   .contact-form__or {
     margin: 4px 0;
-  }
-}
-
-@media screen and (max-width: 560px) {
-  .contact-form__textarea {
-    display: none;
   }
 }
 

@@ -16,7 +16,6 @@
 
     &__menu {
         margin-right: -$padding;
-        margin-top: $padding * 0.25;
 
         @include media-max(768px) {
             margin-top: $padding * 0.75;

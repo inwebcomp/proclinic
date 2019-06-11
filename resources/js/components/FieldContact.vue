@@ -44,9 +44,9 @@ export default {
                 this.reset()
                 this.showSuccessAlert(data.description, data.message)
             })
-            .catch((error) => {
+            .catch(({response}) => {
                 this.loading = false;
-                this.showFailAlert(data.description, data.message)
+                this.showFailAlert(response.data.message)
             });
         }
     },

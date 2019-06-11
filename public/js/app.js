@@ -1792,9 +1792,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.loading ? 'Отправка...' : 'Отправить';
     },
     phoneEmailErrors: function phoneEmailErrors() {
-      if (this.errors.phone && this.errors.email) {
-        return true;
-      }
+      return this.errors.phone && this.errors.email;
     }
   },
   methods: {
@@ -1823,10 +1821,11 @@ __webpack_require__.r(__webpack_exports__);
         _this.reset();
 
         _this.showSuccessAlert(data.description, data.message);
-      })["catch"](function (error) {
+      })["catch"](function (_ref2) {
+        var response = _ref2.response;
         _this.loading = false;
 
-        _this.showFailAlert(data.description, data.message);
+        _this.showFailAlert(response.data.message);
       });
     }
   }
@@ -1889,10 +1888,11 @@ __webpack_require__.r(__webpack_exports__);
         _this.reset();
 
         _this.showSuccessAlert(data.description, data.message);
-      })["catch"](function (error) {
+      })["catch"](function (_ref2) {
+        var response = _ref2.response;
         _this.loading = false;
 
-        _this.showFailAlert(data.description, data.message);
+        _this.showFailAlert(response.data.message);
       });
     }
   }
@@ -15974,8 +15974,8 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Work\proclinic\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Work\proclinic\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/escral/Server/www/proclinic/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/escral/Server/www/proclinic/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -27,9 +27,7 @@ export default {
             return this.loading ? 'Отправка...' : 'Отправить'
         },
         phoneEmailErrors() {
-            if(this.errors.phone && this.errors.email) {
-                return true
-            }
+            return this.errors.phone && this.errors.email
         }
     },
 
@@ -59,9 +57,9 @@ export default {
                 this.reset()
                 this.showSuccessAlert(data.description, data.message)
             })
-            .catch((error) => {
+            .catch(({response}) => {
                 this.loading = false;
-                this.showFailAlert(data.description, data.message)
+                this.showFailAlert(response.data.message)
             });
         }
     },

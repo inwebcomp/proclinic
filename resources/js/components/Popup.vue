@@ -12,47 +12,47 @@
 </template>
 
 <script>
-    import stopBodyScroll from '../mixins/stopBodyScroll'
+import stopBodyScroll from '../mixins/stopBodyScroll'
 
-    export default {
-        name: 'popup',
-        props: {
-            transition: {
-                default: 'fade'
-            },
-            duration: {
-                default: null
-            },
-            classMod: {
-                default: ''
-            }
+export default {
+    name: 'popup',
+    props: {
+        transition: {
+            default: 'fade'
         },
-
-        mixins: [stopBodyScroll],
-
-        data() {
-            return {
-                show: false,
-                params: {}
-            }
+        duration: {
+            default: null
         },
-        created() {
-            let self = this
-            self.$on('show', function (params) {
-                self.show = true
-                self.$root.popupIsActive = true
-                self.params = params
-            })
-            self.$on('close', function () {
-                self.show = false
-                self.$root.popupIsActive = false
-                this.stopBodyScroll(false, 'popup-wrapper')
-            })
-            self.$root.$on('closePopup', function () {
-                self.show = false
-                self.$root.popupIsActive = false
-                this.stopBodyScroll(false, 'popup-wrapper')
-            })
+        classMod: {
+            default: ''
         }
+    },
+
+    mixins: [stopBodyScroll],
+
+    data() {
+        return {
+            show: false,
+            params: {}
+        }
+    },
+    created() {
+        let self = this
+        self.$on('show', function (params) {
+            self.show = true
+            self.$root.popupIsActive = true
+            self.params = params
+        })
+        self.$on('close', function () {
+            self.show = false
+            self.$root.popupIsActive = false
+            this.stopBodyScroll(false, 'popup-wrapper')
+        })
+        self.$root.$on('closePopup', function () {
+            self.show = false
+            self.$root.popupIsActive = false
+            this.stopBodyScroll(false, 'popup-wrapper')
+        })
     }
+}
 </script>

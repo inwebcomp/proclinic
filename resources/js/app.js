@@ -8,6 +8,7 @@ import FieldContact from './components/FieldContact'
 import MobMenu from './components/MobMenu'
 import ContactForm from './components/ContactForm'
 import Popup from './components/Popup'
+import PopupForm from './components/PopupForm'
 
 // mixins
 import stopBodyScroll from './mixins/stopBodyScroll'
@@ -28,7 +29,8 @@ new Vue({
         FieldContact,
         MobMenu,
         ContactForm,
-        Popup
+        Popup,
+        PopupForm
     },
 
     mixins: [stopBodyScroll],

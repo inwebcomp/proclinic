@@ -28,7 +28,7 @@
                 </div>
                 <div class="contact-form__row contact-form__textarea">
                     <div class="input-field input-field--textarea"
-                        :class="{'input-field--error': this.errors.message}">
+                        :class="{'input-field--error': errors.message}">
                         <span class="icon icon--chat input-field__icon"></span>
                         <textarea
                             class="input-field__input"

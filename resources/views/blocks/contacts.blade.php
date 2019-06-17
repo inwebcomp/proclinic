@@ -25,7 +25,7 @@
         </div>
 
         <div class="contacts__footer">
-            <a href="#" class="button" @click.prevent="showPopup('contact')">@lang('Как к нам добраться')</a>
+            <a href="#" class="button">@lang('Как к нам добраться')</a>
         </div>
     </div>
 </section>

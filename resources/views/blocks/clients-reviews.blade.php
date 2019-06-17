@@ -48,7 +48,7 @@
             </div>
 
             <div class="reviews__footer">
-                <a href="#" class="button reviews__button">@lang('Оставить отзыв на сайте')</a>
+                <a href="#" class="button reviews__button" @click.prevent="showPopup('contact')">@lang('Оставить отзыв на сайте')</a>
                 <a href="#" class="button reviews__button reviews__button--fb">@lang('Оставить отзыв на Facebook')</a>
             </div>
         </div>

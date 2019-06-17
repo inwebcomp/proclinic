@@ -2331,6 +2331,10 @@ field-contact {
   }
 }
 
+.header__banner {
+  padding-top: 80px;
+}
+
 @media screen and (max-width: 1140px) {
   .header__banner {
     padding-top: 112px;

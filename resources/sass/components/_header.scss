@@ -83,6 +83,8 @@
     }
 
     &__banner {
+        padding-top:  $padding * 5;
+
         @include media-max(1140px) {
             padding-top: $padding * 7;
             //padding-bottom: $padding * 4;

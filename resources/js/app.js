@@ -7,6 +7,7 @@ import Vue from 'vue'
 import FieldContact from './components/FieldContact'
 import MobMenu from './components/MobMenu'
 import ContactForm from './components/ContactForm'
+import Popup from './components/Popup'
 
 // mixins
 import stopBodyScroll from './mixins/stopBodyScroll'
@@ -26,16 +27,30 @@ new Vue({
     components: {
         FieldContact,
         MobMenu,
-        ContactForm
+        ContactForm,
+        Popup
     },
 
     mixins: [stopBodyScroll],
 
     data: {
-        mobMenuIsOpen: false
+        mobMenuIsOpen: false,
+        popupIsActive: false,
     },
 
     methods: {
+        showPopup(name, params = {}) {
+            if (this.$refs[name] == undefined)
+                return console.error("[Vue/Popup]: Popup '" + name + "' not found")
+
+            this.$refs[name].$emit('show', params)
+
+            // window.addEventListener("scroll", function () {
+            //     return false
+            // })
+            this.stopBodyScroll(this.popupIsActive, 'popup-wrapper')
+        },
+
         burgherClick() {
             this.mobMenuIsOpen = !this.mobMenuIsOpen;
         },

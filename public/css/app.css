@@ -723,6 +723,10 @@ button {
   background-image: url("/img/icons/phone-call.svg");
 }
 
+.icon--user {
+  background-image: url("/img/icons/user.svg");
+}
+
 .icon--tooth-whitening {
   background-image: url("/img/icons/tooth-whitening.svg");
 }
@@ -1108,8 +1112,10 @@ body {
   z-index: 99;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(2, 39, 73, 0.4);
   display: table;
   transition: opacity 0.25s ease;
@@ -1117,40 +1123,74 @@ body {
 }
 
 .popup-wrapper {
-  width: 100%;
-  max-height: 100%;
-  overflow: auto;
+  width: 90%;
+  max-width: 570px;
+  max-height: 95%;
+  overflow-x: auto;
   position: fixed;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 100;
+  border-radius: 2.5rem;
+}
+
+@media screen and (max-width: 520px) {
+  .popup-wrapper {
+    max-height: 90%;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup-wrapper {
+    width: 90%;
+  }
 }
 
 .popup-container {
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 48px 48px;
-  background: #FFF;
-  border-radius: 2px;
+  padding: 44px 72px;
+  background: transparent;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  border-radius: 2.5rem;
+}
+
+@media screen and (max-width: 520px) {
+  .popup-container {
+    padding: 48px 32px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .popup-container {
+    padding: 48px 16px;
+  }
 }
 
 .popup-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 4px;
+  right: 5px;
   padding: 0;
   margin: 0;
-  width: 60px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
   box-sizing: border-box;
   z-index: 2;
   background-image: url("/img/icons/close.svg");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 24px;
+  background-size: 18px;
+  transition: opacity ease 0.15s;
+}
+
+.popup-close:hover {
+  opacity: 0.85;
 }
 
 popup,
@@ -2310,7 +2350,7 @@ field-contact {
   margin-right: 40px;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 720px) {
   .header__phone {
     display: none;
   }
@@ -4595,6 +4635,78 @@ field-contact {
   .doctor-slider__button--next {
     right: -10px;
   }
+}
+
+.popup--review {
+  background-image: url("/img/backgrounds/popup-bg.jpeg");
+  background-size: 186%;
+  background-repeat: no-repeat;
+  background-position: 68% 58%;
+}
+
+@media screen and (max-width: 520px) {
+  .popup--review {
+    background-size: cover;
+  }
+}
+
+.popup--review .popup-container {
+  position: relative;
+}
+
+.popup--review .popup-container:before {
+  content: "";
+  display: block;
+  background-color: #fff;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 2.5rem;
+  z-index: -1;
+}
+
+.popup-contacts {
+  display: block;
+  z-index: 3;
+}
+
+.popup-contacts__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 560px) {
+  .popup-contacts__title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+}
+
+.popup-contacts__row {
+  width: 100%;
+}
+
+.popup-contacts__row:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.popup-contacts__btn {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.popup-contacts .input-field--textarea textarea {
+  height: 150px;
+  max-height: 150px;
+  min-height: 150px;
+  resize: none;
+  border-radius: 2.5rem;
 }
 
 .footer {

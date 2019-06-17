@@ -98,7 +98,7 @@
         font-size: 1.6rem;
         margin-right: $padding * 2.5;
 
-        @include media-max(860px) {
+        @include media-max(720px) {
             display: none;
         }
 

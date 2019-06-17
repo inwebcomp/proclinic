@@ -89,6 +89,9 @@
     &--phone-call {
         background-image: url($icon-path + "phone-call.svg");
     }
+    &--user {
+        background-image: url($icon-path + "user.svg");
+    }
 
     &--tooth-whitening  {
         background-image: url($icon-path + "tooth-whitening.svg");

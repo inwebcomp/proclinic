@@ -2,24 +2,6 @@
     <div class="map" id="map">
     </div>
 
-    {{-- <script>
-        function initMap() {
-            var coordinates = {lat: 46.993857, lng: 28.857413},
-
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: coordinates,
-                    zoom: 16,
-                });
-
-                marker = new google.maps.Marker({
-                    position: coordinates,
-                    map: map,
-                    animation: google.maps.Animation.DROP,
-                    icon: './img/icons/png/map-icon.png'
-                });
-        }
-    </script> --}}
-
     <div class="contacts">
         <div class="contacts__head">@lang('Контакты клиники')</div>
         <div class="contacts__head-mg"></div>

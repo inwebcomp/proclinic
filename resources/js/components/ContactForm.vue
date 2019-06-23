@@ -6,15 +6,19 @@ import alerts from '../mixins/alerts'
 import validationForm from '../mixins/validationForm'
 
 export default {
-    name: 'field-contact',
+    name: 'contact-form',
     mixins: [alerts, validationForm],
 
     data: () => ({
         form: {
-           contact: ''
+           phone: '',
+           email: '',
+           message: ''
         },
         errors: {
-            contact: false
+            phone: false,
+            email: false,
+            message: false
         }
     }),
 
@@ -22,23 +26,32 @@ export default {
         buttonText() {
             return this.loading ? 'Отправка...' : 'Отправить'
         },
+        phoneEmailErrors() {
+            return this.errors.phone && this.errors.email
+        }
     },
 
     methods: {
         validate() {
-            this.errors.contact = ! this.form.contact
+            this.errors.phone = ! this.form.phone
+            this.errors.email = ! this.form.email
+        },
+
+        validateMessage() {
+            this.errors.message = ! this.form.message
         },
 
         submitHandler() {
             this.validate()
+            this.validateMessage()
 
-            if(this.hasErrors() || this.loading) {
+            if(this.phoneEmailErrors || this.errors.message || this.loading) {
                 return false;
             }
 
             this.loading = true;
 
-            axios.post('/api/consultation', this.form)
+            axios.post('/api/contact', this.form)
             .then( ({data}) => {
                 this.loading = false;
                 this.reset()

@@ -16,8 +16,8 @@
 
         @include('blocks.lang-toggler')
 
-            <button class="header__burgher">
-                <span class="icon icon--menu "></span>
+        <button class="header__burgher" @click="burgherClick">
+            <span class="icon icon--menu"></span>
         </button>
 
     </div>

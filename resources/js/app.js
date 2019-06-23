@@ -5,6 +5,13 @@ import Vue from 'vue'
 
 // components
 import FieldContact from './components/FieldContact'
+import MobMenu from './components/MobMenu'
+import ContactForm from './components/ContactForm'
+import Popup from './components/Popup'
+import PopupForm from './components/PopupForm'
+
+// mixins
+import stopBodyScroll from './mixins/stopBodyScroll'
 
 let Lang = new Translator({});
 
@@ -19,9 +26,49 @@ Vue.mixin({
 new Vue({
     el: '#app',
     components: {
-        FieldContact
+        FieldContact,
+        MobMenu,
+        ContactForm,
+        Popup,
+        PopupForm
+    },
+
+    mixins: [stopBodyScroll],
+
+    data: {
+        mobMenuIsOpen: false,
+        popupIsActive: false,
+    },
+
+    methods: {
+        showPopup(name, params = {}) {
+            if (this.$refs[name] == undefined)
+                return console.error("[Vue/Popup]: Popup '" + name + "' not found")
+
+            this.$refs[name].$emit('show', params)
+
+            // window.addEventListener("scroll", function () {
+            //     return false
+            // })
+            this.stopBodyScroll(this.popupIsActive, 'popup-wrapper')
+        },
+
+        burgherClick() {
+            this.mobMenuIsOpen = !this.mobMenuIsOpen;
+        },
+
+        menuCloseHandler() {
+            this.mobMenuIsOpen = false;
+        }
+    },
+
+    watch: {
+        mobMenuIsOpen(val) {
+            this.stopBodyScroll(val, 'mob-menu')
+        }
     },
 });
+
 
 const initCarousel = () => {
     const carousel = document.querySelector('.slider-main');
@@ -37,7 +84,6 @@ const initCarousel = () => {
         fade: true,
         wrapAround: true,
         adaptiveHeight: true,
-        lazyLoad: true
     });
 
     new Flickity( document.querySelector('.slider-small'), {
@@ -48,7 +94,6 @@ const initCarousel = () => {
         asNavFor: document.querySelector('.slider-main'),
         pageDots: false,
         adaptiveHeight: true,
-        lazyLoad: true
     });
 
     buttonWrap.forEach(slideImgWrap => {
@@ -178,14 +223,6 @@ const headerCollapse = () => {
     })
 };
 
-// for test
-const burgher = document.querySelector('.header__burgher');
-const menu = document.querySelector('.mob-menu');
-
-burgher.addEventListener('click', () => {
-    menu.classList.toggle('mob-menu--open')
-});
-
 const langToggler = () => {
     const buttons = document.querySelectorAll('.lang-toggler__button');
 
@@ -199,7 +236,24 @@ const langToggler = () => {
     })
 }
 
-langToggler();
+langToggler()
 
+function initMap() {
+    const coordinates = {lat: 46.993857, lng: 28.857413}
+
+    const map = new google.maps.Map(document.getElementById('map'), {
+            center: coordinates,
+            zoom: 16,
+        });
+
+        const marker = new google.maps.Marker({
+            position: coordinates,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: './img/icons/png/map-icon.png'
+        });
+}
+
+initMap()
 
 

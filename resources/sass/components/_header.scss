@@ -49,6 +49,7 @@
         top: 0;
         left: 0;
         z-index: 3;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 
         @include media-max(1024px) {
             height: $header-height - 20;
@@ -82,6 +83,8 @@
     }
 
     &__banner {
+        padding-top:  $padding * 5;
+
         @include media-max(1140px) {
             padding-top: $padding * 7;
             //padding-bottom: $padding * 4;
@@ -97,7 +100,7 @@
         font-size: 1.6rem;
         margin-right: $padding * 2.5;
 
-        @include media-max(860px) {
+        @include media-max(720px) {
             display: none;
         }
 

@@ -74,6 +74,19 @@ field-contact {
         }
     }
 
+    &--error-right {
+        &::after {
+            left: auto;
+            right: -8px;
+            transform: scale(1);
+
+            @include media-max(560px) {
+                right: auto;
+                left: -8px;
+            }
+        }
+    }
+
     &__input {
         border: none;
         outline: none;

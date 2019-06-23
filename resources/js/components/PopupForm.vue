@@ -6,31 +6,39 @@ import alerts from '../mixins/alerts'
 import validationForm from '../mixins/validationForm'
 
 export default {
-    name: 'field-contact',
+    name: 'popup-form',
     mixins: [alerts, validationForm],
 
     data: () => ({
         form: {
-           contact: ''
+           name: '',
+           message: ''
         },
         errors: {
-            contact: false
+            name: false,
+            message: false
         }
     }),
 
     computed: {
         buttonText() {
             return this.loading ? 'Отправка...' : 'Отправить'
-        },
+        }
     },
 
     methods: {
-        validate() {
-            this.errors.contact = ! this.form.contact
+        validate(field) {
+            if (field === 'all') {
+                for (let item in this.form) {
+                    this.errors[item] = ! this.form[item]
+                }
+            } else {
+                this.errors[field] = ! this.form[field]
+            }
         },
 
         submitHandler() {
-            this.validate()
+            this.validate('all')
 
             if(this.hasErrors() || this.loading) {
                 return false;
@@ -38,7 +46,7 @@ export default {
 
             this.loading = true;
 
-            axios.post('/api/consultation', this.form)
+            axios.post('/api/contact', this.form)
             .then( ({data}) => {
                 this.loading = false;
                 this.reset()

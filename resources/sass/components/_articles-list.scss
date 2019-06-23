@@ -1,5 +1,7 @@
 .block--articles {
-
+    @include media-max(425px) {
+        margin-top: $padding * 2.25;
+    }
 }
 
 .articles-list {
@@ -20,10 +22,13 @@
     }
 
     &__more-btn {
-        //display: none;
-        display: block;
+        display: none;
         max-width: 275px;
         margin: $padding * 2 auto 0;
+
+        @include media-max(560px) {
+            display: block;
+        }
     }
 }
 

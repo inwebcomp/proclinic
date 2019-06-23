@@ -1,0 +1,67 @@
+.popup--review {
+    background-image: url('/img/backgrounds/popup-bg.jpeg');
+    background-size: 186%;
+    background-repeat: no-repeat;
+    background-position: 68% 58%;
+
+    @include media-max(520px) {
+        background-size: cover;
+    }
+
+    .popup-container {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            background-color: #fff;
+            opacity: 0.5;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: $border-radius;
+            z-index: -1;
+        }
+    }
+}
+
+.popup-contacts {
+    display: block;
+    z-index: 3;
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: $padding * 1.875;
+        text-align: center;
+        width: 100%;
+
+        @include media-max(560px) {
+            font-size: 2rem;
+            margin-bottom: $padding;
+        }
+    }
+
+    &__row {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: $padding * 0.5;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        margin-top: $padding * 1.875;
+    }
+
+    .input-field--textarea textarea {
+        height: 150px;
+        max-height: 150px;
+        min-height: 150px;
+        resize: none;
+        border-radius: 2.5rem;
+    }
+}

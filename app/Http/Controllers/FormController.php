@@ -24,4 +24,14 @@ class FormController extends Controller
             'description' => __("Мы с вами скоро свяжемся")
         ];
     }
+
+    public function contact(Request $request)
+    {
+        //Mail::to(config('contacts.mail_to'))->queue(new ConsultationMail($request->input()));
+
+        return [
+            'message' => __("Сообщение отправлено!"),
+            'description' => __("Мы с вами скоро свяжемся")
+        ];
+    }
 }

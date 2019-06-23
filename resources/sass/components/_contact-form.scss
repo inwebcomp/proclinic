@@ -33,12 +33,6 @@
         }
     }
 
-    &__textarea {
-        @include media-max(560px) {
-            display: none;
-        }
-    }
-
     &__btn {
         @include media-max(560px) {
             width: 100%;

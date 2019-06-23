@@ -7,7 +7,7 @@ export default {
 
     methods: {
         hasErrors() {
-            return Object.keys(this.errors).length
+            return Object.keys(this.errors).find(i => this.errors[i])
         },
         reset() {
             for (var field in this.form) {

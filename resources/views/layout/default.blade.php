@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
 
     <title>ProClinic</title>
 
@@ -13,8 +14,17 @@
 <body>
     <div id="app">
         @yield('content')
+
+        <transition name="fade">
+            <div class="popup-mask" v-show="popupIsActive" @click="$root.$emit('closePopup')"></div>
+        </transition>
+
+        @include('blocks.popup-review')
     </div>
 
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3YzninfSxe8Ml8YqLnNspvnAehzd5t38&callback=initMap">
+    </script>
     @yield('scripts')
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>

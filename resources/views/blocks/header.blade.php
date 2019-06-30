@@ -4,13 +4,13 @@
 
     <div class="container banner header__banner">
         <div class="banner__row">
-            <h1 class="banner__title">@lang('Лечение зубов без боли с гарантией результата')</h1>
-            <div class="banner__descr">@lang('Современный медицинский центр') <strong>@lang('в Кишиневе')</strong></div>
+            <h1 class="banner__title">{{ \App\Models\Textblock::text('main_header') }}</h1>
+            <div class="banner__descr">{!! \App\Models\Textblock::html('sub_main_header') !!}</div>
         </div>
         <div class="banner__row">
             <div class="banner__quest">
                 <p class="banner__quest__title">@lang('Нужна консультация?')</p>
-                <p>@lang('Оставьте заявку и получите бесплатный прием')</p>
+                <p>@lang('Наши специалисты ответят на все ваши вопросы')</p>
             </div>
 
             <field-contact inline-template>

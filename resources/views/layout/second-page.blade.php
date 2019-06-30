@@ -13,11 +13,12 @@
 <body>
     <div id="app">
         @include('blocks.mob-menu')
+
         <header class="empty-header">
             @include('blocks.header__top-line')
         </header>
 
-            @yield('content')
+        @yield('content')
 
         @include('blocks.has-quest')
 
@@ -30,7 +31,9 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3YzninfSxe8Ml8YqLnNspvnAehzd5t38&callback=initMap">
     </script>
+
     @yield('scripts')
+
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 </html>

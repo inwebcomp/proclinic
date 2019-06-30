@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\ApiLanguage;
+use App\Http\Middleware\Language;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -35,10 +37,15 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            Language::class,
         ],
 
         'api' => [
-            'throttle:60,1',
+            'throttle:1000,1',
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            ApiLanguage::class,
             'bindings',
         ],
     ];

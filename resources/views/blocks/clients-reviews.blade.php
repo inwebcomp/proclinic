@@ -3,41 +3,31 @@
         <div class="reviews">
             <div class="reviews__head">
                 <h3 class="block__title reviews__title">@lang('Клиенты говорят о нас')</h3>
-                <div class="reviews__peoples-container">
-                    <ul class="reviews__peoples">
-                        @for ($i = 0; $i < 6; $i++)
-                            <li class="reviews__man" data-selector=".reviews__item--{{$i}}">
-                                <img src="{{ asset('img/reviews-people/1.jpg') }}" alt="Клиент" class="reviews__man__img">
-                            </li>
-                            <li class="reviews__man" data-selector=".reviews__item--{{++$i}}">
-                                <img src="{{ asset('img/reviews-people/2.jpg') }}" alt="Клиент" class="reviews__man__img">
-                            </li>
-                        @endfor
-                    </ul>
-                </div>
+                {{--<div class="reviews__peoples-container">--}}
+                    {{--<ul class="reviews__peoples">--}}
+                        {{--<li class="reviews__man" data-selector=".reviews__item--0">--}}
+                            {{--<img src="{{ asset('img/reviews-people/1.jpg') }}" alt="Клиент" class="reviews__man__img">--}}
+                        {{--</li>--}}
+                        {{--<li class="reviews__man" data-selector=".reviews__item--1">--}}
+                            {{--<img src="{{ asset('img/reviews-people/2.jpg') }}" alt="Клиент" class="reviews__man__img">--}}
+                        {{--</li>--}}
+                        {{--<li class="reviews__man" data-selector=".reviews__item--1">--}}
+                            {{--<img src="{{ asset('img/reviews-people/2.jpg') }}" alt="Клиент" class="reviews__man__img">--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
             </div>
 
 
             <div class="reviews__list-wrap">
                 <div class="reviews__list">
-                    @for ($i = 0; $i < 6; $i++)
+                    @foreach($testimonials as $i => $testimonial)
                         <div class="reviews__item reviews__item--{{$i}}" data-index="{{$i}}">
-                            <p class="reviews__item__name">@lang('Ольга Шахматова')</p>
-                            <span class="reviews__item__data">27.09.2018</span>
-                            <p class="reviews__item__text">@lang('Современная стоматология. Передовые технологии и
-                            качественное обслуживание! Уютный интерьер и
-                            приветливый персонал!  Профессиональный и
-                            индивидуальный подход! Уютный интерьер и
-                            приветливый персонал Профессиональный и
-                            индивидуальный подход! Уютный интерье') </p>
+                            <p class="reviews__item__name">{{ $testimonial->name }}</p>
+                            <span class="reviews__item__data">{{ $testimonial->date }}</span>
+                            <p class="reviews__item__text">{{ $testimonial->text }}</p>
                         </div>
-                        <div class="reviews__item reviews__item--{{++$i}}" data-index="{{$i}}">
-                            <p class="reviews__item__name">@lang('Ольга Шахматова')</p>
-                            <span class="reviews__item__data">27.09.2018</span>
-                            <p class="reviews__item__text">@lang('Современная стоматология. Передовые технологии и
-                            качественное обслуживание! ') </p>
-                        </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <button class="slider-button reviews__slider-btn reviews__slider-btn--prev">
                     <span class="icon icon--circle icon--fill icon--chevron"></span>

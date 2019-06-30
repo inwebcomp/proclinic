@@ -7,16 +7,13 @@
 @section('content')
     @include('blocks.header')
 
-    @include('blocks.services', [
-        'items' => $services
-    ])
-    @include('blocks.advantages', [
-        'items' => $advantages
-    ])
+    @include('blocks.services')
+
+    @include('blocks.advantages')
 
     @include('blocks.dual-slider')
 
-    @include('blocks.personal-slider')
+    @include('blocks.doctors-slider')
 
     @include('blocks.need-consultation')
 

@@ -1996,10 +1996,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PopupForm.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PopupForm.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TestimonialForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TestimonialForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2007,13 +2007,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_alerts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/alerts */ "./resources/js/mixins/alerts.js");
 /* harmony import */ var _mixins_validationForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mixins/validationForm */ "./resources/js/mixins/validationForm.js");
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'popup-form',
+  name: 'testimonial-form',
   mixins: [_mixins_alerts__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_validationForm__WEBPACK_IMPORTED_MODULE_1__["default"]],
   data: function data() {
     return {
@@ -2052,13 +2049,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.loading = true;
-      axios.post('/api/contact', this.form).then(function (_ref) {
+      axios.post('/api/testimonial', this.form).then(function (_ref) {
         var data = _ref.data;
         _this.loading = false;
 
         _this.reset();
 
-        _this.showSuccessAlert(data.description, data.message);
+        _this.showSuccessAlert(data.message, data.description);
+
+        _this.$root.$emit('closePopup');
       })["catch"](function (_ref2) {
         var response = _ref2.response;
         _this.loading = false;
@@ -3386,30 +3385,6 @@ var render = function() {
       )
     ]
   )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PopupForm.vue?vue&type=template&id=b68bc496&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PopupForm.vue?vue&type=template&id=b68bc496& ***!
-  \************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -15541,7 +15516,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MobMenu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/MobMenu */ "./resources/js/components/MobMenu.vue");
 /* harmony import */ var _components_ContactForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ContactForm */ "./resources/js/components/ContactForm.vue");
 /* harmony import */ var _components_Popup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Popup */ "./resources/js/components/Popup.vue");
-/* harmony import */ var _components_PopupForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/PopupForm */ "./resources/js/components/PopupForm.vue");
+/* harmony import */ var _components_TestimonialForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/TestimonialForm */ "./resources/js/components/TestimonialForm.vue");
 /* harmony import */ var _mixins_stopBodyScroll__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./mixins/stopBodyScroll */ "./resources/js/mixins/stopBodyScroll.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -15578,7 +15553,7 @@ new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
     MobMenu: _components_MobMenu__WEBPACK_IMPORTED_MODULE_5__["default"],
     ContactForm: _components_ContactForm__WEBPACK_IMPORTED_MODULE_6__["default"],
     Popup: _components_Popup__WEBPACK_IMPORTED_MODULE_7__["default"],
-    PopupForm: _components_PopupForm__WEBPACK_IMPORTED_MODULE_8__["default"]
+    TestimonialForm: _components_TestimonialForm__WEBPACK_IMPORTED_MODULE_8__["default"]
   },
   mixins: [_mixins_stopBodyScroll__WEBPACK_IMPORTED_MODULE_9__["default"]],
   data: {
@@ -15707,24 +15682,23 @@ var reviewslSlider = function reviewslSlider() {
     contain: true,
     wrapAround: true,
     groupCells: '100%',
-    adaptiveHeight: true
-  });
-  activeButtonsFn();
-  flkty.on('select', activeButtonsFn);
-  buttonsNav.addEventListener('click', function (_ref2) {
-    var target = _ref2.target;
+    adaptiveHeight: false
+  }); // activeButtonsFn();
+  // flkty.on( 'select', activeButtonsFn);
+  // buttonsNav.addEventListener( 'click', ({ target }) => {
+  //     if(target.classList.contains('reviews__man__img')) {
+  //         const selector = target.parentElement.getAttribute('data-selector');
+  //
+  //         [...buttonsNav.children].forEach(elem => {
+  //             elem.classList.remove('active')
+  //         });
+  //
+  //         target.parentElement.classList.add('active');
+  //
+  //         flkty.selectCell(selector);
+  //     }
+  // });
 
-    if (target.classList.contains('reviews__man__img')) {
-      var selector = target.parentElement.getAttribute('data-selector');
-
-      _toConsumableArray(buttonsNav.children).forEach(function (elem) {
-        elem.classList.remove('active');
-      });
-
-      target.parentElement.classList.add('active');
-      flkty.selectCell(selector);
-    }
-  });
   buttonPrev.addEventListener('click', function () {
     flkty.previous();
   });
@@ -15758,9 +15732,8 @@ var langToggler = function langToggler() {
       e.target.classList.toggle('active');
     });
   });
-};
+}; // langToggler()
 
-langToggler();
 
 function initMap() {
   var coordinates = {
@@ -16107,29 +16080,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/PopupForm.vue":
-/*!***********************************************!*\
-  !*** ./resources/js/components/PopupForm.vue ***!
-  \***********************************************/
+/***/ "./resources/js/components/TestimonialForm.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/TestimonialForm.vue ***!
+  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PopupForm_vue_vue_type_template_id_b68bc496___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PopupForm.vue?vue&type=template&id=b68bc496& */ "./resources/js/components/PopupForm.vue?vue&type=template&id=b68bc496&");
-/* harmony import */ var _PopupForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PopupForm.vue?vue&type=script&lang=js& */ "./resources/js/components/PopupForm.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* harmony import */ var _TestimonialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TestimonialForm.vue?vue&type=script&lang=js& */ "./resources/js/components/TestimonialForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
 
 
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _PopupForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PopupForm_vue_vue_type_template_id_b68bc496___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PopupForm_vue_vue_type_template_id_b68bc496___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _TestimonialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
   false,
   null,
   null,
@@ -16139,40 +16111,22 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/PopupForm.vue"
+component.options.__file = "resources/js/components/TestimonialForm.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/PopupForm.vue?vue&type=script&lang=js&":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/PopupForm.vue?vue&type=script&lang=js& ***!
-  \************************************************************************/
+/***/ "./resources/js/components/TestimonialForm.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/TestimonialForm.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PopupForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PopupForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PopupForm.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PopupForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/PopupForm.vue?vue&type=template&id=b68bc496&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/PopupForm.vue?vue&type=template&id=b68bc496& ***!
-  \******************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PopupForm_vue_vue_type_template_id_b68bc496___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PopupForm.vue?vue&type=template&id=b68bc496& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PopupForm.vue?vue&type=template&id=b68bc496&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PopupForm_vue_vue_type_template_id_b68bc496___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PopupForm_vue_vue_type_template_id_b68bc496___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TestimonialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TestimonialForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TestimonialForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TestimonialForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -16376,8 +16330,8 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Work\proclinic\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Work\proclinic\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/escral/Server/www/proclinic/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/escral/Server/www/proclinic/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

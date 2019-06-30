@@ -1,6 +1,6 @@
 <div class="header__top-line">
     <div class="container header__top-line__container">
-        <a class="logo header__logo" href="#">
+        <a class="logo header__logo" href="/{{ ($locale == 'ru' ? '' : $locale) }}">
             <img src="{{ asset('img/logo.svg') }}" width="200" alt="{{ config('app.name') }}" class="logo__img">
         </a>
 
@@ -8,10 +8,10 @@
             'classMod' => 'header__menu',
         ])
 
-        <a href="#" class="header__phone">
+        <a href="tel:{{ config('contacts.phone_link') }}" class="header__phone">
             <span class="icon icon--circle icon--fill icon--phone-call-white"></span>
-            +373
-            <span class="header__phone-bold">78 90 60 60</span>
+            {{ config('contacts.phone_prefix') }}
+            <span class="header__phone-bold">{{ config('contacts.phone') }}</span>
         </a>
 
         @include('blocks.lang-toggler')

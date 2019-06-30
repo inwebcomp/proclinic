@@ -8,7 +8,7 @@ import FieldContact from './components/FieldContact'
 import MobMenu from './components/MobMenu'
 import ContactForm from './components/ContactForm'
 import Popup from './components/Popup'
-import PopupForm from './components/PopupForm'
+import TestimonialForm from './components/TestimonialForm'
 
 // mixins
 import stopBodyScroll from './mixins/stopBodyScroll'
@@ -30,7 +30,7 @@ new Vue({
         MobMenu,
         ContactForm,
         Popup,
-        PopupForm
+        TestimonialForm
     },
 
     mixins: [stopBodyScroll],
@@ -177,26 +177,26 @@ const reviewslSlider = () => {
         contain: true,
         wrapAround: true,
         groupCells: '100%',
-        adaptiveHeight: true,
+        adaptiveHeight: false,
     });
 
-    activeButtonsFn();
+    // activeButtonsFn();
 
-    flkty.on( 'select', activeButtonsFn);
+    // flkty.on( 'select', activeButtonsFn);
 
-    buttonsNav.addEventListener( 'click', ({ target }) => {
-        if(target.classList.contains('reviews__man__img')) {
-            const selector = target.parentElement.getAttribute('data-selector');
-
-            [...buttonsNav.children].forEach(elem => {
-                elem.classList.remove('active')
-            });
-
-            target.parentElement.classList.add('active');
-
-            flkty.selectCell(selector);
-        }
-    });
+    // buttonsNav.addEventListener( 'click', ({ target }) => {
+    //     if(target.classList.contains('reviews__man__img')) {
+    //         const selector = target.parentElement.getAttribute('data-selector');
+    //
+    //         [...buttonsNav.children].forEach(elem => {
+    //             elem.classList.remove('active')
+    //         });
+    //
+    //         target.parentElement.classList.add('active');
+    //
+    //         flkty.selectCell(selector);
+    //     }
+    // });
 
     buttonPrev.addEventListener('click', () => {
         flkty.previous()
@@ -236,7 +236,7 @@ const langToggler = () => {
     })
 }
 
-langToggler()
+// langToggler()
 
 function initMap() {
     const coordinates = {lat: 46.993857, lng: 28.857413}

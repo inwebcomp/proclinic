@@ -15,8 +15,9 @@
         padding: 0;
         border-radius: 2rem;
         box-shadow: 0 0.5rem 1rem rgba(3, 29, 91, 0.05), 0 0 1.5rem rgba(3, 29, 91, 0.02);
-        transition: all $transition;
+        //transition: all $transition;
         text-align: center;
+
         &:not(:last-child) {
             margin-right: $padding * 0.75;
         }
@@ -39,7 +40,7 @@
             }
 
         }
-        &--md {
+        &--ro {
             &::before {
                 background-image: url('/img/icons/png/romania.png');
             }

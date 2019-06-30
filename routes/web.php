@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'ServiceController@index');
-Route::get('/service', 'ServiceController@service');
-Route::get('/doctor', 'ServiceController@doctor');
-Route::get('/blog', 'ServiceController@blog');
+Route::get('{locale?}', "PageController@index")->name('index');
+Route::get('{locale?}/service', 'PageController@service')->name('service');
+Route::get('{locale?}/doctor', 'PageController@doctor')->name('doctor');
+Route::get('{locale?}/blog', 'PageController@blog')->name('blog');

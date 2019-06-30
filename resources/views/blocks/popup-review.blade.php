@@ -1,5 +1,5 @@
 <popup ref="contact" class-mod="popup--review">
-    <popup-form inline-template>
+    <testimonial-form inline-template>
         <div class="popup-contacts">
             <div class="popup-contacts__info">
                 <h3 class="title popup-contacts__title">@lang('Отправьте нам свой отзыв!')</h3>
@@ -35,5 +35,5 @@
                 </form>
             </div>
         </div>
-    </popup-form>
+    </testimonial-form>
 </popup>

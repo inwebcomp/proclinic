@@ -3,22 +3,17 @@
         <h3 class="block__title">@lang('Наши услуги')</h3>
 
         <div class="services">
-            @foreach ($items as $item)
+            @foreach ($services as $service)
                 <div class="service">
-                    <span class="icon icon--circle-big icon--{{ $item['icon'] }} service__icon"></span>
-                    <a href="#" class="service__img">
-                        <img src="{{ asset('img/services/' . $item['img']) }}" alt="photo">
-                        <p class="service__name">{{ $item['name'] }}</p>
+                    <span class="icon icon--circle-big service__icon"
+                          style="background-image: url({{ optional($service->icon)->getUrl() }})"></span>
+
+                    <a href="{{ url($service->path()) }}" class="service__img">
+                        <img src="{{ optional($service->image)->getUrl('catalog') }}" width="270" height="200" alt="photo">
+                        <p class="service__name">{{ $service->title }}</p>
                     </a>
 
-                    @if ($item['list'])
-                        <ul class="service__list">
-                            <li class="service__list__item">имплантация зубов</li>
-                            <li class="service__list__item">реконструктивные операции</li>
-                        </ul>
-                    @else
-                        <p class="service__text">{{ $item['text'] }}</p>
-                    @endif
+                    <div class="service__text">{!! $service->description !!}</div>
                 </div>
             @endforeach
         </div>

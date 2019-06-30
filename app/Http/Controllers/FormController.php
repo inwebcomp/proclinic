@@ -34,4 +34,19 @@ class FormController extends Controller
             'description' => __("Мы с вами скоро свяжемся")
         ];
     }
+
+    public function testimonial(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'message' => 'required'
+        ]);
+
+        //Mail::to(config('contacts.mail_to'))->queue(new ConsultationMail($request->input()));
+
+        return [
+            'message' => __("Спасибо за ваш отзыв!"),
+            'description' => __("Он появится на сайте после модерации")
+        ];
+    }
 }

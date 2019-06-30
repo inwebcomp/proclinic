@@ -1,7 +1,7 @@
 <section class="block block--consultation">
     <div class="consultation">
         <h3 class="consultation__title">@lang('Нужна консультация?')</h3>
-        <p class="consultation__text" >@lang('Оставьте заявку и получите бесплатный прием')</p>
+        <p class="consultation__text" >@lang('Наши специалисты ответят на все ваши вопросы')</p>
 
         <field-contact inline-template>
             <form @submit.prevent="submitHandler" @keyup.enter="validate" class="input-field-contact">

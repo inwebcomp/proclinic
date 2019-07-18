@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use InWeb\Admin\App\Fields\Boolean;
 use InWeb\Admin\App\Fields\Editor;
+use InWeb\Admin\App\Fields\Select;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\Textarea;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
@@ -18,7 +19,7 @@ use InWeb\Admin\App\Resources\Resource;
 class Article extends Resource
 {
     public static $model = \App\Models\Article::class;
-    protected static $position = 4;
+    protected static $position = 7;
 
     public static $with = ['translations'];
 
@@ -59,6 +60,9 @@ class Article extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+            Select::make(__('Категория'), 'category_id')->displayUsing(function($value) {
+                return optional($this->category)->title;
+            }),
             Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
                 return Str::limit($value, 600);
             }),
@@ -77,6 +81,10 @@ class Article extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+            Select::make(__('Категория'), 'category_id')
+                  ->options(
+                      Select::prepare(\App\Models\Category::published()->get()->pluck('title', 'id'))
+                  )->withEmpty(),
             Textarea::make(__('Описание'), 'description'),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
@@ -94,6 +102,10 @@ class Article extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+            Select::make(__('Категория'), 'category_id')
+                  ->options(
+                      Select::prepare(\App\Models\Category::published()->get()->pluck('title', 'id'))
+                  )->withEmpty(),
             Textarea::make(__('Описание'), 'description'),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),

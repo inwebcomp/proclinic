@@ -17,17 +17,17 @@ use InWeb\Admin\App\Resources\Resource;
 class Testimonial extends Resource
 {
     public static $model = \App\Models\Testimonial::class;
-    protected static $position = 2;
+    protected static $position = 5;
 
     public static $with = ['translations'];
 
     public static $search = [
-        'title'
+        'name'
     ];
 
     public function title()
     {
-        return $this->title;
+        return $this->name;
     }
 
     public static function label()

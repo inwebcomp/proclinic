@@ -2,18 +2,11 @@
 
 namespace App\Models;
 
-use App\Contracts\Cacheable;
-use App\Contracts\HasPage;
-use App\Route;
-use App\Traits\Positionable;
-use App\Traits\TranslatableSlug;
-use App\Traits\WithContentImages;
-use App\Traits\WithImages;
-use App\Traits\WithMetadata;
-use App\Traits\WithStatus;
-use Carbon\Carbon;
-use Dimsav\Translatable\Translatable;
-use Intervention\Image\Constraint;
+use InWeb\Base\Contracts\Cacheable;
+use InWeb\Base\Entity;
+use InWeb\Base\Traits\Positionable;
+use InWeb\Media\WithImages;
+use InWeb\Base\Traits\WithStatus;
 use Spatie\EloquentSortable\Sortable;
 
 /**

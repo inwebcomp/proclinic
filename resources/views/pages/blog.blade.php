@@ -7,14 +7,14 @@
 @section('content')
     @include('blocks.page-header')
 
-    @include('blocks.tag-cloud')
+    @include('blog.categories')
 
-    @include('blocks.articles-slider')
+    @include('blocks.articles-slider', ['articles' => $popularArticles])
 
-    <section class="block block--articles">
+    <section class="block--articles">
         <div class="container">
             @include('blocks.articles-list')
-            @include('blocks.pagination')
+            @include('blocks.pagination', ['pages' => $articles])
         </div>
     </section>
 

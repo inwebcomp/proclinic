@@ -1,6 +1,5 @@
 <section class="block block--map">
-    <div class="map" id="map">
-    </div>
+    <div class="map" id="map"></div>
 
     <div class="contacts">
         <div class="contacts__head">@lang('Контакты клиники')</div>
@@ -9,18 +8,18 @@
             <div class="contacts__list">
                 <p class="contacts__item">
                     <span class="icon icon--fill icon--circle icon--location contacts__item__icon"></span>
-                    <b>Moldova,</b> Zelinski 15/4 Sectorul Botanica, Chisinau
+                    {!! \App\Models\Textblock::html('address', true) !!}
                 </p>
                 <p class="contacts__item">
                     <span class="icon icon--fill icon--circle icon--phone-call-white  contacts__item__icon"></span>
-                    <a href="tel:+37378906060" class="contacts__phone">
-                        <b>+373 789 06 060</b>
+                    <a href="tel:{{ config('contacts.phone_link') }}" class="contacts__phone">
+                        <b>{{ config('contacts.phone_prefix') . ' ' . config('contacts.phone') }}</b>
                     </a>
-                    <a href="mailto:info@boosdent.kz" class="contacts__mail">info@boosdent.kz</a>
+                    <a href="mailto:{{ config('contacts.email') }}" class="contacts__mail">{{ config('contacts.email') }}</a>
                 </p>
             </div>
             <div class="contacts__right-box">
-                    <a href="#" class="icon icon--fill icon--circle icon--fb  contacts__right-box__icon"></a>
+                    <a href="https://www.facebook.com/stomatologie.proclinic/" class="icon icon--fill icon--circle icon--fb  contacts__right-box__icon"></a>
             </div>
         </div>
 

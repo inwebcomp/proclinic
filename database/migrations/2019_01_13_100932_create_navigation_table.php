@@ -18,6 +18,7 @@ class CreateNavigationTable extends Migration
         Schema::create('navigation', function (Blueprint $table) {
             $table->increments('id');
             $table->string('uid')->nullable();
+            $table->unsignedInteger('page_id')->nullable();
             Navigation::statusColumn($table);
             Navigation::positionColumn($table);
             $table->timestamps();

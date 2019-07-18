@@ -16,7 +16,7 @@ class Page extends Resource
 {
     public static $model = \App\Models\Page::class;
 
-    protected static $position = 2;
+    protected static $position = 3;
 
     public static function label()
     {

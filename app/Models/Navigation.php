@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use App\Contracts\Cacheable;
-use App\Contracts\Nested;
-use App\Route;
-use App\Traits\Positionable;
-use App\Traits\WithImages;
-use App\Traits\WithStatus;
-use App\Traits\WithUID;
+use InWeb\Base\Contracts\Cacheable;
+use InWeb\Base\Contracts\Nested;
+use InWeb\Base\Entity;
+use InWeb\Base\Support\Route;
+use InWeb\Base\Traits\Positionable;
+use InWeb\Media\WithImages;
+use InWeb\Base\Traits\WithStatus;
+use InWeb\Base\Traits\WithUID;
 use Dimsav\Translatable\Translatable;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\EloquentSortable\Sortable;
@@ -68,6 +69,11 @@ class Navigation extends Entity implements Nested, Sortable, Cacheable
 
     public function getLinkAttribute($value)
     {
-        return Route::localized($value);
+        return $this->page ? $this->page->path() : ($value ? Route::localized($value) : '/');
+    }
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
     }
 }

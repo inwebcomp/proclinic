@@ -16,9 +16,12 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_id')->unsigned();
             Article::statusColumn($table);
             Article::positionColumn($table);
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
         });
 
         Schema::create('article_translations', function (Blueprint $table) {

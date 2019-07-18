@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use App\Contracts\HasPage;
-use App\Route;
-use App\Traits\Positionable;
-use App\Traits\TranslatableSlug;
-use App\Traits\WithContentImages;
 use App\Traits\WithMetadata;
-use App\Traits\WithStatus;
 use Dimsav\Translatable\Translatable;
-use Laravel\Scout\Searchable;
+use InWeb\Base\Contracts\HasPage;
+use InWeb\Base\Entity;
+use InWeb\Base\Support\Route;
+use InWeb\Base\Traits\Positionable;
+use InWeb\Base\Traits\TranslatableSlug;
+use InWeb\Base\Traits\WithStatus;
+use InWeb\Media\WithContentImages;
 use Spatie\EloquentSortable\Sortable;
 
 /**

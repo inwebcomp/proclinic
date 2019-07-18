@@ -1301,6 +1301,10 @@ transition {
   }
 }
 
+.text-secton {
+  margin-top: 64px;
+}
+
 .text-block,
 .fr-view {
   font-family: "OpenSans", sans-serif;
@@ -1309,7 +1313,6 @@ transition {
   color: #8797a9;
   overflow: hidden;
   padding-left: 100px;
-  padding-bottom: 48px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1724,7 +1727,7 @@ transition {
 
 .button-tag__count {
   position: absolute;
-  right: -19px;
+  right: -9px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -3881,7 +3884,7 @@ field-contact {
   right: 0;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
-  top: 65%;
+  bottom: 30px;
 }
 
 .contacts__list {
@@ -4028,7 +4031,7 @@ field-contact {
   margin-bottom: 16px;
 }
 
-.article-card__list {
+.article-card ul {
   padding: 0 0 0 28px;
   list-style-type: none;
   margin: 20px 0;
@@ -4037,12 +4040,12 @@ field-contact {
 }
 
 @media screen and (max-width: 560px) {
-  .article-card__list {
+  .article-card ul {
     padding: 0;
   }
 }
 
-.article-card__list__item {
+.article-card ul li {
   font-size: 1.4rem;
   font-family: "OpenSans", sans-serif;
   font-weight: 700;
@@ -4051,11 +4054,11 @@ field-contact {
   padding-left: 23px;
 }
 
-.article-card__list__item:not(:last-child) {
+.article-card ul li:not(:last-child) {
   margin-bottom: 4px;
 }
 
-.article-card__list__item::before {
+.article-card ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -4066,6 +4069,10 @@ field-contact {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.tag-cloud-sect {
+  margin-bottom: 48px;
 }
 
 .tag-cloud {

@@ -4,7 +4,7 @@
 
             <div class="dual-slider__box">
 
-                <h3 class="block__title">@lang('Наши услуги')</h3>
+                <h3 class="block__title">@lang('Наша клиника')</h3>
                 <p class="dual-slider__descr">{{ \App\Models\Textblock::text('clinic_subheading') }}</p>
 
                 <div class="slider-small">

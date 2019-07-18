@@ -5,7 +5,7 @@
         <div class="cart-slider">
             <div class="cart-slider__list js-slider">
                 @foreach($doctors as $doctor)
-                    <a href="{{ url($doctor->path()) }}" class="cart-slider__item">
+                    <a href="{{ localized($doctor->path()) }}" class="cart-slider__item">
                         <div class="cart-slider__photo">
                             <img src="{{ optional($doctor->image)->getUrl('catalog') }}" alt="{{ $doctor->title }}" class="cart-slider__img">
                         </div>

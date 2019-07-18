@@ -10,17 +10,20 @@ class MenuComposer
     /**
      * Bind data to the view.
      *
-     * @param  View  $view
+     * @param View $view
      * @return void
      */
     public function compose(View $view)
     {
-        $menu = Navigation::findByUID('top')
-            ->children()
-            ->published()
-            ->ordered()
-            ->withTranslation()
-            ->get();
+        $menu = Navigation::findByUID('top');
+
+        if ($menu) {
+            $menu = $menu->children()
+                 ->published()
+                 ->ordered()
+                 ->withTranslation()
+                 ->get();
+        }
 
         $view->with('menu', $menu);
     }

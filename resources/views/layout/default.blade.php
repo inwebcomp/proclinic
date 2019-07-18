@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
 
-    <title>ProClinic</title>
+    @include('layout.meta')
 
     @yield('styles')
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">

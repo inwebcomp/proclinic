@@ -1,5 +1,7 @@
-<nav class="menu {{ $classMod ?? '' }}">
-    @foreach($menu as $item)
-    <a href="{{ $item->link }}" class="menu__link">{{ $item->title }}</a>
-    @endforeach
-</nav>
+@if(is_iterable($menu))
+    <nav class="menu {{ $classMod ?? '' }}">
+        @foreach($menu as $item)
+            <a href="{{ $item->link }}" class="menu__link">{{ $item->title }}</a>
+        @endforeach
+    </nav>
+@endif

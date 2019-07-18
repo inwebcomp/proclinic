@@ -19,6 +19,11 @@ class CreateServicesTable extends Migration
             Service::statusColumn($table);
             Service::positionColumn($table);
             $table->timestamps();
+            $table->nestedSet();
+        });
+
+        Schema::table('services', function(Blueprint $table) {
+            $table->foreign('parent_id')->references('id')->on('services')->onDelete('cascade');
         });
 
         Schema::create('service_translations', function (Blueprint $table) {

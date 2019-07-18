@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use App\Contracts\Cacheable;
-use App\Traits\Positionable;
-use App\Traits\WithStatus;
-use App\Traits\WithUID;
+use InWeb\Base\Contracts\Cacheable;
+use InWeb\Base\Entity;
+use InWeb\Base\Traits\Positionable;
+use InWeb\Base\Traits\WithStatus;
+use InWeb\Base\Traits\WithUID;
 use App\Translations\TextblockTranslation;
 use Dimsav\Translatable\Translatable;
 use Spatie\EloquentSortable\Sortable;
@@ -17,7 +18,7 @@ class Textblock extends Entity implements Cacheable, Sortable
         WithStatus,
         Positionable;
 
-    public $translationModel = TextblockTranslation::class;
+    public $translationModel     = TextblockTranslation::class;
     public $translatedAttributes = ['title', 'text'];
 
     protected $fillable = [
@@ -59,8 +60,13 @@ class Textblock extends Entity implements Cacheable, Sortable
         return strip_tags(static::html($name));
     }
 
-    public static function html($name)
+    public static function html($name, $withoutWrapping = false)
     {
-        return optional(static::findByUID($name))->text;
+        $value = optional(static::findByUID($name))->text;
+
+        if ($withoutWrapping)
+            $value = preg_replace('/(^<p>)|(<\/p>$)/', '', $value);
+
+        return $value;
     }
 }

@@ -18,7 +18,7 @@ use InWeb\Admin\App\Resources\Resource;
 class Doctor extends Resource
 {
     public static $model = \App\Models\Doctor::class;
-    protected static $position = 4;
+    protected static $position = 6;
 
     public static $with = ['translations'];
 

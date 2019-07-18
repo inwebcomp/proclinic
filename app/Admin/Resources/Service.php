@@ -8,15 +8,20 @@ use App\Admin\Actions\Hide;
 use App\Admin\Actions\Publish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use InWeb\Admin\App\Contracts\Nested;
 use InWeb\Admin\App\Fields\Boolean;
 use InWeb\Admin\App\Fields\Editor;
+use InWeb\Admin\App\Fields\FastActions;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\Textarea;
+use InWeb\Admin\App\Fields\TreeField;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
 
-class Service extends Resource
+class Service extends Resource implements Nested
 {
+    use \InWeb\Admin\App\Nested;
+
     public static $model = \App\Models\Service::class;
     protected static $position = 1;
 
@@ -57,7 +62,8 @@ class Service extends Resource
     public function fields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            TreeField::make(__('Название'), 'title'),
+            FastActions::make('')->onlyOnHover()->edit($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
             Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
                 return Str::limit(strip_tags($value), 600);
@@ -77,6 +83,7 @@ class Service extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+            TreeField::make(__('Родитель'), 'parent_id'),
             Editor::make(__('Описание'), 'description')->original(),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
@@ -94,6 +101,7 @@ class Service extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
+            TreeField::make(__('Родитель'), 'parent_id'),
             Editor::make(__('Описание'), 'description')->original(),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),

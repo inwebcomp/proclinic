@@ -15,7 +15,8 @@ class ServicesComposer
      */
     public function compose(View $view)
     {
-        $services = Service::published()
+        $services = Service::whereIsRoot()
+            ->published()
             ->ordered()
             ->with('images')
             ->withTranslation()

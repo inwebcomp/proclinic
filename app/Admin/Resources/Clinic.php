@@ -19,7 +19,7 @@ class Clinic extends Resource
 {
     public static $model = \App\Models\Clinic::class;
 
-    protected static $position = 3;
+    protected static $position = 4;
 
     public static $with = ['translations'];
 

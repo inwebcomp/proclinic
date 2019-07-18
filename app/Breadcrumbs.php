@@ -2,47 +2,72 @@
 
 namespace App;
 
+use App\Models\Article;
 use App\Models\Category;
-use App\Models\Product;
+use App\Models\Page;
+use App\Models\Service;
+use InWeb\Base\Support\Route;
 
 class Breadcrumbs
 {
-    private static function root() {
-        return [
-            'title' => __('Главная'),
-            'href' => '/'
-        ];
-    }
-
-    public static function category(Category $category)
+    public static function page(Page $page)
     {
-        $path = [
-            self::root()
-        ];
-
-        $category->ancestors()->each(function(Category $ancestor) use (&$path) {
-            $path[] = [
-                'title' => $ancestor->title,
-                'href' => $ancestor->path()
-            ];
-        });
+        $path = [];
 
         $path[] = [
-            'title' => $category->title,
-            'href' => $category->path()
+            'title' => $page->title,
+            'link'  => $page->path()
         ];
 
         return $path;
     }
 
-    public static function product(Product $product)
+    public static function blog(Category $category = null)
     {
-        $path = self::category($product->category);
+        $path = [];
 
-        //$path[] = [
-        //    'title' => $product->title,
-        //    'href' => $product->path()
-        //];
+        $path[] = [
+            'title' => __('Блог'),
+            'link'  => localized(Route::route('blog.index'))
+        ];
+
+        if ($category) {
+            $path[] = [
+                'title' => $category->title,
+                'link'  => $category->path()
+            ];
+        }
+
+        return $path;
+    }
+
+    public static function article(Article $article)
+    {
+        $path = static::blog($article->category);
+
+        $path[] = [
+            'title' => $article->title,
+            'link'  => $article->path()
+        ];
+
+        return $path;
+    }
+
+    public static function service(Service $service)
+    {
+        $path = [];
+
+        $service->getAncestors()->each(function($ancestor) use (&$path) {
+            $path[] = [
+                'title' => $ancestor->title,
+                'link'  => $ancestor->path()
+            ];
+        });
+
+        $path[] = [
+            'title' => $service->title,
+            'link'  => $service->path()
+        ];
 
         return $path;
     }

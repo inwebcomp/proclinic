@@ -1,3 +1,7 @@
+.tag-cloud-sect {
+    margin-bottom: $padding * 3;
+}
+
 .tag-cloud {
     @extend .ul-reset;
     padding: $padding * 4 0 0 0;

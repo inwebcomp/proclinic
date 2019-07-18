@@ -46,7 +46,7 @@ class AdminServiceProvider extends AdminApplicationServiceProvider
     public function tools()
     {
         return [
-            TranslatablePhrases::class
+            new TranslatablePhrases()
         ];
     }
 }

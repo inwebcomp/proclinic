@@ -1,3 +1,7 @@
+.text-secton {
+    margin-top: $padding * 4;
+}
+
 .text-block, .fr-view {
         font-family: "OpenSans", sans-serif;
         font-size: $font-size;
@@ -5,7 +9,6 @@
         color: $font-color;
         overflow: hidden;
         padding-left: $padding * 6.25;
-        padding-bottom: $padding * 3;
 
         @include media-max(1024px) {
             padding-left: 0;

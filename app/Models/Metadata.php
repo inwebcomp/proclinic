@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Traits\BindedToModelAndObject;
+use InWeb\Base\Entity;
+use InWeb\Base\Traits\BindedToModelAndObject;
 use Dimsav\Translatable\Translatable;
 
 /**

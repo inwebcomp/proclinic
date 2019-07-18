@@ -13,8 +13,8 @@
 
     <div class="footer__bottom">
         <div class="container footer__bottom__container">
-            <span class="footer__copr">© ProClinic.md</span>
-            <p class="footer__text ">Powered by <a href="#" class="footer__text__link"><b>InWeb.md</b></a></p>
+            <span class="footer__copr">{!! \App\Models\Textblock::html('copyrights', true) !!}</span>
+            <p class="footer__text ">Powered by <a href="//inweb.md" target="_blank" class="footer__text__link"><b>InWeb.md</b></a></p>
         </div>
     </div>
 

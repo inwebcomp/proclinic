@@ -2,9 +2,9 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\ApiLanguage;
-use App\Http\Middleware\Language;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use InWeb\Base\Http\Middleware\ApiLanguage;
+use InWeb\Base\Http\Middleware\Language;
 
 class Kernel extends HttpKernel
 {

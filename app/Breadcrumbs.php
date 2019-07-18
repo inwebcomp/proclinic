@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Doctor;
 use App\Models\Page;
 use App\Models\Service;
 use InWeb\Base\Support\Route;
@@ -67,6 +68,22 @@ class Breadcrumbs
         $path[] = [
             'title' => $service->title,
             'link'  => $service->path()
+        ];
+
+        return $path;
+    }
+
+    public static function doctor(Doctor $doctor)
+    {
+        $path = [];
+
+        $path[] = [
+            'title' => __('Доктора'),
+        ];
+
+        $path[] = [
+            'title' => $doctor->title,
+            'link'  => $doctor->path()
         ];
 
         return $path;

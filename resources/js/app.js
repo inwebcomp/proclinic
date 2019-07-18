@@ -2,6 +2,10 @@ import './bootstrap'
 import swal from 'sweetalert'
 import Translator from './services/Translator'
 import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 
 // components
 import FieldContact from './components/FieldContact'
@@ -9,6 +13,7 @@ import MobMenu from './components/MobMenu'
 import ContactForm from './components/ContactForm'
 import Popup from './components/Popup'
 import TestimonialForm from './components/TestimonialForm'
+import TextblockEditor from './components/TextblockEditor'
 
 // mixins
 import stopBodyScroll from './mixins/stopBodyScroll'
@@ -30,10 +35,13 @@ new Vue({
         MobMenu,
         ContactForm,
         Popup,
-        TestimonialForm
+        TestimonialForm,
+        TextblockEditor,
     },
 
-    mixins: [stopBodyScroll],
+    mixins: [
+        stopBodyScroll,
+    ],
 
     data: {
         mobMenuIsOpen: false,
@@ -239,7 +247,7 @@ const langToggler = () => {
 // langToggler()
 
 function initMap() {
-    const coordinates = {lat: 46.993857, lng: 28.857413}
+    const coordinates = {lat: 46.991957, lng: 28.8512339}
 
     const map = new google.maps.Map(document.getElementById('map'), {
             center: coordinates,

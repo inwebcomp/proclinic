@@ -38,8 +38,8 @@
             </div>
 
             <div class="reviews__footer">
-                <a href="#" class="button reviews__button" @click.prevent="showPopup('contact')">@lang('Оставить отзыв на сайте')</a>
-                <a href="#" class="button reviews__button reviews__button--fb">@lang('Оставить отзыв на Facebook')</a>
+                <button type="button" class="button reviews__button" @click.prevent="showPopup('contact')">@lang('Оставить отзыв на сайте')</button>
+                <a target="_blank" href="https://www.facebook.com/pg/stomatologie.proclinic/reviews/?ref=page_internal" class="button reviews__button reviews__button--fb">@lang('Оставить отзыв на Facebook')</a>
             </div>
         </div>
     </div>

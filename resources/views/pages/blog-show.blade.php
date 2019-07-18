@@ -7,7 +7,7 @@
 @section('content')
     @include('blocks.page-header')
 
-    @include('blocks.text-block', ['text' => $article->text])
+    @include('blocks.text-block', ['text' => $article->text, 'resource' => 'article', 'resourceId' => $article->id])
 @endsection
 
 @section('scripts')

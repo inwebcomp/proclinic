@@ -10,7 +10,8 @@
         padding: $padding * 0.5 $padding $padding * 0.5  $padding * 0.875;
         position: relative;
         font-size: 1.6rem;
-
+        cursor: default;
+        
         @include media-max(560px) {
             font-size: 1.4rem;
         }
@@ -34,8 +35,12 @@
             bottom: 5px;
             transition: width $transition, opacity $transition;
         }
-
-        &:hover {
+        
+        &:not(span) {
+            cursor: pointer;    
+        }
+        
+        &:not(span):hover {
             &::before {
                 width: 80%;
             }

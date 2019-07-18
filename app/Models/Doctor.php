@@ -40,7 +40,7 @@ class Doctor extends Entity implements HasPage, Sortable, Cacheable
 
     public function path()
     {
-        return route('doctor', Route::pathLocale(), $this->slug);
+        return Route::localized(route('doctor', [$this->slug], false));
     }
 
     public function getImageThumbnails()

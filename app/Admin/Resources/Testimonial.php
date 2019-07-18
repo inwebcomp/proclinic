@@ -2,7 +2,6 @@
 
 namespace App\Admin\Resources;
 
-use Admin\ResourceTools\Images\Images;
 use App\Admin\Actions\Hide;
 use App\Admin\Actions\Publish;
 use Illuminate\Http\Request;
@@ -18,8 +17,6 @@ class Testimonial extends Resource
 {
     public static $model = \App\Models\Testimonial::class;
     protected static $position = 5;
-
-    public static $with = ['translations'];
 
     public static $search = [
         'name'
@@ -45,6 +42,11 @@ class Testimonial extends Resource
         return 'testimonial';
     }
 
+    public static function notification()
+    {
+        return \App\Models\Testimonial::hidden()->count();
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -58,6 +60,7 @@ class Testimonial extends Resource
             Textarea::make(__('Текст'), 'text')->displayUsing(function($value) {
                 return Str::limit(strip_tags($value), 600);
             }),
+            Boolean::make(__('Опубликован'), 'status'),
         ];
     }
 

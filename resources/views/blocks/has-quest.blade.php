@@ -8,7 +8,7 @@
                 <div class="contact-form__row">
                     <div class="input-field input-field--small" :class="{'input-field--error': phoneEmailErrors}">
                         <span class="icon icon--phone-call input-field__icon"></span>
-                        <input type="number"
+                        <input type="text"
                             class="input-field__input"
                             @input="validate"
                             type="text"

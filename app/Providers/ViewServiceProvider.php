@@ -41,14 +41,14 @@ class ViewServiceProvider extends ServiceProvider
 
             $data = $view->getData();
 
-            if (! isset($data['meta']) or ! is_iterable($data['meta'])) {
+            if (! isset($data['meta']) or ! is_iterable($data['meta']) or ! isset($data['meta']['title'])) {
                 $view->with('meta', $indexPage ? $indexPage->metadata->toArray() : [
                     'title' => config('app.name')
                 ]);
             }
         });
 
-        View::composer('blocks.menu', MenuComposer::class);
+        View::composer(['blocks.menu', 'blocks.mob-menu'], MenuComposer::class);
         View::composer('blocks.services', ServicesComposer::class);
         View::composer('blocks.advantages', AdvantagesComposer::class);
         View::composer('blocks.dual-slider', ClinicComposer::class);

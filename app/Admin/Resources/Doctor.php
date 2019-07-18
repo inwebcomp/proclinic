@@ -75,7 +75,7 @@ class Doctor extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'title')->link($this->editPath()),
+            Text::make(__('Имя'), 'title')->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Textarea::make(__('Описание'), 'description')->original(),
             Editor::make(__('Текст'), 'text'),
@@ -92,7 +92,7 @@ class Doctor extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'title')->link($this->editPath()),
+            Text::make(__('Имя'), 'title')->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Textarea::make(__('Описание'), 'description')->original(),
             Editor::make(__('Текст'), 'text'),

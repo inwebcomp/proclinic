@@ -8,9 +8,15 @@
                     <span class="icon icon--home"></span>
                 </a>
                 @foreach($breadcrumbs as $item)
-                    <a href="{{ $item['link'] }}" class="breadcrumbs__item">
-                        <span class="breadcrumbs__text">{{ $item['title'] }}</span>
-                    </a>
+                    @isset($item['link'])
+                        <a href="{{ $item['link'] }}" class="breadcrumbs__item">
+                            <span class="breadcrumbs__text">{{ $item['title'] }}</span>
+                        </a>
+                    @else
+                        <span class="breadcrumbs__item">
+                            <span class="breadcrumbs__text">{{ $item['title'] }}</span>
+                        </span>
+                    @endisset
                 @endforeach
             </nav>
         @endif

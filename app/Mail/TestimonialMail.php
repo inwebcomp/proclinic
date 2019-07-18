@@ -5,7 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 
-class ConsultationMail extends Mailable
+class TestimonialMail extends Mailable
 {
     use Queueable;
 
@@ -21,10 +21,11 @@ class ConsultationMail extends Mailable
      */
     public function build()
     {
-        $subject = __('ProClinic заявка на консультацию от') . ' ' . $this->data['contact'];
+        $subject = __('ProClinic отзыв от ') . ' ' . $this->data['name'];
 
-        return $this->subject($subject)->view('mail.consultation')->with([
-            'contact' => $this->data['contact'],
+        return $this->subject($subject)->view('mail.testimonial')->with([
+            'name'       => $this->data['name'],
+            'messageText' => $this->data['message'],
         ]);
     }
 }

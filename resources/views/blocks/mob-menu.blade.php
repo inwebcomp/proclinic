@@ -13,28 +13,36 @@
                 @include('blocks.lang-toggler')
             </div>
 
-            <nav class="mob-menu__list">
-                <a href="#" class="mob-menu__link">
-                    <span class="icon icon--busines"></span>
-                    Клиника
-                </a>
-                <a href="#" class="mob-menu__link">
-                    <span class="icon icon--chat"></span>
-                    Клиника
-                </a>
-                <a href="#" class="mob-menu__link">
-                    <span class="icon icon--email-2"></span>
-                    Клиника
-                </a>
-                <a href="#" class="mob-menu__link">
-                    <span class="icon icon--man"></span>
-                    Клиника
-                </a>
-                <a href="#" class="mob-menu__link">
-                    <span class="icon icon--peoples"></span>
-                    Клиника
-                </a>
-            </nav>
+            @if(is_iterable($menu))
+                <nav class="mob-menu__list">
+                    @foreach($menu as $item)
+                        <a href="{{ $item->link }}" class="mob-menu__link">{{ $item->title }}</a>
+                    @endforeach
+                </nav>
+            @endif
+
+{{--            <nav class="mob-menu__list">--}}
+{{--                <a href="#" class="mob-menu__link">--}}
+{{--                    <span class="icon icon--busines"></span>--}}
+{{--                    Клиника--}}
+{{--                </a>--}}
+{{--                <a href="#" class="mob-menu__link">--}}
+{{--                    <span class="icon icon--chat"></span>--}}
+{{--                    Клиника--}}
+{{--                </a>--}}
+{{--                <a href="#" class="mob-menu__link">--}}
+{{--                    <span class="icon icon--email-2"></span>--}}
+{{--                    Клиника--}}
+{{--                </a>--}}
+{{--                <a href="#" class="mob-menu__link">--}}
+{{--                    <span class="icon icon--man"></span>--}}
+{{--                    Клиника--}}
+{{--                </a>--}}
+{{--                <a href="#" class="mob-menu__link">--}}
+{{--                    <span class="icon icon--peoples"></span>--}}
+{{--                    Клиника--}}
+{{--                </a>--}}
+{{--            </nav>--}}
 
             <footer class="mob-menu__footer">
                 <a href="#" class="header__phone mob-menu__phone">

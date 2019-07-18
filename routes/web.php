@@ -17,7 +17,7 @@ if (strlen($locale) !== 2) {
 Route::group(['prefix' => $locale], function () {
     Route::get('', "PageController@index")->name('index');
     Route::get('service/{service}', 'ServiceController@show')->name('service');
-    Route::get('doctor', 'PageController@doctor')->name('doctor');
+    Route::get('doctor/{doctor}', 'DoctorController@show')->name('doctor');
 
     Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
         Route::get('', 'BlogController@index')->name('index');

@@ -21,16 +21,28 @@
 
     &:hover {
         background-color: darken($accent-color, 17%);
-        //background-image: linear-gradient(to top, #1166be 0%, #2588cb 100%);
     }
     &:active  {
-        //transform: scale(0.95)
         background-color: darken($accent-color, 25%);
     }
 
     &:disabled {
         pointer-events: none;
         background-color: lighten($accent-color, 12%);
+    }
+
+    &--success {
+        background-color: $success-color;
+
+        &:hover {
+            background-color: darken($success-color, 4%);
+        }
+        &:active  {
+            background-color: darken($success-color, 6%);
+        }
+        &:disabled {
+            background-color: lighten($success-color, 12%);
+        }
     }
 }
 

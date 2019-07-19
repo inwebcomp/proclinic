@@ -91,7 +91,7 @@
         margin-bottom: 0;
     }
 
-    img.p-float-img {
+    .p-float-img {
         @include media-max(560px) {
             margin: $padding * 2 0 0 0;
         }

@@ -23,7 +23,7 @@ let Lang = new Translator({});
 
 Vue.mixin({
     methods: {
-        __: function(...args) {
+        __: function (...args) {
             return Lang.get(...args);
         }
     }
@@ -106,9 +106,9 @@ const initCarousel = () => {
     const buttonWrap = document.querySelectorAll('.slider-main__img-wrap');
 
 
-    if(!carousel) return false;
+    if (!carousel) return false;
 
-    const flkty =  new Flickity( carousel, {
+    const flkty = new Flickity(carousel, {
         prevNextButtons: false,
         pageDots: false,
         fade: true,
@@ -116,7 +116,7 @@ const initCarousel = () => {
         adaptiveHeight: true,
     });
 
-    new Flickity( document.querySelector('.slider-small'), {
+    new Flickity(document.querySelector('.slider-small'), {
         prevNextButtons: false,
         fade: true,
         contain: true,
@@ -126,15 +126,11 @@ const initCarousel = () => {
         adaptiveHeight: true,
     });
 
-    buttonWrap.forEach(slideImgWrap => {
-        slideImgWrap.addEventListener('click', ({ target }) => {
-            if(target.closest('button').classList.contains('dual-slider__button--prev')) {
-                flkty.previous();
-            }
-            if(target.closest('button').classList.contains('dual-slider__button--next')) {
-                flkty.next()
-            }
-        })
+    document.querySelector('.dual-slider__button--prev').addEventListener('click', () => {
+        flkty.previous();
+    });
+    document.querySelector('.dual-slider__button--next').addEventListener('click', () => {
+        flkty.next()
     });
 
     buttonPrev.addEventListener('click', () => {
@@ -149,9 +145,9 @@ const personalSlider = () => {
     const buttonPrev = document.querySelector('.slider-button--prev');
     const buttonNext = document.querySelector('.slider-button--next');
 
-    if(!carousel) return false;
+    if (!carousel) return false;
 
-    const flkty =  new Flickity( carousel, {
+    const flkty = new Flickity(carousel, {
         prevNextButtons: false,
         pageDots: false,
         contain: true,
@@ -176,7 +172,7 @@ const reviewslSlider = () => {
     const buttonPrev = document.querySelector('.reviews__slider-btn--prev');
     const buttonNext = document.querySelector('.reviews__slider-btn--next');
 
-    if(!carousel) return false;
+    if (!carousel) return false;
 
     const activeButtonsFn = () => {
         const activeButtons = [];
@@ -201,7 +197,7 @@ const reviewslSlider = () => {
         });
     }
 
-    const flkty =  new Flickity( carousel, {
+    const flkty = new Flickity(carousel, {
         prevNextButtons: false,
         pageDots: false,
         contain: true,
@@ -258,7 +254,7 @@ const langToggler = () => {
 
     buttons.forEach((item) => {
         item.addEventListener('click', (e) => {
-            buttons.forEach((item)=> {
+            buttons.forEach((item) => {
                 item.classList.remove('active')
             })
             e.target.classList.toggle('active')
@@ -272,22 +268,17 @@ function initMap() {
     const coordinates = {lat: 46.991957, lng: 28.8512339}
 
     const map = new google.maps.Map(document.getElementById('map'), {
-            center: coordinates,
-            zoom: 16,
-        });
+        center: coordinates,
+        zoom: 16,
+    });
 
-        const marker = new google.maps.Marker({
-            position: coordinates,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            icon: './img/icons/png/map-icon.png'
-        });
+    const marker = new google.maps.Marker({
+        position: coordinates,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: './img/icons/png/map-icon.png'
+    });
 }
-
-
-
-
-
 
 
 var myMap;

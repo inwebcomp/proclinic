@@ -7,6 +7,8 @@
 
     @include('layout.meta')
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     @yield('styles')
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>

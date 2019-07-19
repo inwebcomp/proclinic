@@ -55,11 +55,6 @@ class Service extends Entity implements HasPage, Sortable, Cacheable, Nested
                     $constraint->upsize();
                 });
             }, true),
-            'extended' => new Thumbnail(function (\Intervention\Image\Image $image) {
-                return $image->fit(370, 220, function (Constraint $constraint) {
-                    $constraint->upsize();
-                });
-            }, true),
         ];
     }
 

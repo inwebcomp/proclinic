@@ -1,4 +1,4 @@
-<section class="block block--dual-slider">
+<section class="block block--dual-slider" id="clinic">
     <div class="container">
         <div class="dual-slider">
 

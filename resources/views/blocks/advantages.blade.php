@@ -1,4 +1,4 @@
-<section class="block block--advantages">
+<section class="block block--advantages" id="advantages">
     <div class="container">
         <h3 class="block__title">@lang('Наши преимущества')</h3>
 

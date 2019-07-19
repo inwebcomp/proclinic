@@ -1,4 +1,4 @@
-<section class="block block--map">
+<section class="block block--map" id="contacts">
     <div class="map" id="map"></div>
 
     <div class="contacts">

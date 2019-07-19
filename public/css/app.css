@@ -3849,7 +3849,7 @@ field-contact {
 }
 
 .block--map {
-  background-color: #0059bd;
+  background-color: #67a5eb;
   position: relative;
   margin-top: 0;
   display: flex;
@@ -3926,6 +3926,8 @@ field-contact {
   text-align: center;
   padding-bottom: 30px;
   padding-top: 5px;
+  position: relative;
+  z-index: 1;
 }
 
 .contacts__content {

@@ -11,7 +11,7 @@
                         v-model="form.contact"
                         @input="validate"
                         type="text"
-                        placeholder="Как с вами связаться?">
+                        placeholder="@lang('Как с вами связаться?')">
                     <button
                         :disabled="loading"
                         v-text="buttonText"

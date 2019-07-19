@@ -26,6 +26,7 @@
         "flickity": "^2.2.0",
         "hamburgers": "^1.1.3",
         "sweetalert": "^2.1.2",
-        "vue-axios": "^2.1.4"
+        "vue-axios": "^2.1.4",
+        "scroll-into-view": "^1.9.7"
     }
 }

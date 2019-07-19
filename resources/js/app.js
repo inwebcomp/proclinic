@@ -4,6 +4,7 @@ import Translator from './services/Translator'
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import ScrollIntoView from 'scroll-into-view'
 
 Vue.use(VueAxios, axios)
 
@@ -67,7 +68,28 @@ new Vue({
 
         menuCloseHandler() {
             this.mobMenuIsOpen = false;
-        }
+        },
+
+        scrollTop() {
+            document.getElementById('app').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        },
+
+        scrollToBlock(e) {
+            let el = document.querySelector(e.target.hash)
+
+            if (e.target.pathname == window.location.pathname && el) {
+                window.history.pushState({}, e.target.innerText, e.target.href)
+
+                ScrollIntoView(el, {
+                    time: 350,
+                })
+
+                e.preventDefault()
+            }
+        },
     },
 
     watch: {

@@ -16,7 +16,7 @@
             @if(is_iterable($menu))
                 <nav class="mob-menu__list">
                     @foreach($menu as $item)
-                        <a href="{{ $item->link }}" class="mob-menu__link">{{ $item->title }}</a>
+                        <a href="{{ $item->link }}" class="mob-menu__link" @click="scrollToBlock">{{ $item->title }}</a>
                     @endforeach
                 </nav>
             @endif

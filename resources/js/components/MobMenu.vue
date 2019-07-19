@@ -16,6 +16,10 @@ export default {
     methods: {
         closeMenu() {
             this.$emit('menu-close')
+        },
+        scrollToBlock(e) {
+            this.$root.scrollToBlock(e)
+            this.closeMenu()
         }
     }
 };

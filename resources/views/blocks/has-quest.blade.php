@@ -10,7 +10,7 @@
                         <span class="icon icon--phone-call input-field__icon"></span>
                         <input type="text"
                             class="input-field__input"
-                            @keypress="validate"
+                            @input="validate"
                             type="text"
                             placeholder="@lang('Телефон')"
                             v-model="form.phone">
@@ -20,7 +20,7 @@
                         <span class="icon icon--message input-field__icon"></span>
                         <input type="email"
                             class="input-field__input"
-                            @keypress="validate"
+                            @input="validate"
                             type="text"
                             placeholder="@lang('Эл. почта')"
                             v-model="form.email">
@@ -32,7 +32,7 @@
                         <span class="icon icon--chat input-field__icon"></span>
                         <textarea
                             class="input-field__input"
-                            @keypress="validateMessage"
+                            @input="validateMessage"
                             placeholder="@lang('Сообщение')"
                             v-model="form.message">
                         </textarea>

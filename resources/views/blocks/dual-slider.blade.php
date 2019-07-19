@@ -29,10 +29,10 @@
                                 <div class="slider-main__img-wrap">
                                     <img src="{{ optional($slide->image)->getUrl('big') }}" data-flickity-lazyload="{{ optional($slide->image)->getUrl('big') }}" width="720" height="410" alt="{{ $slide->title }}" class="slider-main__img" >
 
-                                    <button class="slider-button dual-slider__button--prev">
+                                    <button class="slider-button dual-slider__button--prev slider-main__button--prev">
                                         <span class="icon icon--circle icon--fill icon--chevron"></span>
                                     </button>
-                                    <button class="slider-button dual-slider__button--next">
+                                    <button class="slider-button dual-slider__button--next slider-main__button--prev">
                                         <span class="icon icon--circle icon--fill icon--chevron"></span>
                                     </button>
                                 </div>

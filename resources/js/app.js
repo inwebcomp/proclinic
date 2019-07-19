@@ -126,10 +126,10 @@ const initCarousel = () => {
         adaptiveHeight: true,
     });
 
-    document.querySelector('.dual-slider__button--prev').addEventListener('click', () => {
+    document.querySelector('. slider-main__button--prev')[0].addEventListener('click', () => {
         flkty.previous();
     });
-    document.querySelector('.dual-slider__button--next').addEventListener('click', () => {
+    document.querySelector('. slider-main__button--next')[0].addEventListener('click', () => {
         flkty.next()
     });
 

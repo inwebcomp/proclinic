@@ -4,7 +4,7 @@
             <h3 class="block__title">@lang('Наши врачи')</h3>
 
             <div class="cart-slider">
-                <div class="cart-slider__list js-slider">
+                <div class="cart-slider__list js-slider is-slider">
                     @foreach($doctors as $doctor)
                         <a href="{{ localized($doctor->path()) }}" class="cart-slider__item">
                             <div class="cart-slider__photo">

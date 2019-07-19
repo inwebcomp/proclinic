@@ -113,12 +113,14 @@ const initCarousel = () => {
         pageDots: false,
         fade: true,
         wrapAround: true,
+        contain: false,
         adaptiveHeight: true,
     });
 
     new Flickity(document.querySelector('.slider-small'), {
         prevNextButtons: false,
         fade: true,
+        contain: false,
         draggable: false,
         asNavFor: document.querySelector('.slider-main'),
         pageDots: false,

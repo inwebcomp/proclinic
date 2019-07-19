@@ -48,6 +48,7 @@
     @include media-max(1024px) {
         width: calc(50% - 32px);
     }
+
     @include media-max(800px) {
         margin: $padding * 1.25 + 43px $padding * 0.5 0;
         width: calc(100%);

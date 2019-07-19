@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00c18855-8973-47a8-a56b-cda936739537" name="Default Changelist" comment="Articles migration">
+    <list default="true" id="00c18855-8973-47a8-a56b-cda936739537" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_22_213403_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_22_213403_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,15 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Breadcrumbs.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2310">
-              <caret line="75" column="33" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/blocks/page-header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,11 +67,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_22_213403_create_articles_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
               <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Providers/ViewServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="44" column="94" selection-start-line="44" selection-start-column="94" selection-end-line="44" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -167,7 +167,6 @@
         <option value="$PROJECT_DIR$/resources/sass/components/_text-block.scss" />
         <option value="$PROJECT_DIR$/resources/sass/config/_colors.scss" />
         <option value="$PROJECT_DIR$/resources/views/blocks/mob-menu.blade.php" />
-        <option value="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Mail/ConsultationMail.php" />
         <option value="$PROJECT_DIR$/resources/views/mail/consultation.blade.php" />
@@ -192,6 +191,7 @@
         <option value="$PROJECT_DIR$/vendor/inweb/admin/src/App/Fields/Field.php" />
         <option value="$PROJECT_DIR$/vendor/inweb/admin/src/App/Http/Requests/InteractsWithTranslations.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_22_213403_create_articles_table.php" />
+        <option value="$PROJECT_DIR$/app/Providers/ViewServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -424,7 +424,7 @@
       <workItem from="1563459665580" duration="2422000" />
       <workItem from="1563462103294" duration="7761000" />
       <workItem from="1563469898612" duration="888000" />
-      <workItem from="1563515604252" duration="317000" />
+      <workItem from="1563515604252" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="Added new pages templates">
       <created>1559044534700</created>
@@ -461,11 +461,25 @@
       <option name="project" value="LOCAL" />
       <updated>1563515849526</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Articles migration">
+      <created>1563515924603</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1563515924603</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Metadata">
+      <created>1563516117486</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563516117486</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43321000" />
+    <option name="totallyTimeSpent" value="43534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -530,7 +544,8 @@
     <MESSAGE value="Almost final" />
     <MESSAGE value="remove images migration" />
     <MESSAGE value="Articles migration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Articles migration" />
+    <MESSAGE value="Metadata" />
+    <option name="LAST_COMMIT_MESSAGE" value="Metadata" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/pages/page.blade.php">
@@ -618,13 +633,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/View/Composers/MenuComposer.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/ViewServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="50" column="51" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blocks/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -897,6 +905,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/ViewServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="44" column="94" selection-start-line="44" selection-start-column="94" selection-end-line="44" selection-end-column="94" />
         </state>
       </provider>
     </entry>

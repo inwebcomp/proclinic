@@ -119,7 +119,6 @@ const initCarousel = () => {
     new Flickity(document.querySelector('.slider-small'), {
         prevNextButtons: false,
         fade: true,
-        contain: true,
         draggable: false,
         asNavFor: document.querySelector('.slider-main'),
         pageDots: false,

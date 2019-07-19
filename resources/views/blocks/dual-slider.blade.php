@@ -8,7 +8,7 @@
                     <h3 class="block__title">@lang('Наша клиника')</h3>
                     <p class="dual-slider__descr">{{ \App\Models\Textblock::text('clinic_subheading') }}</p>
 
-                    <div class="slider-small is-slider">
+                    <div class="slider-small">
                         @for($i = 0; $i < count($clinic); $i++)
                             @php $slide = $clinic[$i == 0 ? count($clinic) - 1 : $i - 1]; @endphp
                             <div class="slider-small__slide">

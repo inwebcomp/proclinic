@@ -1,4 +1,4 @@
-<section class="block block--reviews">
+<section class="block block--reviews" id="testimonials">
     <div class="container">
         <div class="reviews">
             <div class="reviews__head">

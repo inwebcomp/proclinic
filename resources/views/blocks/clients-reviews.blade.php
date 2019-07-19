@@ -25,7 +25,7 @@
                         <div class="reviews__item reviews__item--{{$i}}" data-index="{{$i}}">
                             <p class="reviews__item__name">{{ $testimonial->name }}</p>
                             <span class="reviews__item__data">{{ $testimonial->date }}</span>
-                            <p class="reviews__item__text">{{ $testimonial->text }}</p>
+                            <p class="reviews__item__text">{!! $testimonial->text !!}</p>
                         </div>
                     @endforeach
                 </div>

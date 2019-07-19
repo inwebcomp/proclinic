@@ -17,7 +17,7 @@ class TestimonialsComposer
     public function compose(View $view)
     {
         $testimonials = Testimonial::published()
-            ->ordered()
+            ->ordered('desc')
             ->get();
 
         $view->with('testimonials', $testimonials);

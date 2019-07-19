@@ -14,10 +14,13 @@ class DoctorController extends Controller
         $breadcrumbs = Breadcrumbs::doctor($doctor);
 
         return view('pages.doctor', [
-            'doctor'     => $doctor,
+            'doctor'      => $doctor,
             'breadcrumbs' => $breadcrumbs,
             'pageTitle'   => $doctor->title,
-            'meta'        => $doctor->metadata->toArray(),
+            'meta'        => array_merge([
+                'title'       => $doctor->title,
+                'description' => $doctor->description,
+            ], optional($doctor->metadata)->toArray() ?? []),
         ]);
     }
 }

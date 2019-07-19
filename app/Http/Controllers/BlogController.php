@@ -32,6 +32,10 @@ class BlogController extends Controller
 
         if ($category) {
             $metadata = optional($category->metadata)->toArray();
+
+            $metadata = array_merge([
+                'title' => $category->title,
+            ], $metadata ?? []);
         }
 
         if ($blogPage and ! $metadata) {
@@ -56,7 +60,10 @@ class BlogController extends Controller
             'article'     => $article,
             'breadcrumbs' => Breadcrumbs::article($article),
             'pageTitle'   => $article->title,
-            'meta'        => $article->metadata->toArray(),
+            'meta'        => array_merge([
+                'title'       => $article->title,
+                'description' => $article->description,
+            ], optional($article->metadata)->toArray() ?? []),
         ]);
     }
 }

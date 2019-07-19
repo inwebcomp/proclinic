@@ -20,7 +20,10 @@ class ServiceController extends Controller
             'children'    => $children,
             'breadcrumbs' => $breadcrumbs,
             'pageTitle'   => $service->title,
-            'meta'        => optional($service->metadata)->toArray(),
+            'meta'        => array_merge([
+                'title'       => $service->title,
+                'description' => $service->description,
+            ], optional($service->metadata)->toArray() ?? []),
         ]);
     }
 }

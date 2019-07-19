@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00c18855-8973-47a8-a56b-cda936739537" name="Default Changelist" comment="Hide blocks if no information">
+    <list default="true" id="00c18855-8973-47a8-a56b-cda936739537" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/TextblockEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TextblockEditor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,11 +64,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/blog/categories.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="198">
+              <caret line="5" column="148" lean-forward="true" selection-start-line="5" selection-start-column="148" selection-end-line="5" selection-end-column="148" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/blog/article.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -83,30 +91,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/blocks/clients-reviews.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="27" column="89" lean-forward="true" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/View/Composers/TestimonialsComposer.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Clinic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1386" />
           </provider>
         </entry>
       </file>
@@ -144,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Mail/ConsultationMail.php" />
         <option value="$PROJECT_DIR$/resources/views/mail/consultation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/has-quest.blade.php" />
         <option value="$PROJECT_DIR$/app/Mail/ContactMail.php" />
@@ -191,10 +188,11 @@
         <option value="$PROJECT_DIR$/resources/views/blocks/clients-reviews.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/View/Composers/TestimonialsComposer.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/doctors-slider.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/index-articles.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/TextblockEditor.vue" />
         <option value="$PROJECT_DIR$/resources/views/blog/categories.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/blog/article.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" />
       </list>
     </option>
   </component>
@@ -349,6 +347,20 @@
             </path>
             <path>
               <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
@@ -440,7 +452,7 @@
       <workItem from="1563517842099" duration="2040000" />
       <workItem from="1563520842282" duration="622000" />
       <workItem from="1563521474683" duration="663000" />
-      <workItem from="1563522479318" duration="3442000" />
+      <workItem from="1563522479318" duration="3889000" />
     </task>
     <task id="LOCAL-00001" summary="Added new pages templates">
       <created>1559044534700</created>
@@ -659,17 +671,31 @@
       <option name="project" value="LOCAL" />
       <updated>1563525604452</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Article categories">
+      <created>1563525946929</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1563525946929</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Category path">
+      <created>1563526001215</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1563526001215</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50917000" />
+    <option name="totallyTimeSpent" value="51364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20520833" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20520833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -723,8 +749,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added new pages templates" />
-    <MESSAGE value="Text pages" />
     <MESSAGE value="Almost final" />
     <MESSAGE value="remove images migration" />
     <MESSAGE value="Articles migration" />
@@ -748,23 +772,11 @@
     <MESSAGE value="Slider style" />
     <MESSAGE value="Testimonial order" />
     <MESSAGE value="Hide blocks if no information" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hide blocks if no information" />
+    <MESSAGE value="Article categories" />
+    <MESSAGE value="Category path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Category path" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1089">
-          <caret line="33" column="24" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_22_213403_create_articles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/ViewServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1089">
@@ -1038,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -1085,8 +1090,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blog/categories.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="198">
+          <caret line="5" column="148" lean-forward="true" selection-start-line="5" selection-start-column="148" selection-end-line="5" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blog/article.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Clinic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
         </state>
       </provider>
     </entry>

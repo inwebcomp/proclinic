@@ -24,7 +24,7 @@ class Testimonial extends Entity implements Sortable, Cacheable
         Positionable,
         WithImages;
 
-    protected $fillable = ['name', 'text'];
+    protected $fillable = ['name', 'text', 'status'];
 
     public static function clearCache(Cacheable $model = null)
     {

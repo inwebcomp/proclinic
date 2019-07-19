@@ -1,0 +1,12 @@
+.fr-wrapper > div:first-child:not(.fr-view) {
+    visibility: hidden;
+    display: none;
+}
+
+.fr-wrapper.show-placeholder .fr-placeholder {
+    margin-top: 0 !important;
+}
+
+.fr-box.fr-basic {
+    width: 100%;
+}

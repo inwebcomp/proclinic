@@ -4,7 +4,7 @@
 
         <div class="advantages">
             @foreach ($advantages as $i => $advantage)
-                <div class="advantage @if($i == count($advantages) or $i == count($advantages) - 1) advantage--lg @endif">
+                <div class="advantage @if($i == count($advantages) - 1 or $i == count($advantages) - 2) advantage--lg @endif">
                     <span class="icon icon--fill icon--circle-big advantage__icon"
                           style="background-image: url({{ optional($advantage->image)->getUrl() }})"></span>
                     <span class="advantage__counter">{{ '0' . ($i + 1) }}</span>

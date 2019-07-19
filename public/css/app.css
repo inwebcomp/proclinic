@@ -4020,7 +4020,7 @@ field-contact {
 
 .article-card__photo {
   display: block;
-  max-width: 370px;
+  max-width: 270px;
 }
 
 .article-card__photo:hover .article-card__img {

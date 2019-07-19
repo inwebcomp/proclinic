@@ -20,7 +20,7 @@
 
 
             <div class="reviews__list-wrap">
-                <div class="reviews__list">
+                <div class="reviews__list is-slider">
                     @foreach($testimonials as $i => $testimonial)
                         <div class="reviews__item reviews__item--{{$i}}" data-index="{{$i}}">
                             <p class="reviews__item__name">{{ $testimonial->name }}</p>

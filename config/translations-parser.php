@@ -16,7 +16,7 @@ return [
 
     // Excluded directories or files
     'excluded' => [
-        base_path('app/Admin')
+        'Admin'
     ],
 
     // Where is your folder with translations

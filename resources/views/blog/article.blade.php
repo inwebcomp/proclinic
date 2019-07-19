@@ -7,7 +7,7 @@
     <ul class="tags">
         @if ($article->category)
             <li class="tags__item">
-                <a href="{{ $article->path() }}" class="tags__item__link tags__item__link--active">{{ $article->category->title }}</a>
+                <a href="{{ $article->category->path() }}" class="tags__item__link tags__item__link--active">{{ $article->category->title }}</a>
             </li>
         @endif
         {{--                <li class="tags__date">{{ $article->date }}</li>--}}

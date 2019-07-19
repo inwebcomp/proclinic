@@ -34,7 +34,7 @@
                 language: 'ru',
                 toolbarButtons: [
                     'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|',
-                    'fontSize', 'color', 'paragraphStyle', '|',
+                    'paragraphStyle', '|', // 'fontSize', 'color',
                     'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent',
                     '-',
                     'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertTable', '|',

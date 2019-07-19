@@ -10,12 +10,14 @@
                 </li>
 
                 @foreach($categories as $cat)
-                    <li class="tag-cloud__item">
-                        <a href="{{ $cat->path() }}" class="button-tag tag-cloud__link @if ($category and $category->id == $cat->id)  button-tag--active @endif">
-                            {{ $cat->title }}
-                            <span class="button-tag__count">{{ $cat->articlesCount }}</span>
-                        </a>
-                    </li>
+                    @if($cat->articlesCount > 0)
+                        <li class="tag-cloud__item">
+                            <a href="{{ $cat->path() }}" class="button-tag tag-cloud__link @if ($category and $category->id == $cat->id)  button-tag--active @endif">
+                                {{ $cat->title }}
+                                <span class="button-tag__count">{{ $cat->articlesCount }}</span>
+                            </a>
+                        </li>
+                    @endif
                 @endforeach
             </ul>
         </nav>

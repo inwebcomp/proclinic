@@ -42,7 +42,7 @@ class ViewServiceProvider extends ServiceProvider
             $data = $view->getData();
 
             if (! isset($data['meta']) or ! is_iterable($data['meta']) or ! isset($data['meta']['title'])) {
-                $view->with('meta', $indexPage ? $indexPage->metadata->toArray() : [
+                $view->with('meta', $indexPage ? optional($indexPage->metadata)->toArray() : [
                     'title' => config('app.name')
                 ]);
             }

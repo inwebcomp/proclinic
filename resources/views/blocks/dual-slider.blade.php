@@ -32,7 +32,7 @@
                                     <button class="slider-button dual-slider__button--prev slider-main__button--prev">
                                         <span class="icon icon--circle icon--fill icon--chevron"></span>
                                     </button>
-                                    <button class="slider-button dual-slider__button--next slider-main__button--prev">
+                                    <button class="slider-button dual-slider__button--next slider-main__button--next">
                                         <span class="icon icon--circle icon--fill icon--chevron"></span>
                                     </button>
                                 </div>

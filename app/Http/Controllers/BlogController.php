@@ -35,7 +35,7 @@ class BlogController extends Controller
         }
 
         if ($blogPage and ! $metadata) {
-            $metadata = optional($blogPage)->metadata->toArray();
+            $metadata = optional(optional($blogPage)->metadata)->toArray();
         }
 
         return view('pages.blog', [

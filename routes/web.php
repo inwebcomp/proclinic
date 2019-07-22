@@ -28,7 +28,7 @@ Route::group(['prefix' => $locale], function () {
         Route::get('{article}', 'BlogController@show')->name('show');
     });
 
-    Route::get('{page}', 'PageController@show')->name('page');
+    Route::get('{page}', 'PageController@show')->where('page', '^(?!' . config('admin.path') . ')(.)*$')->name('page');
 });
 
 function localized($uri, $language = null) {

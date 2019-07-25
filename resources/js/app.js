@@ -108,34 +108,16 @@ const initCarousel = () => {
 
     if (!carousel) return false;
 
-    const flkty = new Flickity(carousel, {
-        prevNextButtons: false,
-        pageDots: false,
-        fade: true,
-        wrapAround: true,
-        contain: false,
-        adaptiveHeight: true,
-    });
-
-    new Flickity(document.querySelector('.slider-small'), {
-        prevNextButtons: false,
-        fade: true,
-        contain: false,
-        draggable: false,
-        asNavFor: document.querySelector('.slider-main'),
-        pageDots: false,
-        adaptiveHeight: true,
-    });
-
-    document.querySelector('.slider-main__button--prev').addEventListener('click', () => {
-        flkty.previous();
-    });
-    document.querySelector('.slider-main__button--next').addEventListener('click', () => {
-        flkty.next()
-    });
-
-    buttonPrev.addEventListener('click', () => {
-        flkty.previous()
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop:true,
+            margin:0,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeOut',
+            smartSpeed: 100,
+            items:1,
+            nav:true,
+        });
     });
 };
 

@@ -47,7 +47,7 @@ class Doctor extends Entity implements HasPage, Sortable, Cacheable
     {
         return [
             'catalog' => new Thumbnail(function (\Intervention\Image\Image $image) {
-                return $image->fit(216, 272, function (Constraint $constraint) {
+                return $image->fit(269, 290, function (Constraint $constraint) {
                     $constraint->upsize();
                 });
             }, true),

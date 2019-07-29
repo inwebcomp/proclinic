@@ -16017,14 +16017,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TestimonialForm__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/TestimonialForm */ "./resources/js/components/TestimonialForm.vue");
 /* harmony import */ var _components_TextblockEditor__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/TextblockEditor */ "./resources/js/components/TextblockEditor.vue");
 /* harmony import */ var _mixins_stopBodyScroll__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./mixins/stopBodyScroll */ "./resources/js/mixins/stopBodyScroll.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 
 
 
@@ -16105,110 +16097,94 @@ new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
     }
   }
 });
-
-var initCarousel = function initCarousel() {
-  var carousel = document.querySelector('.slider-main');
-  var buttonPrev = document.querySelector('.slider-small__button--prev');
-  var buttonWrap = document.querySelectorAll('.slider-main__img-wrap');
-  if (!carousel) return false;
-  $(document).ready(function () {
-    $(".owl-carousel").owlCarousel({
+$(document).ready(function () {
+  (function () {
+    var carousel = document.querySelector('.slider-main');
+    if (!carousel) return false;
+    $(".slider-main").owlCarousel({
       loop: true,
       margin: 0,
-      animateOut: 'fadeOut',
-      animateIn: 'fadeOut',
-      smartSpeed: 100,
+
+      /* animateOut: 'fadeOut',
+      animateIn: 'fadeOut', */
+      //smartSpeed: 100,
       items: 1,
-      nav: true
+      nav: true,
+      navText: ["<span class=\"icon icon--circle icon--fill icon--chevron\"></span>", "<span class=\"icon icon--circle icon--fill icon--chevron\"></span>"],
+      navElement: 'button',
+      navClass: ['slider-button dual-slider__button--prev', 'slider-button dual-slider__button--next']
     });
-  });
-};
+  })();
 
-initCarousel();
-
-var personalSlider = function personalSlider() {
-  var carousel = document.querySelector('.js-slider');
-  var buttonPrev = document.querySelector('.slider-button--prev');
-  var buttonNext = document.querySelector('.slider-button--next');
-  if (!carousel) return false;
-  var flkty = new Flickity(carousel, {
-    prevNextButtons: false,
-    pageDots: false,
-    contain: true,
-    cellAlign: 'left',
-    wrapAround: true,
-    adaptiveHeight: true
-  });
-  buttonPrev.addEventListener('click', function () {
-    flkty.previous();
-  });
-  buttonNext.addEventListener('click', function () {
-    flkty.next();
-  });
-};
-
-personalSlider();
-
-var reviewslSlider = function reviewslSlider() {
-  var carousel = document.querySelector('.reviews__list');
-  var buttonsNav = document.querySelector('.reviews__peoples');
-  var buttonPrev = document.querySelector('.reviews__slider-btn--prev');
-  var buttonNext = document.querySelector('.reviews__slider-btn--next');
-  if (!carousel) return false;
-
-  var activeButtonsFn = function activeButtonsFn() {
-    var activeButtons = [];
-    var arrSelectedIndexs = [];
-
-    _toConsumableArray(buttonsNav.children).forEach(function (elem) {
-      elem.classList.remove('active');
+  (function () {
+    var carousel = document.querySelector('.cart-slider__list');
+    if (!carousel) return false;
+    $(".cart-slider__list").owlCarousel({
+      loop: true,
+      items: 4,
+      nav: true,
+      margin: 20,
+      navText: ["<span class=\"icon icon--circle icon--fill icon--chevron\"></span>", "<span class=\"icon icon--circle icon--fill icon--chevron\"></span>"],
+      navElement: 'button',
+      navClass: ['slider-button cart-slider__button--prev', 'slider-button cart-slider__button--next'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        570: {
+          items: 2,
+          autoWidth: true
+        },
+        769: {
+          items: 3
+        },
+        880: {
+          items: 4
+        },
+        1140: {
+          items: 4,
+          margin: 32
+        }
+      }
     });
+  })();
 
-    flkty.selectedCells.forEach(function (cell) {
-      var index = cell.element.getAttribute('data-index');
-      arrSelectedIndexs.push(index);
+  (function () {
+    var carousel = document.querySelector('.reviews__list');
+    if (!carousel) return false;
+    $(".reviews__list").owlCarousel({
+      loop: true,
+      items: 2,
+      nav: true,
+      margin: 30,
+      navText: ["<span class=\"icon icon--circle icon--fill icon--chevron\"></span>", "<span class=\"icon icon--circle icon--fill icon--chevron\"></span>"],
+      navElement: 'button',
+      navClass: ['slider-button reviews__slider-btn reviews__slider-btn--prev', 'slider-button reviews__slider-btn reviews__slider-btn--next'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        1024: {
+          items: 2
+        }
+      }
     });
-    arrSelectedIndexs.forEach(function (index) {
-      var button = buttonsNav.children[index];
-      activeButtons.push(button);
+  })();
+
+  (function () {
+    var carousel = document.querySelector('.doctor-slider__list');
+    if (!carousel) return false;
+    $(".doctor-slider__list").owlCarousel({
+      loop: true,
+      items: 1,
+      nav: true,
+      margin: 0,
+      navText: ["<span class=\"icon icon--circle icon--fill icon--chevron\"></span>", "<span class=\"icon icon--circle icon--fill icon--chevron\"></span>"],
+      navElement: 'button',
+      navClass: ['slider-button slider-button--prev doctor-slider__button--prev', 'slider-button slider-button--next doctor-slider__button--next']
     });
-    activeButtons.forEach(function (navButton) {
-      navButton.classList.add('active');
-    });
-  };
-
-  var flkty = new Flickity(carousel, {
-    prevNextButtons: false,
-    pageDots: false,
-    contain: true,
-    wrapAround: true,
-    groupCells: '100%',
-    adaptiveHeight: false
-  }); // activeButtonsFn();
-  // flkty.on( 'select', activeButtonsFn);
-  // buttonsNav.addEventListener( 'click', ({ target }) => {
-  //     if(target.classList.contains('reviews__man__img')) {
-  //         const selector = target.parentElement.getAttribute('data-selector');
-  //
-  //         [...buttonsNav.children].forEach(elem => {
-  //             elem.classList.remove('active')
-  //         });
-  //
-  //         target.parentElement.classList.add('active');
-  //
-  //         flkty.selectCell(selector);
-  //     }
-  // });
-
-  buttonPrev.addEventListener('click', function () {
-    flkty.previous();
-  });
-  buttonNext.addEventListener('click', function () {
-    flkty.next();
-  });
-};
-
-reviewslSlider();
+  })();
+});
 
 var headerCollapse = function headerCollapse() {
   var header = document.querySelector('.header');

@@ -20,7 +20,7 @@
 
 
             <div class="reviews__list-wrap">
-                <div class="reviews__list is-slider">
+                <div class="reviews__list owl-carousel">
                     @foreach($testimonials as $i => $testimonial)
                         <div class="reviews__item reviews__item--{{$i}}" data-index="{{$i}}">
                             <p class="reviews__item__name">{{ $testimonial->name }}</p>
@@ -29,12 +29,12 @@
                         </div>
                     @endforeach
                 </div>
-                <button class="slider-button reviews__slider-btn reviews__slider-btn--prev">
+               {{--  <button class="slider-button reviews__slider-btn reviews__slider-btn--prev">
                     <span class="icon icon--circle icon--fill icon--chevron"></span>
                 </button>
                 <button class="slider-button reviews__slider-btn reviews__slider-btn--next">
                     <span class="icon icon--circle icon--fill icon--chevron"></span>
-                </button>
+                </button> --}}
             </div>
 
             <div class="reviews__footer">

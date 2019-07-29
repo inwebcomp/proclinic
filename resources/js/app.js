@@ -99,123 +99,108 @@ new Vue({
     },
 });
 
+$(document).ready(function(){
+    (() => {
+        const carousel = document.querySelector('.slider-main')
+    
+        if (!carousel) return false
 
-const initCarousel = () => {
-    const carousel = document.querySelector('.slider-main');
-    const buttonPrev = document.querySelector('.slider-small__button--prev');
-    const buttonWrap = document.querySelectorAll('.slider-main__img-wrap');
-
-
-    if (!carousel) return false;
-
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
+        
+    
+        $(".slider-main").owlCarousel({
             loop:true,
             margin:0,
-            animateOut: 'fadeOut',
-            animateIn: 'fadeOut',
-            smartSpeed: 100,
+            /* animateOut: 'fadeOut',
+            animateIn: 'fadeOut', */
+            //smartSpeed: 100,
             items:1,
             nav:true,
-        });
-    });
-};
+            navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
+            navElement: 'button',
+            navClass: ['slider-button dual-slider__button--prev', 'slider-button dual-slider__button--next']
+        })
+    })();
 
-initCarousel();
+    (() => {
+        const carousel = document.querySelector('.cart-slider__list')
 
-const personalSlider = () => {
-    const carousel = document.querySelector('.js-slider');
-    const buttonPrev = document.querySelector('.slider-button--prev');
-    const buttonNext = document.querySelector('.slider-button--next');
+        if (!carousel) return false
+       
+        $(".cart-slider__list").owlCarousel({
+            loop:true,
+            items:4,
+            nav:true,
+            margin:20,
+            navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
+            navElement: 'button',
+            navClass: ['slider-button cart-slider__button--prev', 'slider-button cart-slider__button--next'], 
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                570: {
+                    items: 2,
+                    autoWidth:true,
+                },
+                769: {
+                    items: 3,
+                },
+                880: {
+                    items: 4,
+                },
+                1140: {
+                    items: 4,
+                    margin:32,
+                },
+            }
+        })
+    })();
 
-    if (!carousel) return false;
+    (() => {
+        const carousel = document.querySelector('.reviews__list')
 
-    const flkty = new Flickity(carousel, {
-        prevNextButtons: false,
-        pageDots: false,
-        contain: true,
-        cellAlign: 'left',
-        wrapAround: true,
-        adaptiveHeight: true
-    });
+        if (!carousel) return false
+       
+        $(".reviews__list").owlCarousel({
+            loop:true,
+            items:2,
+            nav:true,
+            margin:30,
+            
+            navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
+            navElement: 'button',
+            navClass: ['slider-button reviews__slider-btn reviews__slider-btn--prev', 'slider-button reviews__slider-btn reviews__slider-btn--next'], 
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                1024: {
+                    items: 2,
+                }
+            }
+        })
+    })();
 
-    buttonPrev.addEventListener('click', () => {
-        flkty.previous()
-    });
-    buttonNext.addEventListener('click', () => {
-        flkty.next()
-    })
-};
+    (() => {
+        const carousel = document.querySelector('.doctor-slider__list')
 
-personalSlider();
+        if (!carousel) return false
+        
+        $(".doctor-slider__list").owlCarousel({
+            loop:true,
+            items:1,
+            nav:true,
+            margin:0,
+            
+            navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
+            navElement: 'button',
+            navClass: ['slider-button slider-button--prev doctor-slider__button--prev', 'slider-button slider-button--next doctor-slider__button--next'], 
+        })
+    })();
 
-const reviewslSlider = () => {
-    const carousel = document.querySelector('.reviews__list');
-    const buttonsNav = document.querySelector('.reviews__peoples');
-    const buttonPrev = document.querySelector('.reviews__slider-btn--prev');
-    const buttonNext = document.querySelector('.reviews__slider-btn--next');
+        
+});
 
-    if (!carousel) return false;
-
-    const activeButtonsFn = () => {
-        const activeButtons = [];
-        const arrSelectedIndexs = [];
-
-        [...buttonsNav.children].forEach(elem => {
-            elem.classList.remove('active')
-        });
-
-        flkty.selectedCells.forEach((cell) => {
-            const index = cell.element.getAttribute('data-index');
-            arrSelectedIndexs.push(index);
-        });
-
-        arrSelectedIndexs.forEach((index) => {
-            const button = buttonsNav.children[index];
-            activeButtons.push(button);
-        });
-
-        activeButtons.forEach((navButton) => {
-            navButton.classList.add('active')
-        });
-    }
-
-    const flkty = new Flickity(carousel, {
-        prevNextButtons: false,
-        pageDots: false,
-        contain: true,
-        wrapAround: true,
-        groupCells: '100%',
-        adaptiveHeight: false,
-    });
-
-    // activeButtonsFn();
-
-    // flkty.on( 'select', activeButtonsFn);
-
-    // buttonsNav.addEventListener( 'click', ({ target }) => {
-    //     if(target.classList.contains('reviews__man__img')) {
-    //         const selector = target.parentElement.getAttribute('data-selector');
-    //
-    //         [...buttonsNav.children].forEach(elem => {
-    //             elem.classList.remove('active')
-    //         });
-    //
-    //         target.parentElement.classList.add('active');
-    //
-    //         flkty.selectCell(selector);
-    //     }
-    // });
-
-    buttonPrev.addEventListener('click', () => {
-        flkty.previous()
-    });
-    buttonNext.addEventListener('click', () => {
-        flkty.next()
-    })
-};
-
-reviewslSlider();
 
 const headerCollapse = () => {
     const header = document.querySelector('.header');

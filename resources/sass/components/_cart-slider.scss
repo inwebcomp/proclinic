@@ -7,31 +7,31 @@
     position: relative;
 
     @include media-max(1260px) {
-        padding: 0 40px;
+
     }
     @include media-max(620px) {
-        padding: 0 28px;
+        padding: 0 0px;
         margin-top: $padding;
     }
-    @include media-max(425px) {
-        margin-left: -26px;
-        margin-right: -26px;
-        width: auto;
+
+
+    &__list {
+        @include media-max(769px) {
+            margin: 0 auto;
+            max-width: calc(255px + 20px + 255px);
+        }
+        @include media-max(570px) {
+            width: 95%;
+            max-width: 269px;
+        }
     }
 
     &__item {
-        width: calc(25% - 22px);
         display: block;
-        margin-right: 15px;
-        margin-left: 15px;
         padding-bottom: $padding * 1.5;
 
-        @include media-max(1140px) {
-            width: calc(33.3333% - 22px);
-        }
-
-        @include media-max(860px) {
-            width: calc(50% - 15px);
+        @include media-max(769px) {
+            max-width: 255px;
         }
 
         @include media-max(680px) {
@@ -45,14 +45,13 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        height: 290px;
         border-radius: $border-radius;
         overflow: hidden;
     }
 
     &__img {
-        max-width: 100%;
         height: auto;
+        max-width: 100% !important;
         display: block;
     }
 
@@ -76,18 +75,46 @@
         &--prev {
             top: 107px;
             left: -40px;
+            transform: rotate(180deg);
 
-            @include media-max(1260px) {
-                left: 0;
+            @include media-max($content-width + $padding * 2) {
+                left: -33px;
+            }
+
+            @include media-max(1024px) {
+                top: 85px;
+            }
+            @include media-max(769px) {
+                top: 97px;
+            }
+            @include media-max(425px) {
+                top: 112px;
             }
         }
         &--next {
             right: -40px;
             top: 107px;
 
-            @include media-max(1260px) {
-                right: 0;
+            @include media-max($content-width + $padding * 2) {
+                right: -33px;
+            }
+            @include media-max(1024px) {
+                top: 85px;
+            }
+            @include media-max(769px) {
+                top: 97px;
+            }
+            @include media-max(425px) {
+                top: 112px;
             }
         }
     }
 }
+
+.cart-slider__img {
+    @media screen and (min-width: $content-width + $padding * 2) {
+        height: 290px;
+        width: 269px !important;
+    }
+}
+

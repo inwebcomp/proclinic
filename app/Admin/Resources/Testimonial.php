@@ -7,6 +7,7 @@ use App\Admin\Actions\Publish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use InWeb\Admin\App\Fields\Boolean;
+use InWeb\Admin\App\Fields\Date;
 use InWeb\Admin\App\Fields\Editor;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\Textarea;
@@ -74,6 +75,7 @@ class Testimonial extends Resource
     {
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath())->rules('required'),
+            Date::make(__('Дата'), 'created_at'),
             Editor::make(__('Текст'), 'text')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
@@ -89,6 +91,7 @@ class Testimonial extends Resource
     {
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath())->rules('required'),
+            Date::make(__('Дата'), 'created_at'),
             Editor::make(__('Текст'), 'text')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status')->default(true),
         ];

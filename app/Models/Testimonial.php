@@ -43,7 +43,7 @@ class Testimonial extends Entity implements Sortable, Cacheable
 
     public function getDateAttribute()
     {
-        return $this->created_at->format('d.m.Y');
+        return optional($this->created_at)->format('d.m.Y');
     }
 
     public function getTextAttribute($value)

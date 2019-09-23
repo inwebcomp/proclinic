@@ -18,6 +18,7 @@ class CreateTextblockTable extends Migration
         Schema::create('textblocks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('uid')->nullable()->unique();
+            $table->string('title');
             Navigation::statusColumn($table);
             Navigation::positionColumn($table);
             $table->timestamps();
@@ -28,7 +29,6 @@ class CreateTextblockTable extends Migration
             $table->integer('textblock_id')->unsigned();
             $table->string('locale')->index();
 
-            $table->string('title');
             $table->text('text')->nullable();
 
             $table->unique(['textblock_id','locale']);

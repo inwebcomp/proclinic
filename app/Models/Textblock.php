@@ -19,9 +19,10 @@ class Textblock extends Entity implements Cacheable, Sortable
         Positionable;
 
     public $translationModel     = TextblockTranslation::class;
-    public $translatedAttributes = ['title', 'text'];
+    public $translatedAttributes = ['text'];
 
     protected $fillable = [
+        'title',
         'uid',
     ];
 

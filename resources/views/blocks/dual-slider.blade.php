@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="slider-main__content">
                                         <p class="slider-main__title">{{ $slide->title }}</p>
-                                        <p class="slider-main__text">{{ $slide->description }}</p>
+                                        <p class="slider-main__text">{{{ $slide->description }}}</p>
                                         @if($slide->link)<a href="{{ $slide->link }}" class="button">@lang('Читать далее')</a>@endif
                                     </div>
                                 </div>

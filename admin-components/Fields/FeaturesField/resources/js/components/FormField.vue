@@ -161,11 +161,14 @@
             },
 
             hasTranslation(lang) {
+                if (! this.value)
+                    return false
+
                 return !! Object.keys(this.value).find((index) => this.field.translatableValues[lang] && this.field.translatableValues[lang][index] && this.field.translatableValues[lang][index].title)
             },
 
             add() {
-                let newValue = this.value ? this.value.slice() : []
+                let newValue = this.field.value ? this.field.value.slice() : []
 
                 newValue.push({
                     icon: '',

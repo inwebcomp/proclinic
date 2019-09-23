@@ -32,8 +32,6 @@
     }
 
     &__logo {
-        margin-top: -6px;
-
         @include media-max(1202px) {
             margin-right: auto;
         }

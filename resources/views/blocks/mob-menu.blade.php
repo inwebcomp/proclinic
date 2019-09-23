@@ -5,9 +5,9 @@
                 <span class="icon icon--close mob-menu__close-icon"></span>
             </button>
 
-            <a class="logo mob-menu__logo" href="/{{ ($locale == 'ru' ? '' : $locale) }}">
-                <img class="logo__img" src="{{ asset('img/logo.svg') }}" width="170" alt="{{ config('app.name') }}">
-            </a>
+            @include('blocks.logo', [
+                'classMod' => 'mob-menu__logo',
+            ])
 
             <div class="mob-menu__langs">
                 @include('blocks.lang-toggler')

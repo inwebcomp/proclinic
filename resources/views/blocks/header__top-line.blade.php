@@ -1,8 +1,8 @@
 <div class="header__top-line">
     <div class="container header__top-line__container">
-        <a class="logo header__logo" href="/{{ ($locale == 'ru' ? '' : $locale) }}">
-            <img src="{{ asset('img/logo.svg') }}" width="200" alt="{{ config('app.name') }}" class="logo__img">
-        </a>
+        @include('blocks.logo', [
+            'classMod' => 'header__logo',
+        ])
 
         @include('blocks.menu', [
             'classMod' => 'header__menu',

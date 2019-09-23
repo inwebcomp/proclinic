@@ -1,9 +1,9 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__main">
-            <a class="logo footer__logo" href="/{{ ($locale == 'ru' ? '' : $locale) }}">
-                <img src="{{ asset('img/logo.svg') }}" width="200" alt="{{ config('app.name') }}" class="logo__img">
-            </a>
+            @include('blocks.logo', [
+                'classMod' => 'footer__logo',
+            ])
 
             @include('blocks.menu', [
                 'classMod' => 'menu--dark footer__menu',

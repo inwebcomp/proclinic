@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c18855-8973-47a8-a56b-cda936739537" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Admin/Resources/AdminUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Advantage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Advantage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Clinic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Clinic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Service.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Testimonial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/second-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/second-page.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,93 +20,21 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Advantage.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="89" column="86" selection-start-line="89" selection-start-column="86" selection-end-line="89" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Article.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="104" column="91" selection-start-line="104" selection-start-column="91" selection-end-line="104" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Category.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="85" column="91" selection-start-line="85" selection-start-column="91" selection-end-line="85" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Clinic.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="91" column="91" selection-start-line="91" selection-start-column="91" selection-end-line="91" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Doctor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2079">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Navigation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-828">
-              <caret line="55" column="52" lean-forward="true" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1584">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Service.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="101" column="91" selection-start-line="101" selection-start-column="91" selection-end-line="101" selection-end-column="91" />
+              <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="17" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Testimonial.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/second-page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="91" column="76" selection-start-line="91" selection-start-column="76" selection-end-line="91" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Admin/Resources/AdminUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+            <state relative-caret-position="561">
+              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -146,6 +70,7 @@
       <find>localized(</find>
       <find>flickity</find>
       <find>$popularArticles</find>
+      <find>hasTranslation</find>
     </findStrings>
     <replaceStrings>
       <replace>return route(</replace>
@@ -189,10 +114,7 @@
         <option value="$PROJECT_DIR$/resources/views/blocks/doctors-slider.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/page-header.blade.php" />
         <option value="$PROJECT_DIR$/app/Breadcrumbs.php" />
-        <option value="$PROJECT_DIR$/admin-components/Fields/FeaturesField/resources/js/components/FormField.vue" />
         <option value="$PROJECT_DIR$/resources/views/blocks/doctor-info.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/default.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/second-page.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/header__top-line.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blocks/logo.blade.php" />
@@ -217,6 +139,9 @@
         <option value="$PROJECT_DIR$/app/Admin/Resources/Navigation.php" />
         <option value="$PROJECT_DIR$/app/Admin/Resources/Service.php" />
         <option value="$PROJECT_DIR$/app/Admin/Resources/Testimonial.php" />
+        <option value="$PROJECT_DIR$/admin-components/Fields/FeaturesField/resources/js/components/FormField.vue" />
+        <option value="$PROJECT_DIR$/resources/views/layout/default.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/second-page.blade.php" />
       </list>
     </option>
   </component>
@@ -354,6 +279,59 @@
             <path>
               <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
               <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+              <item name="Fields" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+              <item name="Fields" type="462c0819:PsiDirectoryNode" />
+              <item name="FeaturesField" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+              <item name="Fields" type="462c0819:PsiDirectoryNode" />
+              <item name="FeaturesField" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+              <item name="Fields" type="462c0819:PsiDirectoryNode" />
+              <item name="FeaturesField" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+              <item name="Fields" type="462c0819:PsiDirectoryNode" />
+              <item name="FeaturesField" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-components" type="462c0819:PsiDirectoryNode" />
+              <item name="Fields" type="462c0819:PsiDirectoryNode" />
+              <item name="FeaturesField" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -372,13 +350,18 @@
             <path>
               <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
               <item name="proclinic" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
               <item name="proclinic" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="inweb" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proclinic" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proclinic" type="b2602c69:ProjectViewProjectNode" />
@@ -395,7 +378,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Admin/Resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -408,18 +391,18 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Admin/Resources" />
-      <recent name="$PROJECT_DIR$/public/img/icons" />
-      <recent name="$PROJECT_DIR$/admin-components/Fields" />
-      <recent name="$PROJECT_DIR$/resources/lang" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/components" />
       <recent name="$PROJECT_DIR$/resources/views/blog" />
       <recent name="$PROJECT_DIR$/resources/views/categories" />
       <recent name="$PROJECT_DIR$/resources/views/pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/app/Admin/Resources" />
+      <recent name="$PROJECT_DIR$/public/img/icons" />
+      <recent name="$PROJECT_DIR$/admin-components/Fields" />
+      <recent name="$PROJECT_DIR$/resources/lang" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -492,21 +475,9 @@
       <workItem from="1565429379300" duration="410000" />
       <workItem from="1565455744804" duration="4000" />
       <workItem from="1566889453145" duration="693000" />
-      <workItem from="1569218527685" duration="4026000" />
-    </task>
-    <task id="LOCAL-00011" summary="Service Size">
-      <created>1563520701932</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1563520701932</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Service metadata">
-      <created>1563521436936</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1563521436936</updated>
+      <workItem from="1569218527685" duration="6285000" />
+      <workItem from="1569234994769" duration="6000" />
+      <workItem from="1569236923060" duration="156000" />
     </task>
     <task id="LOCAL-00013" summary="Froala">
       <created>1563521525503</created>
@@ -837,11 +808,25 @@
       <option name="project" value="LOCAL" />
       <updated>1569222225856</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Field rules">
+      <created>1569222572811</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1569222572811</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Features field bug fix">
+      <created>1569224765017</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1569224765017</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86415000" />
+    <option name="totallyTimeSpent" value="88836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -877,8 +862,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="section ids" />
-    <MESSAGE value="Menu scrolling" />
     <MESSAGE value="testimonials id" />
     <MESSAGE value="Blog metadata" />
     <MESSAGE value="Hide articles if they are empty" />
@@ -902,47 +885,11 @@
     <MESSAGE value="Admin auth" />
     <MESSAGE value="Admin config" />
     <MESSAGE value="Images fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Images fix" />
+    <MESSAGE value="Field rules" />
+    <MESSAGE value="Features field bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Features field bug fix" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DoctorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blocks/doctor-info.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blocks/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/second-page.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blocks/header__top-line.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -957,9 +904,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/logo.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/logo.svg" />
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1189,23 +1134,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="85" column="91" selection-start-line="85" selection-start-column="91" selection-end-line="85" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_21_213406_create_clinics_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-297" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Clinic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="91" column="91" selection-start-line="91" selection-start-column="91" selection-end-line="91" selection-end-column="91" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_21_213407_create_doctors_table.php">
@@ -1215,43 +1146,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_21_213404_create_services_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2574">
+          <caret line="85" column="91" selection-start-line="85" selection-start-column="91" selection-end-line="85" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Clinic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2640">
+          <caret line="91" column="91" selection-start-line="91" selection-start-column="91" selection-end-line="91" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Doctor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2079">
+        <state relative-caret-position="198">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Navigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-828">
-          <caret line="55" column="52" lean-forward="true" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+        <state relative-caret-position="1452">
+          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1584">
+        <state relative-caret-position="198">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_21_213404_create_services_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Service.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
+        <state relative-caret-position="2871">
           <caret line="101" column="91" selection-start-line="101" selection-start-column="91" selection-end-line="101" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Testimonial.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="91" column="76" selection-start-line="91" selection-start-column="76" selection-end-line="91" selection-end-column="76" />
+        <state relative-caret-position="2673">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Resources/Textblock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-components/Fields/FeaturesField/resources/js/field.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-components/Fields/FeaturesField/resources/js/components/FormField.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/meta.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="17" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/second-page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
         </state>
       </provider>
     </entry>

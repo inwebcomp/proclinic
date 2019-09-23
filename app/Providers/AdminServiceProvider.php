@@ -21,6 +21,10 @@ class AdminServiceProvider extends AdminApplicationServiceProvider
         Admin::serving(function (ServingAdmin $event) {
             \App::setLocale('ru');
         });
+
+        Admin::auth(function() {
+            return auth()->user();
+        });
     }
 
     public function groups()

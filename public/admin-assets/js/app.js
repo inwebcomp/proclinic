@@ -5321,6 +5321,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app-select",
   props: {
@@ -5347,7 +5357,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       searchWord: '',
       opened: false,
-      atTop: false
+      atTop: false,
+      focused: null
     };
   },
   created: function created() {
@@ -5362,6 +5373,9 @@ __webpack_require__.r(__webpack_exports__);
       this.$emit('select', value);
       this.$emit('change', value);
       this.close();
+    },
+    selectByIndex: function selectByIndex(index) {
+      if (this.options[index]) this.select(this.options[index].value);
     },
     toggle: function toggle() {
       this.opened ? this.close() : this.open();
@@ -5380,6 +5394,41 @@ __webpack_require__.r(__webpack_exports__);
           _this.$refs.search.$refs.input.focus();
         });
       }
+    },
+    moveFocus: function moveFocus(event) {
+      if (event.keyCode == 38) {
+        // Up
+        this.focused = this.focused <= 1 ? this.options.length : this.focused - 1;
+        event.preventDefault();
+
+        if (this.focused == this.options.length) {
+          this.$refs.container.scrollTop = this.options.length * 34;
+        } else {
+          var topPos = this.focused * 34;
+          var dif = topPos - this.$refs.container.scrollTop;
+          if (dif <= 0) this.$refs.container.scrollTop += dif - 34;
+        }
+      } else if (event.keyCode == 40) {
+        // Down
+        this.focused = this.focused >= this.options.length ? 1 : this.focused + 1;
+        event.preventDefault();
+
+        if (this.focused == 1) {
+          this.$refs.container.scrollTop = 0;
+        } else {
+          var _topPos = this.focused * 34;
+
+          var _dif = _topPos - this.$refs.container.scrollTop - Math.min(this.options.length, 8) * 34;
+
+          if (_dif > 0) this.$refs.container.scrollTop += _dif;
+        }
+      }
+
+      if (!this.opened) this.selectByIndex(this.focused - 1);
+    },
+    selectFocused: function selectFocused(event) {
+      this.selectByIndex(this.focused - 1);
+      event.preventDefault();
     }
   },
   computed: {
@@ -5406,6 +5455,7 @@ __webpack_require__.r(__webpack_exports__);
     options: function options() {
       var _this4 = this;
 
+      this.focused = false;
       this.$nextTick(function () {
         var height = _this4.$refs.container.getBoundingClientRect().height;
 
@@ -5452,6 +5502,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "search-input",
   props: {
@@ -5461,6 +5513,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     value: {},
+    tabindex: {},
     small: {
       type: Boolean,
       "default": false
@@ -5473,8 +5526,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       opened: false,
-      atTop: false
+      atTop: false,
+      focused: null
     };
+  },
+  watch: {
+    options: function options() {
+      this.focused = false;
+    }
   },
   methods: {
     input: function input(event) {
@@ -5484,6 +5543,10 @@ __webpack_require__.r(__webpack_exports__);
     focus: function focus() {
       if (this.immediate) this.$emit('search', this.value);
       this.opened = true;
+    },
+    blur: function blur(event) {
+      this.close();
+      this.$emit('blur', event);
     },
     select: function select(index) {
       var selected = this.options[index];
@@ -5499,8 +5562,43 @@ __webpack_require__.r(__webpack_exports__);
     },
     open: function open() {
       var offset = window.innerHeight - this.$refs.input.$el.getBoundingClientRect().bottom;
-      this.atTop = offset < (Math.min(this.options.length, 8) + 1) * 36 + 16 ? true : 0;
+      this.atTop = offset < this.height ? true : 0;
       this.opened = true;
+    },
+    moveFocus: function moveFocus(event) {
+      if (event.keyCode == 38) {
+        // Up
+        this.focused = this.focused <= 1 ? this.options.length : this.focused - 1;
+
+        if (this.focused == this.options.length) {
+          this.$refs.container.scrollTop = this.options.length * 34;
+        } else {
+          var topPos = this.focused * 34;
+          var dif = topPos - this.$refs.container.scrollTop;
+          if (dif <= 0) this.$refs.container.scrollTop += dif - 34;
+        }
+      } else if (event.keyCode == 40) {
+        // Down
+        this.focused = this.focused >= this.options.length ? 1 : this.focused + 1;
+
+        if (this.focused == 1) {
+          this.$refs.container.scrollTop = 0;
+        } else {
+          var _topPos = this.focused * 34;
+
+          var _dif = _topPos - this.$refs.container.scrollTop - Math.min(this.options.length, 8) * 34;
+
+          if (_dif > 0) this.$refs.container.scrollTop += _dif;
+        }
+      } else if (event.keyCode == 13) {
+        // Enter
+        this.select(this.focused - 1);
+      }
+    }
+  },
+  computed: {
+    height: function height() {
+      return (Math.min(this.options.length, 8) + 1) * 34 + 16;
     }
   }
 });
@@ -5541,6 +5639,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'text-input',
   props: {
@@ -5553,6 +5652,7 @@ __webpack_require__.r(__webpack_exports__);
       "default": false
     },
     placeholder: {},
+    tabindex: {},
     small: {
       type: Boolean,
       "default": false
@@ -5723,7 +5823,6 @@ __webpack_require__.r(__webpack_exports__);
     fetch: function fetch() {
       var _this = this;
 
-      console.log('sdf');
       App.api.request({
         url: 'resource-tool/actions-on-model-tool/' + this.resourceName + '/' + this.resourceId
       }).then(function (data) {
@@ -33364,7 +33463,7 @@ var render = function() {
                         [_c("i", { staticClass: "far fa-edit text-black-50" })]
                       )
                     ],
-                    { item: item }
+                    { item: item, index: $i }
                   )
                 ],
                 2
@@ -36755,12 +36854,27 @@ var render = function() {
     },
     [
       _c(
-        "div",
+        "button",
         {
           ref: "value",
           staticClass: "dropdown__value form__group__input",
           class: { "form__group__input--h-small": _vm.small },
-          on: { click: _vm.toggle }
+          attrs: { type: "button" },
+          on: {
+            click: _vm.toggle,
+            keydown: [
+              _vm.moveFocus,
+              function($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                return _vm.selectFocused($event)
+              }
+            ]
+          }
         },
         [
           _vm.selected
@@ -36844,13 +36958,19 @@ var render = function() {
               [
                 _c(
                   "ul",
-                  { staticClass: "dropdown__values select__values" },
+                  {
+                    ref: "container",
+                    staticClass: "dropdown__values select__values"
+                  },
                   _vm._l(_vm.options, function(option, $i) {
                     return _c(
                       "li",
                       {
                         key: $i,
                         staticClass: "dropdown__option",
+                        class: {
+                          "dropdown__option--focused": _vm.focused == $i + 1
+                        },
                         on: {
                           click: function($event) {
                             return _vm.select(option.value)
@@ -36933,15 +37053,18 @@ var render = function() {
       _c("text-input", {
         ref: "input",
         staticClass: "search-input__input",
-        attrs: { small: _vm.small, value: _vm.value },
+        attrs: { small: _vm.small, value: _vm.value, tabindex: _vm.tabindex },
         on: {
           input: _vm.input,
           focus: _vm.focus,
-          blur: function($event) {
-            return _vm.$emit("blur", $event)
-          },
+          blur: _vm.blur,
           enter: function($event) {
             return _vm.$emit("enter", $event)
+          }
+        },
+        nativeOn: {
+          keydown: function($event) {
+            return _vm.moveFocus($event)
           }
         }
       }),
@@ -36963,6 +37086,7 @@ var render = function() {
           _c(
             "ul",
             {
+              ref: "container",
               staticClass: "dropdown__values search-input__values",
               class: { "dropdown--top": _vm.atTop }
             },
@@ -36972,6 +37096,7 @@ var render = function() {
                 {
                   key: $i,
                   staticClass: "dropdown__option",
+                  class: { "dropdown__option--focused": _vm.focused == $i + 1 },
                   on: {
                     mousedown: function($event) {
                       return _vm.select($i)
@@ -37035,7 +37160,11 @@ var render = function() {
           ref: "input",
           staticClass: "w-full form__group__input",
           class: { "form__group__input--h-small": _vm.small },
-          attrs: { placeholder: _vm.placeholder, type: _vm.type },
+          attrs: {
+            placeholder: _vm.placeholder,
+            type: _vm.type,
+            tabindex: _vm.tabindex
+          },
           domProps: { value: _vm.value },
           on: {
             input: function($event) {

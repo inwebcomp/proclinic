@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00c18855-8973-47a8-a56b-cda936739537" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Resources/Testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Resources/Testimonial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Testimonial.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Testimonial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,11 +87,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Testimonial.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="492">
               <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="25" column="96" selection-start-line="25" selection-start-column="96" selection-end-line="25" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -149,7 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/admin-components/Fields/PriceField/src/Field.php" />
         <option value="$PROJECT_DIR$/admin-components/Fields/PriceField/src/FeaturesField.php" />
         <option value="$PROJECT_DIR$/admin-components/Fields/PriceField/src/Features.php" />
         <option value="$PROJECT_DIR$/admin-components/Fields/PriceField/resources/js/components/FormField.vue" />
@@ -200,6 +207,7 @@
         <option value="$PROJECT_DIR$/app/Admin/Resources/Service.php" />
         <option value="$PROJECT_DIR$/app/Admin/Resources/Testimonial.php" />
         <option value="$PROJECT_DIR$/app/Models/Testimonial.php" />
+        <option value="$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php" />
       </list>
     </option>
   </component>
@@ -548,21 +556,7 @@
       <workItem from="1566889453145" duration="693000" />
       <workItem from="1569218527685" duration="6285000" />
       <workItem from="1569234994769" duration="6000" />
-      <workItem from="1569236923060" duration="2259000" />
-    </task>
-    <task id="LOCAL-00016" summary="Image style fix">
-      <created>1563521896970</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1563521896970</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Robots">
-      <created>1563522083542</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1563522083542</updated>
+      <workItem from="1569236923060" duration="2493000" />
     </task>
     <task id="LOCAL-00018" summary="Large advantages">
       <created>1563522568346</created>
@@ -893,11 +887,25 @@
       <option name="project" value="LOCAL" />
       <updated>1569239734396</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Testimonial date">
+      <created>1569240171217</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1569240171217</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Clinic slide html">
+      <created>1569240356057</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1569240356057</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90939000" />
+    <option name="totallyTimeSpent" value="91173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -933,8 +941,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fillable status" />
-    <MESSAGE value="Review style fix" />
     <MESSAGE value="Slider style" />
     <MESSAGE value="Testimonial order" />
     <MESSAGE value="Hide blocks if no information" />
@@ -958,16 +964,11 @@
     <MESSAGE value="Favicon" />
     <MESSAGE value="Article image fix" />
     <MESSAGE value="Default status" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default status" />
+    <MESSAGE value="Testimonial date" />
+    <MESSAGE value="Clinic slide html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clinic slide html" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/blocks/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1300,6 +1301,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
           <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blocks/dual-slider.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="25" column="96" selection-start-line="25" selection-start-column="96" selection-end-line="25" selection-end-column="96" />
         </state>
       </provider>
     </entry>

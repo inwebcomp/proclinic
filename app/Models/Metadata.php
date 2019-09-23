@@ -25,4 +25,17 @@ class Metadata extends Entity
     {
         return 'metadata';
     }
+
+    public function toArray()
+    {
+        $data = [];
+
+        if ($this->title)
+            $data['title'] = $this->title;
+
+        if ($this->description)
+            $data['description'] = $this->description;
+
+        return $data;
+    }
 }

@@ -1,6 +1,7 @@
 .block--articles-slider {
     padding: $padding * 3.75 0;
     background-color: $content-bg-color;
+    margin-top: $padding * 3;
 
     @include media-max(768px) {
         padding: $padding * 2.5 0;

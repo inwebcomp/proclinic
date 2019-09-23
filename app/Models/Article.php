@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use InWeb\Base\Contracts\Cacheable;
 use InWeb\Base\Contracts\HasPage;
 use InWeb\Base\Entity;
@@ -25,6 +26,7 @@ use Spatie\EloquentSortable\Sortable;
  * @property string slug
  * @property string description
  * @property string text
+ * @property string popular
  */
 class Article extends Entity implements HasPage, Sortable, Cacheable
 {
@@ -78,5 +80,10 @@ class Article extends Entity implements HasPage, Sortable, Cacheable
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public static function scopePopular(Builder $query)
+    {
+        return $query->where('popular', '=', 1);
     }
 }

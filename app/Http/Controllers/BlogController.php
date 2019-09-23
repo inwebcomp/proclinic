@@ -21,6 +21,7 @@ class BlogController extends Controller
                            ->paginate(10);
 
         $popularArticles = Article::published()
+                                  ->popular()
                                   ->ordered('desc')
                                   ->with('images')
                                   ->withTranslation()

@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->integer('category_id')->unsigned()->nullable();
             Article::statusColumn($table);
             Article::positionColumn($table);
+            $table->boolean('popular');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');

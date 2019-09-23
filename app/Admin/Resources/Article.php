@@ -66,7 +66,8 @@ class Article extends Resource
             Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
                 return Str::limit($value, 600);
             }),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Популярная'), 'popular'),
+            Boolean::make(__('Опубликована'), 'status'),
         ];
     }
 
@@ -87,7 +88,8 @@ class Article extends Resource
                   )->withEmpty(),
             Textarea::make(__('Описание'), 'description'),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликована'), 'status'),
+            Boolean::make(__('Популярная'), 'popular'),
         ];
     }
 
@@ -108,7 +110,8 @@ class Article extends Resource
                   )->withEmpty(),
             Textarea::make(__('Описание'), 'description'),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликована'), 'status'),
+            Boolean::make(__('Популярная'), 'popular'),
 
             new Metadata(),
             new Images(),

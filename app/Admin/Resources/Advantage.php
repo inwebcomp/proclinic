@@ -71,8 +71,8 @@ class Advantage extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
-            Editor::make(__('Описание'), 'description')->original(),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
+            Editor::make(__('Описание'), 'description')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -86,8 +86,8 @@ class Advantage extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
-            Editor::make(__('Описание'), 'description')->original(),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
+            Editor::make(__('Описание'), 'description')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status'),
 
             new Images(),

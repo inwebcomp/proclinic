@@ -80,7 +80,7 @@ class Article extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Select::make(__('Категория'), 'category_id')
                   ->options(
@@ -102,7 +102,7 @@ class Article extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Select::make(__('Категория'), 'category_id')
                   ->options(

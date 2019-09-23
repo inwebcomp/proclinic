@@ -73,8 +73,8 @@ class Testimonial extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'name')->link($this->editPath()),
-            Editor::make(__('Текст'), 'text')->original(),
+            Text::make(__('Имя'), 'name')->link($this->editPath())->rules('required'),
+            Editor::make(__('Текст'), 'text')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }
@@ -88,8 +88,8 @@ class Testimonial extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'name')->link($this->editPath()),
-            Editor::make(__('Текст'), 'text')->original(),
+            Text::make(__('Имя'), 'name')->link($this->editPath())->rules('required'),
+            Editor::make(__('Текст'), 'text')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
     }

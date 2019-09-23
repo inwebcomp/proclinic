@@ -68,7 +68,7 @@ class Category extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
@@ -83,7 +83,7 @@ class Category extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('URL ID'), 'slug'),
             Boolean::make(__('Опубликован'), 'status'),
 

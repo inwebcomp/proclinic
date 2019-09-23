@@ -73,7 +73,7 @@ class Clinic extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('Ссылка'), 'link')->original(),
             Editor::make(__('Описание'), 'description')->original(),
             Boolean::make(__('Опубликован'), 'status'),
@@ -89,7 +89,7 @@ class Clinic extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Название'), 'title')->link($this->editPath()),
+            Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('Ссылка'), 'link')->original(),
             Editor::make(__('Описание'), 'description')->original(),
             Boolean::make(__('Опубликован'), 'status'),

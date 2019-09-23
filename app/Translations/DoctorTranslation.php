@@ -20,5 +20,9 @@ class DoctorTranslation extends Model
         ];
     }
 
-    protected $fillable = ['title', 'slug', 'description', 'text'];
+    protected $casts = [
+        'features' => 'array'
+    ];
+
+    protected $fillable = ['name', 'slug', 'description', 'text', 'specialization', 'quote', 'features'];
 }

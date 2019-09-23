@@ -29,7 +29,7 @@ class Breadcrumbs
 
         $path[] = [
             'title' => __('Блог'),
-            'link'  => localized(Route::route('blog.index'))
+            'link'  => Route::route('blog.index')
         ];
 
         if ($category) {

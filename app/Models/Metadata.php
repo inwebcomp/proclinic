@@ -18,7 +18,7 @@ class Metadata extends Entity
     use Translatable,
         BindedToModelAndObject;
 
-    public $translationModel = 'App\Translations\MetadataTranslation';
+    public $translationModel     = 'App\Translations\MetadataTranslation';
     public $translatedAttributes = ['title', 'description'];
 
     public function getTable()

@@ -26,10 +26,13 @@ class CreateDoctorsTable extends Migration
             $table->integer('doctor_id')->unsigned();
             $table->string('locale')->index();
 
-            $table->string('title');
+            $table->string('name');
             $table->string('slug');
+            $table->text('specialization')->nullable();
             $table->text('description')->nullable();
             $table->text('text')->nullable();
+            $table->text('quote')->nullable();
+            $table->text('features')->default('');
 
             $table->unique(['doctor_id','locale']);
             $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');

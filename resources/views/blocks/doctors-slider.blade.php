@@ -6,12 +6,12 @@
             <div class="cart-slider">
                 <div class="owl-carousel cart-slider__list">
                     @foreach($doctors as $doctor)
-                        <a href="{{ localized($doctor->path()) }}" class="cart-slider__item">
+                        <a href="{{ $doctor->path() }}" class="cart-slider__item">
                             <div class="cart-slider__photo">
                                 <img width="269" heigh="290" src="{{ optional($doctor->image)->getUrl('catalog') }}" alt="{{ $doctor->title }}" class="cart-slider__img">
                             </div>
                             <p class="cart-slider__title">{{ $doctor->title }}</p>
-                            <span class="cart-slider__descr">{{ $doctor->description }}</span>
+                            <span class="cart-slider__descr">{{ $doctor->specialization }}</span>
                         </a>
                     @endforeach
                 </div>

@@ -21,7 +21,7 @@ use Spatie\EloquentSortable\Sortable;
  * Class Doctor
  *
  * @package App
- * @property string title
+ * @property string name
  * @property string slug
  * @property string description
  * @property string text
@@ -35,22 +35,32 @@ class Doctor extends Entity implements HasPage, Sortable, Cacheable
         TranslatableSlug,
         WithMetadata,
         WithImages;
-    public $translationModel = 'App\Translations\DoctorTranslation';
-    public $translatedAttributes = ['title', 'slug', 'description', 'text'];
+    public $translationModel     = 'App\Translations\DoctorTranslation';
+    public $translatedAttributes = ['name', 'slug', 'description', 'text', 'specialization', 'quote', 'features'];
 
     public function path()
     {
-        return Route::localized(route('doctor', [$this->slug], false));
+        return route('doctor', [$this->slug], false);
     }
 
     public function getImageThumbnails()
     {
         return [
-            'catalog' => new Thumbnail(function (\Intervention\Image\Image $image) {
+            'catalog'   => new Thumbnail(function (\Intervention\Image\Image $image) {
                 return $image->fit(269, 290, function (Constraint $constraint) {
                     $constraint->upsize();
                 });
             }, true),
+            'info-main' => new Thumbnail(function (\Intervention\Image\Image $image) {
+                return $image->resize(370, null, function (Constraint $constraint) {
+                    $constraint->aspectRatio();
+                });
+            }, true),
+            'info'      => new Thumbnail(function (\Intervention\Image\Image $image) {
+                return $image->fit(570, 380, function (Constraint $constraint) {
+                    $constraint->upsize();
+                });
+            }),
         ];
     }
 

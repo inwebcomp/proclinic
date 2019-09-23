@@ -99,22 +99,21 @@ new Vue({
     },
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     (() => {
         const carousel = document.querySelector('.slider-main')
-    
+
         if (!carousel) return false
 
-        
-    
+
         $(".slider-main").owlCarousel({
-            loop:true,
-            margin:0,
+            loop: true,
+            margin: 0,
             /* animateOut: 'fadeOut',
             animateIn: 'fadeOut', */
             //smartSpeed: 100,
-            items:1,
-            nav:true,
+            items: 1,
+            nav: true,
             navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
             navElement: 'button',
             navClass: ['slider-button dual-slider__button--prev', 'slider-button dual-slider__button--next']
@@ -125,34 +124,45 @@ $(document).ready(function(){
         const carousel = document.querySelector('.cart-slider__list')
 
         if (!carousel) return false
-       
-        $(".cart-slider__list").owlCarousel({
-            loop:true,
-            items:4,
-            nav:true,
-            margin:20,
-            navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
-            navElement: 'button',
-            navClass: ['slider-button cart-slider__button--prev', 'slider-button cart-slider__button--next'], 
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                570: {
-                    items: 2,
-                    autoWidth:true,
-                },
-                769: {
-                    items: 3,
-                },
-                880: {
-                    items: 4,
-                },
-                1140: {
-                    items: 4,
-                    margin:32,
-                },
-            }
+
+        $(".cart-slider__list").each(function(index, slider) {
+            let itemsLength = $(slider).find(".cart-slider__item").length
+
+            $(slider).owlCarousel({
+                items: 4,
+                mouseDrag: itemsLength > 4,
+                loop: itemsLength > 4,
+                nav: true,
+                margin: 20,
+                navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
+                navElement: 'button',
+                navClass: ['slider-button cart-slider__button--prev', 'slider-button cart-slider__button--next'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        mouseDrag: itemsLength > 1,
+                        loop: itemsLength > 1,
+                    },
+                    570: {
+                        items: 2,
+                        autoWidth: true,
+                        mouseDrag: itemsLength > 2,
+                        loop: itemsLength > 2,
+                    },
+                    769: {
+                        items: 3,
+                        mouseDrag: itemsLength > 3,
+                        loop: itemsLength > 3,
+                    },
+                    880: {
+                        items: 4,
+                    },
+                    1140: {
+                        items: 4,
+                        margin: 32,
+                    },
+                }
+            })
         })
     })();
 
@@ -160,16 +170,16 @@ $(document).ready(function(){
         const carousel = document.querySelector('.reviews__list')
 
         if (!carousel) return false
-       
+
         $(".reviews__list").owlCarousel({
-            loop:true,
-            items:2,
-            nav:true,
-            margin:30,
-            
+            loop: true,
+            items: 2,
+            nav: true,
+            margin: 30,
+
             navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
             navElement: 'button',
-            navClass: ['slider-button reviews__slider-btn reviews__slider-btn--prev', 'slider-button reviews__slider-btn reviews__slider-btn--next'], 
+            navClass: ['slider-button reviews__slider-btn reviews__slider-btn--prev', 'slider-button reviews__slider-btn reviews__slider-btn--next'],
             responsive: {
                 0: {
                     items: 1,
@@ -185,20 +195,20 @@ $(document).ready(function(){
         const carousel = document.querySelector('.doctor-slider__list')
 
         if (!carousel) return false
-        
+
         $(".doctor-slider__list").owlCarousel({
-            loop:true,
-            items:1,
-            nav:true,
-            margin:0,
-            
+            loop: true,
+            items: 1,
+            nav: true,
+            margin: 0,
+
             navText: [`<span class="icon icon--circle icon--fill icon--chevron"></span>`, `<span class="icon icon--circle icon--fill icon--chevron"></span>`],
             navElement: 'button',
-            navClass: ['slider-button slider-button--prev doctor-slider__button--prev', 'slider-button slider-button--next doctor-slider__button--next'], 
+            navClass: ['slider-button slider-button--prev doctor-slider__button--prev', 'slider-button slider-button--next doctor-slider__button--next'],
         })
     })();
 
-        
+
 });
 
 

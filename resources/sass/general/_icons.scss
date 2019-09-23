@@ -160,17 +160,50 @@
     }
 
     // DOCTOR PAGE
-    &--education {
-        background-image: url($icon-path + "png/education.png");
-    }
-    &--aid-kit {
-        background-image: url($icon-path + "png/first-aid-kit.png");
-    }
-    &--happy {
-        background-image: url($icon-path + "png/happy.png");
-    }
-    &--planning {
-        background-image: url($icon-path + "png/planning.png");
+    &--doctor {
+        &-aid-kit {
+            background-image: url($icon-path + "doctor/aid-kit.png");
+        }
+
+        &-busines {
+            background-image: url($icon-path + "doctor/busines.png");
+        }
+
+        &-chat {
+            background-image: url($icon-path + "doctor/chat.png");
+        }
+
+        &-education {
+            background-image: url($icon-path + "doctor/education.png");
+        }
+
+        &-email {
+            background-image: url($icon-path + "doctor/email.png");
+        }
+
+        &-happy {
+            background-image: url($icon-path + "doctor/happy.png");
+        }
+
+        &-man {
+            background-image: url($icon-path + "doctor/man.png");
+        }
+
+        &-map-icon {
+            background-image: url($icon-path + "doctor/map-icon.png");
+        }
+
+        &-peoples {
+            background-image: url($icon-path + "doctor/peoples.png");
+        }
+
+        &-planning {
+            background-image: url($icon-path + "doctor/planning.png");
+        }
+
+        &-romania {
+            background-image: url($icon-path + "doctor/romania.png");
+        }
     }
 }
 

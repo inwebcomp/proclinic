@@ -2,6 +2,7 @@
 
 namespace App\Admin\Resources;
 
+use Admin\Fields\FeaturesField\Features;
 use Admin\ResourceTools\Images\Images;
 use Admin\ResourceTools\Metadata\Metadata;
 use App\Admin\Actions\Hide;
@@ -13,6 +14,7 @@ use InWeb\Admin\App\Fields\Editor;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\Textarea;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
+use InWeb\Admin\App\Panel;
 use InWeb\Admin\App\Resources\Resource;
 
 class Doctor extends Resource
@@ -25,12 +27,12 @@ class Doctor extends Resource
     public static $globallySearchable = true;
 
     public static $search = [
-        'title'
+        'name'
     ];
 
     public function title()
     {
-        return $this->title;
+        return $this->name;
     }
 
     public static function label()
@@ -57,7 +59,7 @@ class Doctor extends Resource
     public function fields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'title')->link($this->editPath()),
+            Text::make(__('Имя'), 'name')->link($this->editPath()),
             Text::make(__('URL ID'), 'slug'),
             Textarea::make(__('Описание'), 'description')->displayUsing(function($value) {
                 return Str::limit(strip_tags($value), 600);
@@ -75,9 +77,11 @@ class Doctor extends Resource
     public function creationFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'title')->rules('required'),
+            Text::make(__('Имя'), 'name')->rules('required'),
             Text::make(__('URL ID'), 'slug'),
+            Text::make(__('Специализация'), 'specialization')->original()->size('full'),
             Textarea::make(__('Описание'), 'description')->original(),
+            Textarea::make(__('Цитата'), 'quote')->original(),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
         ];
@@ -92,11 +96,17 @@ class Doctor extends Resource
     public function detailFields(AdminRequest $request)
     {
         return [
-            Text::make(__('Имя'), 'title')->rules('required'),
+            Text::make(__('Имя'), 'name')->rules('required'),
             Text::make(__('URL ID'), 'slug'),
+            Text::make(__('Специализация'), 'specialization')->original()->size('full'),
             Textarea::make(__('Описание'), 'description')->original(),
+            Textarea::make(__('Цитата'), 'quote')->original(),
             Editor::make(__('Текст'), 'text'),
             Boolean::make(__('Опубликован'), 'status'),
+
+            new Panel(__('Достижения'), [
+                Features::make(__('Достижения'), 'features')->original(false)->size('full'),
+            ]),
 
             new Metadata(),
             new Images(),

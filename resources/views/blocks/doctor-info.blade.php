@@ -1,45 +1,50 @@
-    <div class="container doctor-info">
-        <div class="doctor-info__content">
-            <h2 class="title doctor-info__name">@lang('Иванов Иван Иванович')</h2>
-            <ul class="doctor-info__tags">
-                <li class="doctor-info__tag">@lang('главный врач,')</li>
-                <li class="doctor-info__tag">@lang('учредитель,')</li>
-                <li class="doctor-info__tag">@lang('главный врач')</li>
-            </ul>
+<div class="container doctor-info">
+    <div class="doctor-info__content">
+        <h2 class="title doctor-info__name">{{ $doctor->name }}</h2>
+        <ul class="doctor-info__tags">
+            <li class="doctor-info__tag">{{ $doctor->specialization }}</li>
+        </ul>
 
-            <p class="doctor-info__descr">Создатель клиники, автор популярных курсов для врачей-стоматологов «Мастерство протезирования» и «Реконструкция улыбки», человек, собравший вокруг себя команду стоматологов, состоящую из лучших специалистов в своем деле.</p>
+        <p class="doctor-info__descr">{{ $doctor->description }}</p>
 
+        @if($doctor->quote)
             <blockquote class="doctor-quote">
                 <div class="doctor-quote__icon">
                     <span class="icon icon--circle icon--fill icon--quotes"></span>
                 </div>
 
-                @lang('“Мы стараемся услышать каждого пациента и помочь ему, а также разобраться
-                    в причинах заболеваний, подобрать индивидуальный и оптимальный метод
-                лечения и профилактики.”')
+                {{ $doctor->quote }}
             </blockquote>
+        @endif
 
+        @if ($doctor->features)
             <ul class="doctor-info__features">
-                @foreach ($doctor_features as $item)
+                @foreach ($doctor->features as $feature)
                     <li class="doctor-info__features__item">
-                        <span class="icon icon--circle-big icon--{{$item['icon']}} doctor-info__fatures__icon"></span>
+                        @isset($feature['icon'])
+                            <span class="icon icon--circle-big icon--doctor-{{ $feature['icon'] ?? '' }} doctor-info__fatures__icon"></span>
+                        @endisset
                         <p class="doctor-info__features__text">
-                            {{$item['text']}}
+                            {{ $feature['text'] }}
                         </p>
                     </li>
                 @endforeach
             </ul>
-        </div>
-
-        <div class="doctor-info__photo-box">
-            <h2 class="title doctor-info__name doctor-info__name--hidden">@lang('Иванов Иван Иванович')</h2>
-            <ul class="doctor-info__tags doctor-info__tags--hidden">
-                <li class="doctor-info__tag">@lang('главный врач,')</li>
-                <li class="doctor-info__tag">@lang('учредитель,')</li>
-                <li class="doctor-info__tag">@lang('главный врач')</li>
-            </ul>
-
-            <img src="{{ asset('img/doctors/Samofalov1.jpg') }}" alt="Фото врача" class="doctor-info__photo">
-        </div>
+        @endif
     </div>
 
+    <div class="doctor-info__photo-box">
+        <h2 class="title doctor-info__name doctor-info__name--hidden">{{ $doctor->name }}</h2>
+        <ul class="doctor-info__tags doctor-info__tags--hidden">
+            <li class="doctor-info__tag">{{ $doctor->specialization }}</li>
+        </ul>
+
+        @if ($doctor->image)
+            <img src="{{ $doctor->image->getUrl('info-main') }}" alt="{{ $doctor->name }}" width="370"
+                 class="doctor-info__photo">
+        @endif
+    </div>
+</div>
+
+
+@include('blocks.doctor-experience', ['doctor' => $doctor])

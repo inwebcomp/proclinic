@@ -44,7 +44,7 @@ class Service extends Entity implements HasPage, Sortable, Cacheable, Nested
 
     public function path()
     {
-        return Route::localized(route('service', [$this->slug], false));
+        return route('service', [$this->slug], false);
     }
 
     public function getImageThumbnails()

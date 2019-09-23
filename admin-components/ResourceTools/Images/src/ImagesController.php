@@ -2,11 +2,10 @@
 
 namespace Admin\ResourceTools\Images;
 
-use App\Models\Image;
-use App\Traits\WithImages;
 use InWeb\Admin\App\Http\Controllers\Controller;
 use InWeb\Admin\App\Http\Requests\ResourceDetailRequest;
-use InWeb\Admin\App\Http\Requests\ResourceStoreRequest;
+use InWeb\Media\Image;
+use InWeb\Media\WithImages;
 
 class ImagesController extends Controller
 {
@@ -27,7 +26,6 @@ class ImagesController extends Controller
     /**
      * @param ResourceDetailRequest $request
      * @return mixed
-     * @throws \App\Exceptions\ModelIsNotBinded
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      * @todo Lock uploading when many requests are sent
      */

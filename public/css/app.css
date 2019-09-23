@@ -768,20 +768,48 @@ button {
   background-image: url("/img/icons/png/peoples.png");
 }
 
-.icon--education {
-  background-image: url("/img/icons/png/education.png");
+.icon--doctor-aid-kit {
+  background-image: url("/img/icons/doctor/aid-kit.png");
 }
 
-.icon--aid-kit {
-  background-image: url("/img/icons/png/first-aid-kit.png");
+.icon--doctor-busines {
+  background-image: url("/img/icons/doctor/busines.png");
 }
 
-.icon--happy {
-  background-image: url("/img/icons/png/happy.png");
+.icon--doctor-chat {
+  background-image: url("/img/icons/doctor/chat.png");
 }
 
-.icon--planning {
-  background-image: url("/img/icons/png/planning.png");
+.icon--doctor-education {
+  background-image: url("/img/icons/doctor/education.png");
+}
+
+.icon--doctor-email {
+  background-image: url("/img/icons/doctor/email.png");
+}
+
+.icon--doctor-happy {
+  background-image: url("/img/icons/doctor/happy.png");
+}
+
+.icon--doctor-man {
+  background-image: url("/img/icons/doctor/man.png");
+}
+
+.icon--doctor-map-icon {
+  background-image: url("/img/icons/doctor/map-icon.png");
+}
+
+.icon--doctor-peoples {
+  background-image: url("/img/icons/doctor/peoples.png");
+}
+
+.icon--doctor-planning {
+  background-image: url("/img/icons/doctor/planning.png");
+}
+
+.icon--doctor-romania {
+  background-image: url("/img/icons/doctor/romania.png");
 }
 
 .grid {
@@ -4540,6 +4568,10 @@ field-contact {
     max-width: 100%;
     order: -1;
     margin-bottom: 16px;
+  }
+
+  .doctor-info__photo-box img {
+    margin: 0 auto;
   }
 }
 

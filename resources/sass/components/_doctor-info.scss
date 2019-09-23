@@ -51,6 +51,10 @@
             max-width: 100%;
             order: -1;
             margin-bottom: $padding;
+
+            img {
+                margin: 0 auto;
+            }
         }
     }
 

@@ -31,6 +31,9 @@ Route::group(['prefix' => $locale], function () {
     Route::get('{page}', 'PageController@show')->where('page', '^(?!' . config('admin.path') . ')(.)*$')->name('page');
 });
 
-function localized($uri, $language = null) {
-    return \InWeb\Base\Support\Route::localized($uri, $language);
+if (! function_exists('localized')) {
+    function localized($uri, $language = null)
+    {
+        return \InWeb\Base\Support\Route::localized($uri, $language);
+    }
 }

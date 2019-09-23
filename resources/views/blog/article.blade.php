@@ -1,7 +1,9 @@
 <div class="article-prew">
-    <a href="{{ $article->path() }}" class="article-prew__photo">
-        <img src="{{ asset('img/article-covers/1.jpg') }}" alt="{{ $article->title }}" class="article-prew__img">
-    </a>
+    @if ($article->image)
+        <a href="{{ $article->path() }}" class="article-prew__photo">
+            <img src="{{ optional($article->image)->getUrl('catalog') }}" alt="{{ $article->title }}" class="article-prew__img">
+        </a>
+    @endif
 
     <a href="{{ $article->path() }}" class="article-prew__title">{{ $article->title }}</a>
     <ul class="tags">

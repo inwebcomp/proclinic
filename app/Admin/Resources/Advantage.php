@@ -73,7 +73,7 @@ class Advantage extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Editor::make(__('Описание'), 'description')->original()->rules('required'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 
@@ -88,7 +88,7 @@ class Advantage extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Editor::make(__('Описание'), 'description')->original()->rules('required'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Images(),
         ];

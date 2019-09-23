@@ -70,7 +70,7 @@ class Category extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('URL ID'), 'slug'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 
@@ -85,7 +85,7 @@ class Category extends Resource
         return [
             Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('URL ID'), 'slug'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Metadata(),
         ];

@@ -58,7 +58,7 @@ class Navigation extends Resource implements Nested
             Text::make(__('Ссылка'), 'link', function ($value, $resource) {
                 return $resource->page ? $resource->page->path() : $value;
             })->original(),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 
@@ -82,7 +82,7 @@ class Navigation extends Resource implements Nested
                   })->toArray())->withEmpty(),
             Text::make(__('Ссылка'), 'link')->size('full')->original(),
             TreeField::make(__('Родитель'), 'parent_id'),
-            Boolean::make('Опубликован', 'status'),
+            Boolean::make('Опубликован', 'status')->default(true),
         ];
     }
 

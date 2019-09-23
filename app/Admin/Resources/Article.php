@@ -88,7 +88,7 @@ class Article extends Resource
                   )->withEmpty(),
             Textarea::make(__('Описание'), 'description'),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликована'), 'status'),
+            Boolean::make(__('Опубликована'), 'status')->default(true),
             Boolean::make(__('Популярная'), 'popular'),
         ];
     }
@@ -110,7 +110,7 @@ class Article extends Resource
                   )->withEmpty(),
             Textarea::make(__('Описание'), 'description'),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликована'), 'status'),
+            Boolean::make(__('Опубликована'), 'status')->default(true),
             Boolean::make(__('Популярная'), 'popular'),
 
             new Metadata(),

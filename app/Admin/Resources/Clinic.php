@@ -61,6 +61,7 @@ class Clinic extends Resource
                 return Str::limit(strip_tags($value), 600);
             }),
             Text::make(__('Ссылка'), 'link')->original(),
+            Boolean::make(__('Опубликован'), 'status'),
         ];
     }
 
@@ -76,7 +77,7 @@ class Clinic extends Resource
             Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('Ссылка'), 'link')->original(),
             Editor::make(__('Описание'), 'description')->original(),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 
@@ -92,7 +93,7 @@ class Clinic extends Resource
             Text::make(__('Название'), 'title')->link($this->editPath())->rules('required'),
             Text::make(__('Ссылка'), 'link')->original(),
             Editor::make(__('Описание'), 'description')->original(),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Images(),
         ];

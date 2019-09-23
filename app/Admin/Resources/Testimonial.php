@@ -75,7 +75,7 @@ class Testimonial extends Resource
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath())->rules('required'),
             Editor::make(__('Текст'), 'text')->original()->rules('required'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 
@@ -90,7 +90,7 @@ class Testimonial extends Resource
         return [
             Text::make(__('Имя'), 'name')->link($this->editPath())->rules('required'),
             Editor::make(__('Текст'), 'text')->original()->rules('required'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 

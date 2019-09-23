@@ -83,7 +83,7 @@ class Doctor extends Resource
             Textarea::make(__('Описание'), 'description')->original(),
             Textarea::make(__('Цитата'), 'quote')->original(),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
         ];
     }
 
@@ -102,7 +102,7 @@ class Doctor extends Resource
             Textarea::make(__('Описание'), 'description')->original(),
             Textarea::make(__('Цитата'), 'quote')->original(),
             Editor::make(__('Текст'), 'text'),
-            Boolean::make(__('Опубликован'), 'status'),
+            Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Panel(__('Достижения'), [
                 Features::make(__('Достижения'), 'features')->original(false)->size('full'),

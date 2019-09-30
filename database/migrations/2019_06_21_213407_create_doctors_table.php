@@ -32,7 +32,7 @@ class CreateDoctorsTable extends Migration
             $table->text('description')->nullable();
             $table->text('text')->nullable();
             $table->text('quote')->nullable();
-            $table->text('features')->default('');
+            $table->text('features')->default('')->nullable();
 
             $table->unique(['doctor_id','locale']);
             $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');

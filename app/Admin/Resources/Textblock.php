@@ -13,6 +13,7 @@ use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
+use InWeb\Admin\App\ResourceTools\ActionsOnModel;
 
 class Textblock extends Resource
 {
@@ -82,6 +83,8 @@ class Textblock extends Resource
                   }),
 
             Boolean::make(__('Опубликован'), 'status'),
+
+            new ActionsOnModel(),
         ];
     }
 

@@ -11,6 +11,7 @@ use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
+use InWeb\Admin\App\ResourceTools\ActionsOnModel;
 use Inweb\Tools\PermissionsTool\RolesResourceTool;
 
 class AdminUser extends Resource
@@ -79,6 +80,7 @@ class AdminUser extends Resource
             PasswordConfirmation::make(__('Повторите пароль'), 'password_confirm')->rules(['same:password']),
 
             new RolesResourceTool(),
+            new ActionsOnModel(),
         ];
     }
 

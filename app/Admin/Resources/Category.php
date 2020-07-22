@@ -12,6 +12,7 @@ use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
+use InWeb\Admin\App\ResourceTools\ActionsOnModel;
 
 class Category extends Resource
 {
@@ -95,6 +96,7 @@ class Category extends Resource
             Boolean::make(__('Опубликован'), 'status')->default(true),
 
             new Metadata(),
+            new ActionsOnModel(),
         ];
     }
 

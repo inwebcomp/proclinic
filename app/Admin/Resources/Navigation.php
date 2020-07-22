@@ -15,6 +15,7 @@ use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
+use InWeb\Admin\App\ResourceTools\ActionsOnModel;
 
 class Navigation extends Resource implements Nested
 {
@@ -84,6 +85,8 @@ class Navigation extends Resource implements Nested
             Text::make(__('Ссылка'), 'link')->size('full')->original(),
             TreeField::make(__('Родитель'), 'parent_id'),
             Boolean::make('Опубликован', 'status')->default(true),
+
+            new ActionsOnModel(),
         ];
     }
 

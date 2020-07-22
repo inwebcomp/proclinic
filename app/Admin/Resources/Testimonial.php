@@ -15,6 +15,7 @@ use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
+use InWeb\Admin\App\ResourceTools\ActionsOnModel;
 
 class Testimonial extends Resource
 {
@@ -96,6 +97,8 @@ class Testimonial extends Resource
             Date::make(__('Дата'), 'created_at'),
             Editor::make(__('Текст'), 'text')->original()->rules('required'),
             Boolean::make(__('Опубликован'), 'status')->default(true),
+
+            new ActionsOnModel(),
         ];
     }
 

@@ -18,6 +18,7 @@ use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Panel;
 use InWeb\Admin\App\Resources\Resource;
+use InWeb\Admin\App\ResourceTools\ActionsOnModel;
 
 class Doctor extends Resource
 {
@@ -112,6 +113,7 @@ class Doctor extends Resource
 
             new Metadata(),
             new Images(),
+            new ActionsOnModel(),
         ];
     }
 

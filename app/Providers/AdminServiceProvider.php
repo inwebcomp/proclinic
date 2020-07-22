@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use InWeb\Admin\App\Admin;
-use InWeb\Admin\App\Events\ServingAdmin;
 use InWeb\Admin\App\Providers\AdminApplicationServiceProvider;
 use InWeb\Admin\TranslatablePhrases\TranslatablePhrases;
+use Inweb\Tools\PermissionsTool\PermissionsTool;
 
 class AdminServiceProvider extends AdminApplicationServiceProvider
 {
@@ -18,28 +18,12 @@ class AdminServiceProvider extends AdminApplicationServiceProvider
     {
         parent::boot();
 
-        Admin::serving(function (ServingAdmin $event) {
-            \App::setLocale('ru');
-        });
-
-        Admin::auth(function() {
-            return auth()->user();
-        });
+        Admin::setDefaultLocale('ru');
     }
 
     public function groups()
     {
         parent::groups();
-    }
-
-    /**
-     * Register the application's Admin resources.
-     *
-     * @return void
-     */
-    protected function resources()
-    {
-        Admin::resourcesIn(app_path('Admin/Resources'));
     }
 
     /**
@@ -50,7 +34,8 @@ class AdminServiceProvider extends AdminApplicationServiceProvider
     public function tools()
     {
         return [
-            new TranslatablePhrases()
+            new TranslatablePhrases(),
+            new PermissionsTool(),
         ];
     }
 }

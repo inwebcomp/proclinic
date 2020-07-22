@@ -9,13 +9,12 @@ use InWeb\Base\Contracts\Cacheable;
 use InWeb\Base\Contracts\HasPage;
 use InWeb\Base\Contracts\Nested;
 use InWeb\Base\Entity;
-use InWeb\Base\Support\Route;
 use InWeb\Base\Traits\Positionable;
 use InWeb\Base\Traits\TranslatableSlug;
 use InWeb\Base\Traits\WithStatus;
-use InWeb\Media\Thumbnail;
-use InWeb\Media\WithContentImages;
-use InWeb\Media\WithImages;
+use InWeb\Media\Images\Thumbnail;
+use InWeb\Media\Images\WithContentImages;
+use InWeb\Media\Images\WithImages;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\EloquentSortable\Sortable;
 

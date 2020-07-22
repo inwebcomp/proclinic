@@ -7,10 +7,10 @@ use InWeb\Base\Contracts\Nested;
 use InWeb\Base\Entity;
 use InWeb\Base\Support\Route;
 use InWeb\Base\Traits\Positionable;
-use InWeb\Media\WithImages;
 use InWeb\Base\Traits\WithStatus;
 use InWeb\Base\Traits\WithUID;
 use Dimsav\Translatable\Translatable;
+use InWeb\Media\Images\WithImages;
 use Kalnoy\Nestedset\NodeTrait;
 use Spatie\EloquentSortable\Sortable;
 

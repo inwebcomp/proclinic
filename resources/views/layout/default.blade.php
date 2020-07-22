@@ -38,7 +38,7 @@
         @include('blocks.popup-review')
     </div>
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=338995d5-7d2b-4122-b470-b9e25f624804&lang={{ $locale . '_' . strtolower($locale) }}" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=338995d5-7d2b-4122-b470-b9e25f624804&lang={{ $locale . '_' . strtolower($locale == 'en' ? 'us' : $locale) }}" type="text/javascript"></script>
 
     @yield('scripts')
     <script src="{{ mix('/js/app.js') }}"></script>

@@ -9,13 +9,13 @@ use InWeb\Base\Entity;
 use InWeb\Base\Support\Route;
 use InWeb\Base\Traits\Positionable;
 use InWeb\Base\Traits\TranslatableSlug;
-use InWeb\Media\Thumbnail;
-use InWeb\Media\WithContentImages;
-use InWeb\Media\WithImages;
 use App\Traits\WithMetadata;
 use InWeb\Base\Traits\WithStatus;
 use Dimsav\Translatable\Translatable;
 use Intervention\Image\Constraint;
+use InWeb\Media\Images\Thumbnail;
+use InWeb\Media\Images\WithContentImages;
+use InWeb\Media\Images\WithImages;
 use Spatie\EloquentSortable\Sortable;
 
 /**

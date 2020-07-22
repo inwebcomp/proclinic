@@ -16,6 +16,9 @@ class PageController extends Controller
     {
         $page = Page::findBySlug($page)->firstOrFail();
 
+        if ($page->slug == 'index')
+            return abort(404);
+
         return view('pages.page', [
             'page'        => $page,
             'breadcrumbs' => Breadcrumbs::page($page),

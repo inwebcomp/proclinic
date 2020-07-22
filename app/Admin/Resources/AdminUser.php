@@ -2,19 +2,16 @@
 
 namespace App\Admin\Resources;
 
-use Admin\ResourceTools\Images\Images;
-use App\Admin\Actions\Hide;
-use App\Admin\Actions\Publish;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use InWeb\Admin\App\Fields\Boolean;
 use InWeb\Admin\App\Fields\Date;
-use InWeb\Admin\App\Fields\Editor;
 use InWeb\Admin\App\Fields\Password;
 use InWeb\Admin\App\Fields\PasswordConfirmation;
 use InWeb\Admin\App\Fields\Text;
+use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
+use Inweb\Tools\PermissionsTool\RolesResourceTool;
 
 class AdminUser extends Resource
 {
@@ -80,6 +77,8 @@ class AdminUser extends Resource
 
             Password::make(__('Пароль'), 'password')->rules(['nullable']),
             PasswordConfirmation::make(__('Повторите пароль'), 'password_confirm')->rules(['same:password']),
+
+            new RolesResourceTool(),
         ];
     }
 
@@ -99,6 +98,13 @@ class AdminUser extends Resource
 
             Password::make(__('Пароль'), 'password')->rules(['required']),
             PasswordConfirmation::make(__('Повторите пароль'), 'password_confirm')->rules(['required', 'same:password']),
+        ];
+    }
+
+    public function filters(Request $request)
+    {
+        return [
+            new OnPage(20),
         ];
     }
 }

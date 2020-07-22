@@ -11,6 +11,7 @@ use InWeb\Admin\App\Fields\FastActions;
 use InWeb\Admin\App\Fields\Select;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\TreeField;
+use InWeb\Admin\App\Filters\OnPage;
 use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
@@ -97,7 +98,8 @@ class Navigation extends Resource implements Nested
     public function filters(Request $request)
     {
         return [
-            new Status()
+            new OnPage(20),
+            new Status(),
         ];
     }
 }

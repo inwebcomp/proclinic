@@ -5,7 +5,7 @@
                 <li class="tag-cloud__item">
                     <a href="{{ \App\Models\Category::allPath() }}" class="button-tag tag-cloud__link @if (! $category)  button-tag--active @endif">
                         @lang('Все статьи')
-                        <span class="button-tag__count">{{ $articles->total() }}</span>
+                        <span class="button-tag__count">{{ \App\Models\Article::published()->count() }}</span>
                     </a>
                 </li>
 

@@ -17,8 +17,12 @@ class BlogController extends Controller
         $articles = Article::published()
                            ->ordered('desc')
                            ->with('images')
-                           ->withTranslation()
-                           ->paginate(10);
+                           ->withTranslation();
+
+        if ($category)
+            $articles->where('category_id', $category->id);
+
+            $articles = $articles->paginate(10);
 
         $popularArticles = Article::published()
                                   ->popular()

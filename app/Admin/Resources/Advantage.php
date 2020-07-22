@@ -12,6 +12,8 @@ use InWeb\Admin\App\Fields\Boolean;
 use InWeb\Admin\App\Fields\Editor;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\Textarea;
+use InWeb\Admin\App\Filters\OnPage;
+use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
 
@@ -19,6 +21,8 @@ class Advantage extends Resource
 {
     public static $model = \App\Models\Advantage::class;
     protected static $position = 2;
+
+    public static $globallySearchable = true;
 
     public static $with = ['translations'];
 
@@ -99,6 +103,14 @@ class Advantage extends Resource
         return [
             new Publish(),
             new Hide(),
+        ];
+    }
+
+    public function filters(Request $request)
+    {
+        return [
+            new OnPage(20),
+            new Status(),
         ];
     }
 }

@@ -10,7 +10,7 @@
                             <div class="cart-slider__photo">
                                 <img width="269" heigh="290" src="{{ optional($doctor->image)->getUrl('catalog') }}" alt="{{ $doctor->title }}" class="cart-slider__img">
                             </div>
-                            <p class="cart-slider__title">{{ $doctor->title }}</p>
+                            <p class="cart-slider__title">{{ $doctor->name }}</p>
                             <span class="cart-slider__descr">{{ $doctor->specialization }}</span>
                         </a>
                     @endforeach

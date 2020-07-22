@@ -15,6 +15,8 @@ use InWeb\Admin\App\Fields\FastActions;
 use InWeb\Admin\App\Fields\Text;
 use InWeb\Admin\App\Fields\Textarea;
 use InWeb\Admin\App\Fields\TreeField;
+use InWeb\Admin\App\Filters\OnPage;
+use InWeb\Admin\App\Filters\Status;
 use InWeb\Admin\App\Http\Requests\AdminRequest;
 use InWeb\Admin\App\Resources\Resource;
 
@@ -116,6 +118,14 @@ class Service extends Resource implements Nested
         return [
             new Publish(),
             new Hide(),
+        ];
+    }
+
+    public function filters(Request $request)
+    {
+        return [
+            new OnPage(20),
+            new Status(),
         ];
     }
 }

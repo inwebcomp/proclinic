@@ -5,9 +5,9 @@ namespace App\Models;
 use InWeb\Base\Contracts\Cacheable;
 use InWeb\Base\Entity;
 use InWeb\Base\Traits\Positionable;
-use InWeb\Media\WithImages;
 use InWeb\Base\Traits\WithStatus;
 use Dimsav\Translatable\Translatable;
+use InWeb\Media\Images\WithImages;
 use Spatie\EloquentSortable\Sortable;
 
 /**

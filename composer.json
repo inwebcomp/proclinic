@@ -10,54 +10,32 @@
     "repositories": [
         {
             "type": "path",
-            "url": "./admin-components/ResourceTools/Images"
-        },
-        {
-            "type": "path",
             "url": "./admin-components/ResourceTools/Metadata"
         },
         {
             "type": "path",
-            "url": "./admin-components/Tools/TranslatablePhrases"
-        },
-        {
-            "type": "path",
             "url": "./admin-components/Fields/FeaturesField"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/chrispage1/laravel-nestedset"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/inwebcomp/base"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/inwebcomp/media"
         }
     ],
     "require": {
         "php": "^7.1.3",
         "ext-curl": "*",
         "ext-json": "*",
-        "cviebrock/eloquent-sluggable": "^4.6",
-        "dimsav/laravel-translatable": "^9.2",
         "fideloper/proxy": "^4.0",
-        "intervention/image": "^2.4",
         "inweb/admin": "dev-master",
         "inweb/base": "dev-master",
         "inweb/media": "dev-master",
-        "inweb/admin-resource-tool-images": "*",
-        "inweb/admin-resource-tool-metadata": "*",
+        "inweb/admin-permissions-tool": "dev-master",
+        "inweb/admin-resource-tool-images": "dev-master",
+        "inweb/admin-resource-tool-metadata": "dev-master",
         "inweb/admin-features-field": "*",
-        "inweb/admin-translatable-phrases": "*",
-        "kalnoy/nestedset": "^4.3",
+        "inweb/admin-translatable-phrases": "dev-master",
+        "laravel-notification-channels/telegram": "^0.0.6",
         "laravel/framework": "5.8.*",
         "laravel/horizon": "^3.2",
         "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0",
-        "spatie/eloquent-sortable": "3.4.4"
+        "spatie/eloquent-sortable": "^3.7"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

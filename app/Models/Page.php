@@ -10,7 +10,7 @@ use InWeb\Base\Support\Route;
 use InWeb\Base\Traits\Positionable;
 use InWeb\Base\Traits\TranslatableSlug;
 use InWeb\Base\Traits\WithStatus;
-use InWeb\Media\WithContentImages;
+use InWeb\Media\Images\WithContentImages;
 use Spatie\EloquentSortable\Sortable;
 
 /**

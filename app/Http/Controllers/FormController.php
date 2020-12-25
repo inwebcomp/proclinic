@@ -6,8 +6,13 @@ use App\Mail\TestimonialMail;
 use App\Mail\ConsultationMail;
 use App\Mail\ContactMail;
 use App\Models\Testimonial;
+use App\Notification\Consultation;
+use App\Notification\Contact;
+use App\Notification\NewOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
+use NotificationChannels\Telegram\Exceptions\CouldNotSendNotification;
 
 class FormController extends Controller
 {
@@ -18,6 +23,14 @@ class FormController extends Controller
         ]);
 
         Mail::to(config('contacts.mail_to'))->queue(new ConsultationMail($request->input()));
+
+        $notification = new Consultation(config('notification-chats.telegram.messages'), $request->input());
+
+        try {
+            Notification::route('telegram', '')->notify($notification);
+        } catch (CouldNotSendNotification $exception) {
+            \Log::critical('Notification failed: ' . $notification->message());
+        }
 
         return [
             'message'     => __("Сообщение отправлено!"),
@@ -38,6 +51,14 @@ class FormController extends Controller
 
         Mail::to(config('contacts.mail_to'))->queue(new ContactMail($request->input()));
 
+        $notification = new Contact(config('notification-chats.telegram.messages'), $request->input());
+
+        try {
+            Notification::route('telegram', '')->notify($notification);
+        } catch (CouldNotSendNotification $exception) {
+            \Log::critical('Notification failed: ' . $notification->message());
+        }
+
         return [
             'message'     => __("Сообщение отправлено!"),
             'description' => __("Мы с вами скоро свяжемся")
@@ -55,6 +76,14 @@ class FormController extends Controller
         $data['message'] = nl2br(strip_tags($data['message']));
 
         Mail::to(config('contacts.mail_to'))->queue(new TestimonialMail($data));
+
+        $notification = new \App\Notification\Testimonial(config('notification-chats.telegram.messages'), $request->input());
+
+        try {
+            Notification::route('telegram', '')->notify($notification);
+        } catch (CouldNotSendNotification $exception) {
+            \Log::critical('Notification failed: ' . $notification->message());
+        }
 
         Testimonial::create([
             'name'   => $data['name'],
